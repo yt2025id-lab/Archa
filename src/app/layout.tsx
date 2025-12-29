@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Web3Provider } from "@/providers/Web3Provider";
-import "@coinbase/onchainkit/styles.css";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,8 +22,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Archa - Arisan On-Chain",
-  description: "Platform arisan terdesentralisasi yang membawa tradisi keuangan komunal Indonesia ke blockchain Base",
-  keywords: ["arisan", "blockchain", "DeFi", "Indonesia", "Base", "IDRX"],
+  description: "Platform arisan terdesentralisasi yang membawa tradisi keuangan komunal Indonesia ke Mantle Network",
+  keywords: ["arisan", "blockchain", "DeFi", "Indonesia", "Mantle", "MNT"],
 };
 
 export default function RootLayout({
