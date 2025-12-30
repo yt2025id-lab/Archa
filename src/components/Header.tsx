@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ArchaLogo from "./ArchaLogo";
+import ConnectWallet from "./ConnectWallet";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
@@ -21,6 +22,7 @@ export default function Header() {
     { label: t("nav.about"), href: "#tentang" },
     { label: t("nav.howItWorks"), href: "#cara-kerja" },
     { label: t("nav.advantages"), href: "#keunggulan" },
+    { label: t("nav.pools"), href: "/pools" },
   ];
 
   const toggleLanguage = () => {
@@ -102,28 +104,7 @@ export default function Header() {
             </button>
 
             {/* Connect Wallet Button */}
-            <button
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 ${
-                scrolled
-                  ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
-                  : "bg-white text-gray-900 hover:bg-white/90"
-              }`}
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              {t("nav.connectWallet")}
-            </button>
+            <ConnectWallet variant="header" scrolled={scrolled} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -190,28 +171,7 @@ export default function Header() {
             </button>
 
             {/* Mobile Connect Wallet */}
-            <button
-              className={`flex items-center justify-center gap-2 py-3 rounded-full text-lg font-semibold ${
-                scrolled
-                  ? "bg-gradient-to-r from-green-500 to-blue-500 text-white"
-                  : "bg-white text-gray-900"
-              }`}
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-              {t("nav.connectWallet")}
-            </button>
+            <ConnectWallet variant="mobile" scrolled={scrolled} />
           </div>
         </div>
       </div>

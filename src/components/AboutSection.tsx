@@ -78,24 +78,20 @@ export default function AboutSection() {
       return (
         <>
           <strong className="text-gray-900">Archa</strong> adalah protokol arisan terdesentralisasi yang dibangun di atas
-          blockchain <strong className="text-blue-600">Base L2</strong>. Setiap peserta menyetorkan <strong className="text-blue-600">IDRX</strong> (stablecoin Rupiah)
-          secara berkala, dan giliran penerima ditentukan secara adil melalui smart contract.
-          Yang membuat Archa berbeda: selama periode arisan berlangsung, dana yang terkumpul tidak diam begitu saja.
-          Dana tersebut diputar ke protokol <strong className="text-green-600">Thetanuts Finance</strong> untuk menghasilkan yield.
-          Di akhir arisan, <span className="font-semibold text-gray-900">seluruh keuntungan yield dibagikan rata kepada semua peserta</span>,
-          jadi bukan hanya dapat giliran, tapi juga dapat bonus!
+          <strong className="text-blue-600"> Mantle Network</strong>. Setiap peserta menyetorkan <strong className="text-blue-600">USDC</strong> secara berkala,
+          dan giliran penerima ditentukan secara adil melalui smart contract.
+          Yang membuat Archa berbeda: <strong className="text-purple-600">AI Yield Optimizer</strong> secara otomatis memutar dana ke protokol DeFi terbaik untuk menghasilkan yield optimal.
+          Di akhir arisan, <span className="font-semibold text-gray-900">collateral dikembalikan + bonus yield untuk semua peserta</span>!
         </>
       );
     }
     return (
       <>
-        <strong className="text-gray-900">Archa</strong> is a decentralized arisan protocol built on the
-        <strong className="text-blue-600"> Base L2</strong> blockchain. Each participant deposits <strong className="text-blue-600">IDRX</strong> (Rupiah stablecoin)
-        periodically, and the recipient&apos;s turn is determined fairly through smart contracts.
-        What makes Archa different: during the arisan period, the collected funds don&apos;t sit idle.
-        The funds are invested in the <strong className="text-green-600">Thetanuts Finance</strong> protocol to generate yield.
-        At the end of the arisan, <span className="font-semibold text-gray-900">all yield profits are distributed equally to all participants</span>,
-        so you don&apos;t just get your turn, you also get a bonus!
+        <strong className="text-gray-900">Archa</strong> is a decentralized arisan protocol built on
+        <strong className="text-blue-600"> Mantle Network</strong>. Each participant deposits <strong className="text-blue-600">USDC</strong> periodically,
+        and the recipient&apos;s turn is determined fairly through smart contracts.
+        What makes Archa different: <strong className="text-purple-600">AI Yield Optimizer</strong> automatically invests funds into the best DeFi protocols for optimal yield.
+        At the end of the arisan, <span className="font-semibold text-gray-900">collateral is returned + yield bonus for all participants</span>!
       </>
     );
   };

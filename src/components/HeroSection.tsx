@@ -65,49 +65,47 @@ export default function HeroSection() {
             {t("hero.techLabel")}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            {/* Base */}
+            {/* Mantle */}
             <a
-              href="https://base.org"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 111 111" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="55.5" cy="55.5" r="55.5" fill="#0052FF"/>
-                <path d="M55.4 93.5C76.2 93.5 93.1 76.6 93.1 55.8C93.1 35 76.2 18.1 55.4 18.1C35.8 18.1 19.7 33.1 17.9 52.2H68.8V59.4H17.9C19.7 78.5 35.8 93.5 55.4 93.5Z" fill="white"/>
-              </svg>
-              <span className="text-white/80 text-sm font-medium">Base</span>
-            </a>
-
-            {/* IDRX */}
-            <a
-              href="https://idrx.co"
+              href="https://mantle.xyz"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105"
             >
               <svg className="w-5 h-5" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="50" fill="#2563EB"/>
-                <circle cx="50" cy="50" r="42" fill="none" stroke="white" strokeWidth="3"/>
-                <text x="50" y="62" textAnchor="middle" fill="white" fontSize="42" fontWeight="bold" fontFamily="Arial">X</text>
+                <circle cx="50" cy="50" r="50" fill="#000"/>
+                <path d="M25 35L50 20L75 35V65L50 80L25 65V35Z" fill="#65B3AE" stroke="#65B3AE" strokeWidth="2"/>
+                <path d="M50 20V80M25 35L75 65M75 35L25 65" stroke="#000" strokeWidth="2"/>
               </svg>
-              <span className="text-white/80 text-sm font-medium">IDRX Stablecoin</span>
+              <span className="text-white/80 text-sm font-medium">Mantle Network</span>
             </a>
 
-            {/* Thetanuts */}
+            {/* USDC */}
             <a
-              href="https://thetanuts.finance"
+              href="https://circle.com/usdc"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105"
             >
               <svg className="w-5 h-5" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="50" fill="#10B981"/>
-                <path d="M50 15L65 45H55V75H45V45H35L50 15Z" fill="white"/>
-                <circle cx="50" cy="32" r="5" fill="#10B981"/>
+                <circle cx="50" cy="50" r="50" fill="#2775CA"/>
+                <path d="M50 20C33.4 20 20 33.4 20 50s13.4 30 30 30 30-13.4 30-30S66.6 20 50 20zm0 55c-13.8 0-25-11.2-25-25s11.2-25 25-25 25 11.2 25 25-11.2 25-25 25z" fill="white"/>
+                <text x="50" y="58" textAnchor="middle" fill="white" fontSize="28" fontWeight="bold" fontFamily="Arial">$</text>
               </svg>
-              <span className="text-white/80 text-sm font-medium">Thetanuts Finance</span>
+              <span className="text-white/80 text-sm font-medium">USDC Stablecoin</span>
             </a>
+
+            {/* AI */}
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+              <svg className="w-5 h-5" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" fill="#8B5CF6"/>
+                <path d="M50 25L65 40H55V55H65L50 75L35 55H45V40H35L50 25Z" fill="white"/>
+                <circle cx="35" cy="35" r="5" fill="white"/>
+                <circle cx="65" cy="35" r="5" fill="white"/>
+                <circle cx="50" cy="65" r="5" fill="white"/>
+              </svg>
+              <span className="text-white/80 text-sm font-medium">AI Yield Optimizer</span>
+            </div>
           </div>
         </div>
       </div>

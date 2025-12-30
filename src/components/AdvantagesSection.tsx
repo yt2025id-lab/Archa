@@ -254,6 +254,23 @@ export default function AdvantagesSection() {
             ))}
           </div>
         </div>
+
+        {/* CTA Button */}
+        <div
+          className={`mt-12 text-center transition-all duration-1000 delay-900 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <a
+            href="/pools"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300 transform hover:scale-105"
+          >
+            <span>Explore Arisan Pools</span>
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );
