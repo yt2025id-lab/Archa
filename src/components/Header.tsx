@@ -19,9 +19,9 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: t("nav.about"), href: "#tentang" },
-    { label: t("nav.howItWorks"), href: "#cara-kerja" },
-    { label: t("nav.advantages"), href: "#keunggulan" },
+    { label: t("nav.about"), href: "/#tentang" },
+    { label: t("nav.howItWorks"), href: "/#cara-kerja" },
+    { label: t("nav.advantages"), href: "/#keunggulan" },
     { label: t("nav.pools"), href: "/pools" },
   ];
 

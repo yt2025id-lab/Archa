@@ -46,9 +46,9 @@ export default function Footer() {
   ];
 
   const quickLinks = [
-    { label: t("nav.about"), href: "#tentang" },
-    { label: t("nav.howItWorks"), href: "#cara-kerja" },
-    { label: t("nav.advantages"), href: "#keunggulan" },
+    { label: t("nav.about"), href: "/#tentang" },
+    { label: t("nav.howItWorks"), href: "/#cara-kerja" },
+    { label: t("nav.advantages"), href: "/#keunggulan" },
   ];
 
   return (

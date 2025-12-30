@@ -7,7 +7,7 @@
 
   Built on Mantle Network for [Mantle Global Hackathon 2025](https://www.mantle.xyz/hackathon)
 
-  [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://archa.vercel.app)
+  [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://arisanonchain.vercel.app)
   [![Mantle](https://img.shields.io/badge/network-Mantle-65B3AE)](https://www.mantle.xyz)
   [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 </div>
@@ -243,7 +243,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Links
 
-- **Website**: [archa.vercel.app](https://archa.vercel.app)
+- **Website**: [arisanonchain.vercel.app](https://arisanonchain.vercel.app)
 - **Twitter**: [@archaonchain](https://twitter.com/archaonchain)
 - **Discord**: [discord.gg/archa](https://discord.gg/archa)
 - **Telegram**: [t.me/archaonchain](https://t.me/archaonchain)
