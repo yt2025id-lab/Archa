@@ -396,22 +396,25 @@
 ║                         ROADMAP                                ║
 ╠═══════════════════════════════════════════════════════════════╣
 ║                                                               ║
-║  Q1 2025: FOUNDATION ✅                                       ║
+║  Q1 2025: FOUNDATION ✅ COMPLETED                             ║
 ║  ┌─────────────────────────────────────────────────────────┐  ║
 ║  │ ✅ Smart Contract Development (ArisanPool, Factory)     │  ║
 ║  │ ✅ AI Yield Strategy Contract                           │  ║
 ║  │ ✅ Frontend Landing Page                                │  ║
 ║  │ ✅ Wallet Connection (MetaMask, WalletConnect)          │  ║
-║  │ ⬜ Testnet Deployment (Mantle Sepolia)                  │  ║
+║  │ ✅ Testnet Deployment (Ethereum Sepolia)                │  ║
+║  │ ✅ Pool Explorer with Live Blockchain Data              │  ║
+║  │ ✅ AI Yield Optimizer Backend & Dashboard               │  ║
+║  │ ✅ Multi-Protocol Analysis (5 Protocols)                │  ║
 ║  └─────────────────────────────────────────────────────────┘  ║
 ║                                                               ║
 ║  Q2 2025: BETA LAUNCH                                         ║
 ║  ┌─────────────────────────────────────────────────────────┐  ║
-║  │ ⬜ Public Beta on Mantle Mainnet                        │  ║
-║  │ ⬜ Pool Creation & Join Flow                            │  ║
+║  │ ⬜ Mantle Mainnet Deployment                            │  ║
+║  │ ✅ Pool Creation & Join Flow                            │  ║
 ║  │ ⬜ Monthly Deposit Automation                           │  ║
 ║  │ ⬜ Winner Selection (VRF Random)                        │  ║
-║  │ ⬜ Basic AI Yield Integration                           │  ║
+║  │ ✅ AI Yield Integration (Live)                          │  ║
 ║  └─────────────────────────────────────────────────────────┘  ║
 ║                                                               ║
 ║  Q3 2025: GROWTH                                              ║
@@ -554,3 +557,34 @@
 *For: Mantle Global Hackathon 2025*
 *Tagline: "Tabungan Bergilir yang Menghasilkan"*
 *Last Updated: January 2025*
+
+---
+
+## APPENDIX: DEPLOYED CONTRACTS
+
+### Ethereum Sepolia Testnet (Live)
+
+| Contract | Address |
+|----------|---------|
+| ArisanFactory | `0x604D39A66D11C631af65e6dCc8BaeDea3c78BcAA` |
+| AIYieldStrategy | `0x61F48F7a192a0b48D32e4A3e8BaB4EF56b210A39` |
+| YieldVaultAdapter | `0x1c51a10aD3fE18F2567b2e3bdf54E5A09C12F5C6` |
+| MockUSDC | `0x5b65c1f9C55F5312bc55b52E607b2aC8E8eDa4e0` |
+
+### Live Pools
+
+| Pool | Deposit | Participants | Status |
+|------|---------|--------------|--------|
+| Small Pool | 10 USDC | 5 | Open |
+| Medium Pool | 50 USDC | 10 | Open |
+| Large Pool | 100 USDC | 20 | Open |
+
+### AI Yield Protocols Analyzed
+
+| Protocol | Category | APY Range |
+|----------|----------|-----------|
+| Lendle | Lending | 5-10% |
+| Merchant Moe | DEX/LP | 8-15% |
+| Agni Finance | DEX | 6-12% |
+| Minterest | Lending | 4-9% |
+| KTX Finance | Perpetuals | 10-20% |

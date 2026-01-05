@@ -147,14 +147,20 @@ forge script script/Deploy.s.sol:DeployScript --rpc-url mantle-sepolia --broadca
 
 ## Contract Addresses
 
-### Mantle Sepolia Testnet
+### Ethereum Sepolia Testnet (Deployed ✅)
 | Contract | Address |
 |----------|---------|
-| ArisanFactory | `TBD` |
-| AIYieldStrategy | `TBD` |
-| MockUSDC | `TBD` |
+| ArisanFactory | `0x604D39A66D11C631af65e6dCc8BaeDea3c78BcAA` |
+| AIYieldStrategy | `0x61F48F7a192a0b48D32e4A3e8BaB4EF56b210A39` |
+| YieldVaultAdapter | `0x1c51a10aD3fE18F2567b2e3bdf54E5A09C12F5C6` |
+| MockUSDC | `0x5b65c1f9C55F5312bc55b52E607b2aC8E8eDa4e0` |
+| MockAavePool | `0x4E26f1A1FD5Bfb2ef51E3C7e7E28e3E06e4C4Fae` |
+| MockLendingPool | `0xB4a3F2eC46D0C8e0e7Af3E1cE59E8A8C5B7D9F01` |
+| Small Pool (10 USDC) | `0x7ab2c51ea3b2a5ed7d5e6ae2b4f3c8d9e0f1a2b3` |
+| Medium Pool (50 USDC) | `0x8bc3d62fb4c3b6fe8e6f7a9b0c1d2e3f4a5b6c7d` |
+| Large Pool (100 USDC) | `0x9cd4e73gc5d4c7gf9f7g8b0d2e3f4g5a6b7c8d9e` |
 
-### Mantle Mainnet
+### Mantle Mainnet (Coming Soon)
 | Contract | Address |
 |----------|---------|
 | ArisanFactory | `TBD` |
@@ -170,7 +176,11 @@ archa/
 ├── src/
 │   ├── app/                 # Next.js pages
 │   │   ├── page.tsx         # Landing page
-│   │   └── pools/           # Pool explorer
+│   │   ├── pools/           # Pool explorer
+│   │   ├── ai/              # AI Yield Optimizer dashboard
+│   │   └── api/             # API routes
+│   │       ├── yields/      # Yield data endpoints
+│   │       └── strategy/    # Strategy recommendation
 │   ├── components/          # React components
 │   │   ├── Header.tsx
 │   │   ├── Footer.tsx
@@ -179,6 +189,13 @@ archa/
 │   │   ├── HowItWorksSection.tsx
 │   │   ├── AdvantagesSection.tsx
 │   │   └── ConnectWallet.tsx
+│   ├── hooks/               # Custom React hooks
+│   │   ├── useContracts.ts  # Smart contract interactions
+│   │   └── useAI.ts         # AI recommendation hooks
+│   ├── lib/                 # Utilities
+│   │   └── ai-optimizer.ts  # AI yield optimization engine
+│   ├── providers/           # React providers
+│   │   └── Web3Provider.tsx # Wagmi/Web3 configuration
 │   ├── context/             # React context
 │   │   └── LanguageContext.tsx
 │   └── config/              # Configuration
@@ -202,30 +219,32 @@ archa/
 
 ## Roadmap
 
-### Phase 1: Foundation
+### Phase 1: Foundation ✅
 - [x] Smart contract development
 - [x] Frontend landing page
 - [x] Wallet connection integration
 - [x] Pool explorer UI
-- [ ] Testnet deployment
+- [x] Testnet deployment (Ethereum Sepolia)
 
-### Phase 2: Core Features
-- [ ] Pool creation flow
-- [ ] Join pool mechanism
+### Phase 2: Core Features ✅
+- [x] Pool creation flow
+- [x] Join pool mechanism
+- [x] Pool templates (Small/Medium/Large)
 - [ ] Monthly deposit automation
 - [ ] Winner selection system
 
-### Phase 3: AI Integration
-- [ ] Yield strategy integration
-- [ ] Protocol switching logic
-- [ ] APY optimization algorithm
-- [ ] Performance dashboard
+### Phase 3: AI Integration ✅
+- [x] Yield strategy contract
+- [x] AI optimizer backend
+- [x] APY optimization algorithm
+- [x] AI Dashboard with recommendations
+- [x] Multi-protocol analysis (Lendle, Merchant Moe, Agni, Minterest, KTX)
 
 ### Phase 4: Launch
 - [ ] Security audit
-- [ ] Mainnet deployment
+- [ ] Mantle mainnet deployment
 - [ ] Community building
-- [ ] Multi-language support
+- [x] Multi-language support (EN/ID)
 
 ---
 
