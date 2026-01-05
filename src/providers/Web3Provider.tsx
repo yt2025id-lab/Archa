@@ -23,9 +23,9 @@ const config = createConfig({
     }),
   ],
   transports: {
-    [sepolia.id]: http(),
-    [mantle.id]: http(),
-    [mantleSepoliaTestnet.id]: http(),
+    [sepolia.id]: http("https://gateway.tenderly.co/public/sepolia"),
+    [mantle.id]: http("https://rpc.mantle.xyz"),
+    [mantleSepoliaTestnet.id]: http("https://rpc.sepolia.mantle.xyz"),
   },
 });
 

@@ -1,9 +1,13 @@
 "use client";
 
 import { useReadContract, useReadContracts, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
+import { sepolia } from "wagmi/chains";
 import { activeContracts } from "@/config/contracts";
 import { ARISAN_FACTORY_ABI, ARISAN_POOL_ABI, ERC20_ABI } from "@/config/abis";
 import { formatUnits, parseUnits } from "viem";
+
+// Use Sepolia chain for all contract reads
+const CHAIN_ID = sepolia.id;
 
 // Types
 export interface PoolInfo {
@@ -38,6 +42,7 @@ export function useAllPools() {
     address: activeContracts.factory,
     abi: ARISAN_FACTORY_ABI,
     functionName: "getAllPools",
+    chainId: CHAIN_ID,
   });
 
   return {
@@ -54,6 +59,7 @@ export function usePoolInfo(poolAddress: `0x${string}` | undefined) {
     address: poolAddress,
     abi: ARISAN_POOL_ABI,
     functionName: "getPoolInfo",
+    chainId: CHAIN_ID,
     query: {
       enabled: !!poolAddress,
     },
@@ -85,6 +91,7 @@ export function usePoolsInfo(poolAddresses: `0x${string}`[] | undefined) {
     address,
     abi: ARISAN_POOL_ABI,
     functionName: "getPoolInfo" as const,
+    chainId: CHAIN_ID,
   })) || [];
 
   const { data, isLoading, error, refetch } = useReadContracts({
@@ -183,6 +190,7 @@ export function useRequiredCollateral(poolAddress: `0x${string}` | undefined) {
     address: poolAddress,
     abi: ARISAN_POOL_ABI,
     functionName: "getRequiredCollateral",
+    chainId: CHAIN_ID,
     query: {
       enabled: !!poolAddress,
     },
@@ -203,6 +211,7 @@ export function useUSDCBalance(address: `0x${string}` | undefined) {
     abi: ERC20_ABI,
     functionName: "balanceOf",
     args: address ? [address] : undefined,
+    chainId: CHAIN_ID,
     query: {
       enabled: !!address,
     },
@@ -224,6 +233,7 @@ export function useUSDCAllowance(owner: `0x${string}` | undefined, spender: `0x$
     abi: ERC20_ABI,
     functionName: "allowance",
     args: owner && spender ? [owner, spender] : undefined,
+    chainId: CHAIN_ID,
     query: {
       enabled: !!owner && !!spender,
     },
