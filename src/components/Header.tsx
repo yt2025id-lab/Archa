@@ -23,6 +23,7 @@ export default function Header() {
     { label: t("nav.howItWorks"), href: "/#cara-kerja" },
     { label: t("nav.advantages"), href: "/#keunggulan" },
     { label: t("nav.pools"), href: "/pools" },
+    { label: "AI Optimizer", href: "/ai" },
   ];
 
   const toggleLanguage = () => {
