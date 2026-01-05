@@ -2,14 +2,14 @@
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider, createConfig, http } from "wagmi";
-import { mantle, mantleSepoliaTestnet } from "wagmi/chains";
+import { mantle, mantleSepoliaTestnet, sepolia } from "wagmi/chains";
 import { injected, walletConnect } from "wagmi/connectors";
 import { ReactNode, useState } from "react";
 
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "";
 
 const config = createConfig({
-  chains: [mantle, mantleSepoliaTestnet],
+  chains: [sepolia, mantle, mantleSepoliaTestnet],
   connectors: [
     injected(),
     walletConnect({
@@ -23,6 +23,7 @@ const config = createConfig({
     }),
   ],
   transports: {
+    [sepolia.id]: http(),
     [mantle.id]: http(),
     [mantleSepoliaTestnet.id]: http(),
   },

@@ -6,13 +6,15 @@ solc = "0.8.20"
 optimizer = true
 optimizer_runs = 200
 
-# Mantle Network Configuration
+# Network Configuration
 [rpc_endpoints]
 mantle = "https://rpc.mantle.xyz"
 mantle_sepolia = "https://rpc.sepolia.mantle.xyz"
+sepolia = "https://rpc.sepolia.org"
 
 [etherscan]
 mantle = { key = "${ETHERSCAN_API_KEY}", url = "https://explorer.mantle.xyz/api" }
 mantle_sepolia = { key = "${ETHERSCAN_API_KEY}", url = "https://explorer.sepolia.mantle.xyz/api" }
+sepolia = { key = "${ETHERSCAN_API_KEY}", url = "https://api-sepolia.etherscan.io/api" }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
