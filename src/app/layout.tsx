@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Web3Provider } from "@/providers/Web3Provider";
+import OnboardingTutorial from "@/components/OnboardingTutorial";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Web3Provider>
           <LanguageProvider>
             {children}
+            <OnboardingTutorial />
           </LanguageProvider>
         </Web3Provider>
       </body>

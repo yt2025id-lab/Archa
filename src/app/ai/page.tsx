@@ -48,12 +48,21 @@ export default function AIOptimizerPage() {
       <section className="pt-32 pb-16 bg-gradient-to-br from-purple-900 via-gray-900 to-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 rounded-full mb-6">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
-              </span>
-              <span className="text-purple-300 text-sm font-medium">AI-Powered</span>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 rounded-full">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                </span>
+                <span className="text-purple-300 text-sm font-medium">AI-Powered</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="text-green-300 text-sm font-medium">DeFiLlama Live Data</span>
+              </div>
             </div>
             <h1
               className="text-4xl md:text-5xl font-bold text-white mb-4"

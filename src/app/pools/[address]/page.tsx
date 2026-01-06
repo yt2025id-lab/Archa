@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SharePool from "@/components/SharePool";
 import { useAccount } from "wagmi";
 import ConnectWallet from "@/components/ConnectWallet";
 import {
@@ -164,9 +165,17 @@ export default function PoolDetailPage() {
               <p className="text-gray-400 font-mono text-sm">{poolAddress}</p>
             </div>
 
-            {!isConnected ? (
-              <ConnectWallet variant="header" scrolled={true} />
-            ) : null}
+            <div className="flex items-center gap-3">
+              <SharePool
+                poolAddress={poolAddress}
+                poolName={poolName}
+                monthlyDeposit={depositAmount}
+                participants={currentParticipants}
+                maxParticipants={maxParticipants}
+                apy={8.5}
+              />
+              {!isConnected && <ConnectWallet variant="header" scrolled={true} />}
+            </div>
           </div>
         </div>
       </section>
