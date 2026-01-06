@@ -10,9 +10,9 @@
 ║                                                              ║
 ║                         ARCHA                                ║
 ║                                                              ║
-║            Arisan Onchain - Tradisi Bertemu Teknologi        ║
+║          Arisan Onchain - Where Tradition Meets Tech         ║
 ║                                                              ║
-║     "Tabungan Bergilir yang Menghasilkan Passive Income"     ║
+║     "Rotating Savings That Generate Passive Income"          ║
 ║                                                              ║
 ║                  Mantle Global Hackathon 2025                ║
 ║                                                              ║
@@ -23,59 +23,59 @@
 
 ## SLIDE 2: KEY PAIN POINTS
 
-### Masalah Arisan Tradisional
+### Traditional Arisan Problems
 
-| Pain Point | Deskripsi |
-|------------|-----------|
-| **Risiko Kabur** | Peserta kabur setelah dapat giliran pertama - tidak ada jaminan |
-| **Uang Nganggur** | Dana terkumpul tidak menghasilkan apa-apa, hanya didiamkan |
-| **Pencatatan Manual** | Mudah dimanipulasi, tidak transparan, rawan human error |
-| **Skala Terbatas** | Hanya bisa dengan keluarga atau teman dekat yang dipercaya |
-| **Tidak Ada Perlindungan** | Kalau ketua arisan kabur, uang hilang tanpa jejak |
-| **Proses Ribet** | Kumpul uang manual, transfer satu-satu, hitung manual |
+| Pain Point | Description |
+|------------|-------------|
+| **Run-away Risk** | Participants flee after getting the first turn - no guarantee |
+| **Idle Money** | Collected funds generate nothing, just sitting there |
+| **Manual Records** | Easy to manipulate, not transparent, prone to human error |
+| **Limited Scale** | Only possible with family or close trusted friends |
+| **No Protection** | If the organizer runs away, money is gone without a trace |
+| **Complex Process** | Manual money collection, one-by-one transfers, manual calculations |
 
-### Fakta Mengejutkan
+### Surprising Facts
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║   🇮🇩 INDONESIA: 278 JUTA PENDUDUK ¹                          ║
+║   🇮🇩 INDONESIA: 278 MILLION POPULATION ¹                     ║
 ║                                                               ║
 ║   📊 74-80% unbanked/underbanked ²                            ║
-║   💰 Arisan: tradisi keuangan komunal terbesar                ║
-║   📈 22+ juta investor crypto aktif ³                         ║
-║   📉 100% dana arisan tradisional = 0% yield                  ║
+║   💰 Arisan: largest communal financial tradition             ║
+║   📈 22+ million active crypto investors ³                    ║
+║   📉 100% of traditional arisan funds = 0% yield              ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
 
 ### Current Reality
-> "Ratusan triliun rupiah dana arisan tidak menghasilkan yield sama sekali, sementara risiko penipuan tetap tinggi karena sistem berbasis kepercayaan manual"
+> "Hundreds of trillions of rupiah in arisan funds generate zero yield, while fraud risk remains high due to trust-based manual systems"
 
 ---
 
 ## SLIDE 3: INTRODUCTION - WHAT IS ARCHA?
 
-### Arisan Onchain dengan AI Yield Optimizer
+### Onchain Arisan with AI Yield Optimizer
 
-**Archa** adalah platform arisan terdesentralisasi yang membawa tradisi keuangan komunal Indonesia ke blockchain dengan tambahan:
-- **Smart Contract** yang tidak bisa dimanipulasi
-- **Collateral System** sebagai jaminan komitmen
-- **AI Yield Optimizer** yang menghasilkan passive income
+**Archa** is a decentralized arisan platform that brings Indonesia's communal financial tradition to the blockchain with:
+- **Smart Contracts** that cannot be manipulated
+- **Collateral System** as commitment guarantee
+- **AI Yield Optimizer** that generates passive income
 
-### Konsep Utama
+### Core Concept
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                     ARCHA = ARISAN + DeFi                    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│   TRADISI ARISAN         +        TEKNOLOGI BLOCKCHAIN      │
-│   ───────────────                 ────────────────────      │
+│   ARISAN TRADITION       +        BLOCKCHAIN TECHNOLOGY     │
+│   ────────────────                ─────────────────────     │
 │   • Gotong royong                 • Smart Contract          │
-│   • Tabungan bergilir             • Collateral System       │
-│   • Kepercayaan komunal           • AI Yield Optimizer      │
-│   • Disiplin finansial            • Transparent & Trustless │
+│   • Rotating savings              • Collateral System       │
+│   • Community trust               • AI Yield Optimizer      │
+│   • Financial discipline          • Transparent & Trustless │
 │                                                             │
 │                          ═══════                            │
 │                             ║                               │
@@ -86,127 +86,127 @@
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Kenapa Mantle Network?
+### Why Mantle Network?
 
-| Keunggulan | Manfaat untuk Archa |
-|------------|---------------------|
-| **Gas fee sangat murah** | Deposit bulanan tanpa biaya tinggi |
-| **Transaksi cepat** | Pembayaran dan distribusi instan |
-| **TVL $2.2B+ ⁴** | Ekosistem DeFi yang kuat untuk yield |
-| **Top 5 L2 ⁵** | Infrastruktur terpercaya |
+| Advantage | Benefit for Archa |
+|-----------|-------------------|
+| **Very low gas fees** | Monthly deposits without high costs |
+| **Fast transactions** | Instant payments and distributions |
+| **TVL $2.2B+ ⁴** | Strong DeFi ecosystem for yield |
+| **Top 5 L2 ⁵** | Trusted infrastructure |
 
 ---
 
 ## SLIDE 4: MISSION
 
-### Misi Archa
+### Archa's Mission
 
-> "Melestarikan tradisi arisan Indonesia dengan teknologi blockchain, menjadikannya lebih aman, transparan, dan menguntungkan untuk ratusan juta orang Indonesia."
+> "Preserving Indonesia's arisan tradition with blockchain technology, making it safer, more transparent, and more profitable for hundreds of millions of Indonesians."
 
-### Visi
+### Vision
 
 ```
 ┌───────────────────────────────────────────────────────────┐
 │                                                           │
-│   ARISAN LAMA                     ARISAN BARU (Archa)     │
-│   ───────────                     ───────────────────     │
+│   OLD ARISAN                      NEW ARISAN (Archa)      │
+│   ──────────                      ──────────────────      │
 │                                                           │
-│   Risiko kabur tinggi       ───►  Collateral = jaminan    │
-│   Uang nganggur             ───►  Yield dari AI DeFi      │
-│   Manual & ribet            ───►  Otomatis by smart       │
-│   Teman dekat saja          ───►  Siapapun, di manapun    │
-│   Pencatatan manual         ───►  100% on-chain           │
+│   High run-away risk        ───►  Collateral = guarantee  │
+│   Idle money                ───►  Yield from AI DeFi      │
+│   Manual & complex          ───►  Automated by smart      │
+│   Close friends only        ───►  Anyone, anywhere        │
+│   Manual records            ───►  100% on-chain           │
 │                                                           │
 └───────────────────────────────────────────────────────────┘
 ```
 
 ### Core Values
 
-| Value | Implementasi |
-|-------|--------------|
-| **Tradisi** | Mempertahankan esensi gotong royong arisan |
-| **Kepercayaan** | Smart contract yang tidak bisa dicurangi |
-| **Keuntungan** | Passive income dari AI yield optimization |
-| **Inklusivitas** | Siapapun bisa ikut, tidak perlu kenal langsung |
+| Value | Implementation |
+|-------|----------------|
+| **Tradition** | Preserving the essence of arisan's gotong royong |
+| **Trust** | Smart contracts that cannot be cheated |
+| **Profit** | Passive income from AI yield optimization |
+| **Inclusivity** | Anyone can join, no need to know each other |
 
 ---
 
 ## SLIDE 5: HOW ARCHA WORKS
 
-### 5 Langkah Sederhana
+### 5 Simple Steps
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                                                                              │
-│  1. PILIH        2. DEPOSIT       3. SETORAN      4. GILIRAN    5. SELESAI  │
-│     POOL           COLLATERAL       BULANAN         ANDA          ARISAN    │
+│  1. CHOOSE       2. DEPOSIT       3. MONTHLY      4. YOUR       5. ARISAN   │
+│     POOL           COLLATERAL       DEPOSITS        TURN          COMPLETE  │
 │      │                 │               │              │              │       │
 │      ▼                 ▼               ▼              ▼              ▼       │
-│   [Pilih]  ───►  [Kunci USDC]  ───►  [AI Invest]  ───►  [Dapat]  ───►  [Semua│
-│    Pool           sbg jaminan        ke DeFi          Pot+Yield       dapat │
+│   [Select]  ───►  [Lock USDC]  ───►  [AI Invests]  ───►  [Get]  ───►  [All  │
+│    Pool          as guarantee        to DeFi         Pot+Yield       get    │
 │                                                                       bonus]│
 │                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Detail Setiap Langkah
+### Detail of Each Step
 
-#### Langkah 1: Pilih Pool Arisan
+#### Step 1: Choose Arisan Pool
 ```
 ┌─────────────────────────────────────────┐
-│ 🎯 PILIH POOL                           │
+│ 🎯 CHOOSE POOL                          │
 ├─────────────────────────────────────────┤
 │                                         │
-│ Pool Starter:                           │
-│ • Setoran: 10 USDC/bulan                │
-│ • Peserta: 5 orang                      │
-│ • Durasi: 5 bulan                       │
+│ Starter Pool:                           │
+│ • Deposit: 10 USDC/month                │
+│ • Participants: 5 people                │
+│ • Duration: 5 months                    │
 │                                         │
-│ Pool Standard:                          │
-│ • Setoran: 50 USDC/bulan                │
-│ • Peserta: 10 orang                     │
-│ • Durasi: 10 bulan                      │
+│ Standard Pool:                          │
+│ • Deposit: 50 USDC/month                │
+│ • Participants: 10 people               │
+│ • Duration: 10 months                   │
 │                                         │
-│ Pool Premium:                           │
-│ • Setoran: 100 USDC/bulan               │
-│ • Peserta: 20 orang                     │
-│ • Durasi: 20 bulan                      │
+│ Premium Pool:                           │
+│ • Deposit: 100 USDC/month               │
+│ • Participants: 20 people               │
+│ • Duration: 20 months                   │
 │                                         │
 └─────────────────────────────────────────┘
 ```
 
-#### Langkah 2: Deposit Collateral
+#### Step 2: Deposit Collateral
 ```
 ┌─────────────────────────────────────────┐
 │ 🔒 COLLATERAL SYSTEM (125%)             │
 ├─────────────────────────────────────────┤
 │                                         │
-│ Contoh Pool 10 orang x 50 USDC:         │
+│ Example Pool 10 people x 50 USDC:       │
 │                                         │
-│ Collateral = 125% × Setoran × (N - 1)   │
+│ Collateral = 125% × Deposit × (N - 1)   │
 │            = 1.25 × 50 × 9              │
 │            = 562.5 USDC                 │
 │                                         │
-│ ✅ Jika konsisten: Collateral + Yield   │
-│ ❌ Jika kabur: Collateral disita        │
+│ ✅ If consistent: Collateral + Yield    │
+│ ❌ If default: Collateral seized        │
 │                                         │
-│ ⚠️ KENAPA 125%?                         │
-│ Pot pertama = 500 USDC                  │
+│ ⚠️ WHY 125%?                            │
+│ First pot = 500 USDC                    │
 │ Collateral = 562.5 USDC                 │
-│ Kabur setelah menang = RUGI 62.5 USDC!  │
+│ Default after winning = LOSS 62.5 USDC! │
 │                                         │
-│ "Anti Kabur System - No Trust Needed"   │
+│ "Anti Run-away System - No Trust Needed"│
 │                                         │
 └─────────────────────────────────────────┘
 ```
 
-#### Langkah 3: Setoran Bulanan + AI Yield
+#### Step 3: Monthly Deposits + AI Yield
 ```
 ┌─────────────────────────────────────────┐
 │ 🤖 AI YIELD OPTIMIZER                   │
 ├─────────────────────────────────────────┤
 │                                         │
-│ Dana Pool: $5,000                       │
+│ Pool Funds: $5,000                      │
 │                                         │
 │ AI Analysis:                            │
 │ ├─ Lendle:      8.2% APY  ✓ Selected    │
@@ -220,67 +220,67 @@
 └─────────────────────────────────────────┘
 ```
 
-#### Langkah 4: Dapat Giliran
+#### Step 4: Your Turn
 ```
 ┌─────────────────────────────────────────┐
 │ 🎉 YOUR TURN!                           │
 ├─────────────────────────────────────────┤
 │                                         │
-│ Giliran ditentukan by smart contract    │
-│ (Random & Fair - tidak bisa dicurangi)  │
+│ Turn determined by smart contract       │
+│ (Random & Fair - cannot be cheated)     │
 │                                         │
-│ Anda menerima:                          │
-│ ├─ Setoran semua peserta: 500 USDC      │
-│ └─ Yield bulan ini:      + 42 USDC      │
+│ You receive:                            │
+│ ├─ All participants' deposits: 500 USDC │
+│ └─ This month's yield:       + 42 USDC  │
 │ ─────────────────────────────────────   │
-│   TOTAL:                   542 USDC     │
+│   TOTAL:                     542 USDC   │
 │                                         │
 └─────────────────────────────────────────┘
 ```
 
-#### Langkah 5: Arisan Selesai
+#### Step 5: Arisan Complete
 ```
 ┌─────────────────────────────────────────┐
 │ 🏆 ARISAN COMPLETE                      │
 ├─────────────────────────────────────────┤
 │                                         │
-│ Semua peserta konsisten? ✅             │
+│ All participants consistent? ✅         │
 │                                         │
-│ Anda menerima:                          │
-│ ├─ Collateral kembali:    562.5 USDC    │
-│ ├─ Yield dari collateral: + 34 USDC     │
-│ └─ Share yield pool:      + 15 USDC     │
+│ You receive:                            │
+│ ├─ Collateral returned:     562.5 USDC  │
+│ ├─ Yield from collateral:   + 34 USDC   │
+│ └─ Pool yield share:        + 15 USDC   │
 │ ─────────────────────────────────────   │
-│   BONUS TOTAL:             611.5 USDC   │
+│   TOTAL BONUS:               611.5 USDC │
 │                                         │
-│ "Double Yield = Yield Pool + Collateral"│
+│ "Double Yield = Pool Yield + Collateral"│
 │                                         │
 └─────────────────────────────────────────┘
 ```
 
-### Sistem Anti-Kabur (125% Collateral)
+### Anti Run-away System (125% Collateral)
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
-║                    JIKA PESERTA KABUR                         ║
+║                    IF PARTICIPANT DEFAULTS                    ║
 ╠═══════════════════════════════════════════════════════════════╣
 ║                                                               ║
-║   Peserta X menang bulan ke-1, lalu tidak bayar?              ║
+║   Participant X wins month 1, then stops paying?              ║
 ║                                                               ║
-║   Pot diterima:       500 USDC                                ║
-║   Collateral dikunci: 562.5 USDC                              ║
+║   Pot received:       500 USDC                                ║
+║   Collateral locked:  562.5 USDC                              ║
 ║   ─────────────────────────────────                           ║
-║   Net jika kabur:     -62.5 USDC (RUGI!)                      ║
+║   Net if default:     -62.5 USDC (LOSS!)                      ║
 ║                                                               ║
-║   1. Smart Contract otomatis potong collateral                ║
-║   2. Dana disalurkan ke pool untuk peserta lain               ║
-║   3. Peserta X kehilangan:                                    ║
+║   1. Smart Contract auto-slashes collateral                   ║
+║   2. Funds distributed to pool for other participants         ║
+║   3. Participant X loses:                                     ║
 ║      • Collateral (562.5 USDC)                                ║
-║      • Semua yield yang sudah terkumpul                       ║
-║      • Hak dapat giliran                                      ║
+║      • All accumulated yield                                  ║
+║      • Right to receive turn                                  ║
 ║                                                               ║
-║   ✅ 125% memastikan tidak ada keuntungan ekonomi dari kabur  ║
-║   ✅ Arisan tetap jalan, peserta lain tidak dirugikan!        ║
+║   ✅ 125% ensures no economic gain from defaulting            ║
+║   ✅ Arisan continues, other participants unharmed!           ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
@@ -289,30 +289,30 @@
 
 ## SLIDE 6: MARKET OPPORTUNITY
 
-### Ukuran Pasar (Data Terverifikasi)
+### Market Size (Verified Data)
 
-| Metrik | Nilai | Sumber |
+| Metric | Value | Source |
 |--------|-------|--------|
-| Populasi Indonesia | 278 Juta (2024) | Trading Economics ¹ |
-| Unbanked/Underbanked | 74-80% populasi | World Bank, OJK ² |
-| Crypto Investors | 22.11 juta (2024) | Chainalysis ³ |
+| Indonesia Population | 278 Million (2024) | Trading Economics ¹ |
+| Unbanked/Underbanked | 74-80% population | World Bank, OJK ² |
+| Crypto Investors | 22.11 million (2024) | Chainalysis ³ |
 | Crypto Adoption Rank | #7 Global, #4 DeFi Usage | Chainalysis 2025 ³ |
-| DeFi TVL Global | $123.6 Billion (2025) | DefiLlama ⁶ |
+| Global DeFi TVL | $123.6 Billion (2025) | DefiLlama ⁶ |
 | Mantle Network TVL | $2.2 Billion+ | DefiLlama ⁴ |
 
-### Mengapa Indonesia = Pasar Sempurna
+### Why Indonesia = The Perfect Market
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
 ║                INDONESIA: THE PERFECT MARKET                  ║
 ╠═══════════════════════════════════════════════════════════════╣
 ║                                                               ║
-║  ✅ Tradisi arisan sudah mengakar di budaya                   ║
-║  ✅ 22+ juta investor crypto aktif                            ║
-║  ✅ Ranking #4 global untuk DeFi usage                        ║
-║  ✅ 74-80% unbanked = butuh alternatif keuangan               ║
-║  ✅ Smartphone penetration 80% = siap digital                 ║
-║  ✅ Crypto trading 3x lipat di 2024 (~$40B)                   ║
+║  ✅ Arisan tradition deeply rooted in culture                 ║
+║  ✅ 22+ million active crypto investors                       ║
+║  ✅ Ranked #4 globally for DeFi usage                         ║
+║  ✅ 74-80% unbanked = need financial alternatives             ║
+║  ✅ 80% smartphone penetration = digitally ready              ║
+║  ✅ Crypto trading 3x growth in 2024 (~$40B)                  ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
@@ -324,30 +324,30 @@
 │                    TARGET AUDIENCE                           │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  PRIMARY: Crypto Natives Indonesia (22+ juta)               │
-│  ├─ Ranking #4 DeFi usage globally                          │
-│  ├─ 50%+ adalah Millennials & Gen Z                         │
-│  └─ Familiar dengan wallet & DeFi                           │
+│  PRIMARY: Indonesian Crypto Natives (22+ million)           │
+│  ├─ Ranked #4 DeFi usage globally                           │
+│  ├─ 50%+ are Millennials & Gen Z                            │
+│  └─ Familiar with wallets & DeFi                            │
 │                                                             │
-│  SECONDARY: Komunitas Arisan Existing                       │
-│  ├─ Ibu-ibu PKK & arisan RT/RW                              │
-│  ├─ Arisan kantor & profesional                             │
-│  └─ Butuh sistem yang lebih aman                            │
+│  SECONDARY: Existing Arisan Communities                     │
+│  ├─ Neighborhood & community arisan groups                  │
+│  ├─ Office & professional arisan circles                    │
+│  └─ Need safer systems                                      │
 │                                                             │
-│  TERTIARY: Diaspora Indonesia                               │
-│  ├─ TKI & WNI di luar negeri                                │
-│  ├─ Ingin arisan dengan keluarga di Indonesia               │
-│  └─ Butuh sistem cross-border yang murah                    │
+│  TERTIARY: Indonesian Diaspora                              │
+│  ├─ Indonesian workers & citizens abroad                    │
+│  ├─ Want arisan with family back in Indonesia               │
+│  └─ Need cheap cross-border systems                         │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ### Competitor Analysis
 
-| Feature | Archa | Arisan WhatsApp | PoolTogether | Aave/Compound |
+| Feature | Archa | WhatsApp Arisan | PoolTogether | Aave/Compound |
 |---------|-------|-----------------|--------------|---------------|
 | Rotating Savings | ✅ Yes | ✅ Yes | ❌ No | ❌ No |
-| Anti-Kabur System | ✅ Collateral | ❌ Trust only | N/A | N/A |
+| Anti Run-away System | ✅ Collateral | ❌ Trust only | N/A | N/A |
 | Yield Generation | ✅ AI Optimized | ❌ No | ✅ Fixed | ✅ Fixed |
 | Transparency | ✅ On-chain | ❌ Manual | ✅ On-chain | ✅ On-chain |
 | Cultural Fit Indonesia | ✅ Native | ✅ Native | ❌ Foreign | ❌ Foreign |
@@ -362,19 +362,19 @@
 ╠═══════════════════════════════════════════════════════════════╣
 ║                                                               ║
 ║  1. CULTURAL MOAT                                             ║
-║     └─ Satu-satunya DeFi yang berbasis tradisi Indonesia      ║
+║     └─ The only DeFi based on Indonesian tradition            ║
 ║                                                               ║
 ║  2. COLLATERAL INNOVATION                                     ║
-║     └─ Solusi unik untuk masalah "trust" di arisan            ║
+║     └─ Unique solution for arisan's "trust" problem           ║
 ║                                                               ║
 ║  3. DOUBLE YIELD                                              ║
-║     └─ Yield dari pool + yield dari collateral                ║
+║     └─ Yield from pool + yield from collateral                ║
 ║                                                               ║
 ║  4. MANTLE-OPTIMIZED                                          ║
-║     └─ Gas fee murah, TVL $2.2B+ ecosystem                    ║
+║     └─ Low gas fees, $2.2B+ TVL ecosystem                     ║
 ║                                                               ║
 ║  5. AI-POWERED                                                ║
-║     └─ Otomatis pilih DeFi terbaik, user tinggal duduk        ║
+║     └─ Auto-selects best DeFi, users just sit back            ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
@@ -385,10 +385,10 @@
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
 │  TAM (Total Addressable Market)                             │
-│  └─ 22 juta crypto investors Indonesia                      │
+│  └─ 22 million Indonesian crypto investors                  │
 │                                                             │
 │  SAM (Serviceable Addressable Market)                       │
-│  └─ 2.2 juta (10% - DeFi active users)                      │
+│  └─ 2.2 million (10% - DeFi active users)                   │
 │                                                             │
 │  SOM (Serviceable Obtainable Market)                        │
 │  └─ 22,000 users (1% SAM - Year 1 target)                   │
@@ -463,7 +463,7 @@
 
 ## SLIDE 8: CLOSING
 
-### Mengapa Archa? Mengapa Sekarang?
+### Why Archa? Why Now?
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
@@ -471,9 +471,9 @@
 ║                    THE PERFECT TIMING                         ║
 ║                                                               ║
 ║     ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        ║
-║     │   Tradisi   │  │   Mantle    │  │  Indonesia  │        ║
-║     │   Arisan    │ +│   $2.2B+    │ +│  #4 DeFi    │        ║
-║     │  Mengakar   │  │    TVL      │  │   Global    │        ║
+║     │   Arisan    │  │   Mantle    │  │  Indonesia  │        ║
+║     │  Tradition  │ +│   $2.2B+    │ +│  #4 DeFi    │        ║
+║     │   Rooted    │  │    TVL      │  │   Global    │        ║
 ║     └──────┬──────┘  └──────┬──────┘  └──────┬──────┘        ║
 ║            │                │                │                ║
 ║            └────────────────┼────────────────┘                ║
@@ -489,19 +489,19 @@
 
 | Point | Value Proposition |
 |-------|-------------------|
-| **Problem** | Arisan tradisional: risiko kabur tinggi, dana nganggur 0% yield |
-| **Solution** | Collateral system + AI yield optimizer = aman & menguntungkan |
-| **Why Mantle** | Gas murah, TVL $2.2B+, Top 5 L2 |
-| **Why Indonesia** | 22 juta crypto users, #4 DeFi usage global |
-| **Cultural Fit** | Satu-satunya DeFi berbasis tradisi Indonesia |
-| **Differentiator** | Double yield: dari pool + dari collateral |
+| **Problem** | Traditional arisan: high run-away risk, idle funds 0% yield |
+| **Solution** | Collateral system + AI yield optimizer = safe & profitable |
+| **Why Mantle** | Low gas fees, $2.2B+ TVL, Top 5 L2 |
+| **Why Indonesia** | 22 million crypto users, #4 DeFi usage globally |
+| **Cultural Fit** | The only DeFi based on Indonesian tradition |
+| **Differentiator** | Double yield: from pool + from collateral |
 
-### Archa = Arisan yang Tidak Bisa Dicurangi
+### Archa = Arisan That Cannot Be Cheated
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║              TRADISI LAMA, TEKNOLOGI BARU                     ║
+║              OLD TRADITION, NEW TECHNOLOGY                    ║
 ║                                                               ║
 ║         "Gotong Royong + Blockchain = Financial Freedom"      ║
 ║                                                               ║
@@ -517,24 +517,24 @@
 ║                          ARCHA                                ║
 ║                      Arisan Onchain                           ║
 ║                                                               ║
-║            "Tabungan Bergilir yang Menghasilkan"              ║
+║            "Rotating Savings That Generate Income"            ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
 
 ---
 
-## DATA SOURCES / SUMBER DATA
+## DATA SOURCES
 
-| No | Data | Sumber | Link |
+| No | Data | Source | Link |
 |----|------|--------|------|
-| ¹ | Populasi Indonesia 278 juta (2024) | Trading Economics | [tradingeconomics.com](https://tradingeconomics.com/indonesia/population) |
+| ¹ | Indonesia Population 278 million (2024) | Trading Economics | [tradingeconomics.com](https://tradingeconomics.com/indonesia/population) |
 | ² | 74-80% unbanked/underbanked | World Bank, DBS Indonesia, OJK | [dbs.com](https://www.dbs.com/newsroom/Indonesia_Has_the_Fourth_Largest_Unbanked_Population_in_the_World) |
-| ³ | 22.11 juta crypto investors, #7 global adoption, #4 DeFi usage | Chainalysis 2025 Global Adoption Index | [chainalysis.com](https://www.chainalysis.com/blog/2025-global-crypto-adoption-index/) |
+| ³ | 22.11 million crypto investors, #7 global adoption, #4 DeFi usage | Chainalysis 2025 Global Adoption Index | [chainalysis.com](https://www.chainalysis.com/blog/2025-global-crypto-adoption-index/) |
 | ⁴ | Mantle Network TVL $2.2B+ | DefiLlama, Messari | [defillama.com/chain/Mantle](https://defillama.com/chain/Mantle) |
 | ⁵ | Mantle Top 5 L2 by TVL | Mantle Network | [mantle.xyz](https://www.mantle.xyz/blog/reviews/mantle-year-in-review-the-2024-recap) |
-| ⁶ | DeFi TVL Global $123.6B (2025) | DefiLlama, Statista | [defillama.com](https://defillama.com) |
-| ⁷ | Crypto trading Indonesia 3x di 2024 (~$40B) | CoinDesk, Chainalysis | [coindesk.com](https://www.coindesk.com/policy/2024/09/11/india-and-nigeria-lead-the-world-in-crypto-adoption-again-but-indonesia-is-fastest-growing-chainalysis) |
+| ⁶ | Global DeFi TVL $123.6B (2025) | DefiLlama, Statista | [defillama.com](https://defillama.com) |
+| ⁷ | Indonesia crypto trading 3x in 2024 (~$40B) | CoinDesk, Chainalysis | [coindesk.com](https://www.coindesk.com/policy/2024/09/11/india-and-nigeria-lead-the-world-in-crypto-adoption-again-but-indonesia-is-fastest-growing-chainalysis) |
 | ⁸ | Smartphone penetration 80% | World Bank, Think with Google | [thinkwithgoogle.com](https://www.thinkwithgoogle.com/intl/en-apac/future-of-marketing/emerging-technology/all-eyes-e-money-race-reach-180m-unbanked-indonesians/) |
 
 ---
@@ -560,7 +560,7 @@
 - **Numbers/Data:** JetBrains Mono
 
 ### Cultural Touch
-- Use Bahasa Indonesia terms where appropriate
+- Use Bahasa Indonesia terms where appropriate (arisan, gotong royong)
 - Include imagery of Indonesian community gatherings
 - Blend modern DeFi with traditional gotong royong aesthetic
 
@@ -568,7 +568,7 @@
 
 *Pitch Deck by: Archa Team*
 *For: Mantle Global Hackathon 2025*
-*Tagline: "Tabungan Bergilir yang Menghasilkan"*
+*Tagline: "Rotating Savings That Generate Income"*
 *Last Updated: January 2025*
 
 ---
