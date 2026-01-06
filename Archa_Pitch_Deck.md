@@ -178,17 +178,22 @@
 #### Langkah 2: Deposit Collateral
 ```
 ┌─────────────────────────────────────────┐
-│ 🔒 COLLATERAL SYSTEM                    │
+│ 🔒 COLLATERAL SYSTEM (125%)             │
 ├─────────────────────────────────────────┤
 │                                         │
 │ Contoh Pool 10 orang x 50 USDC:         │
 │                                         │
-│ Collateral = Setoran × (Peserta - 1)    │
-│            = 50 × 9                     │
-│            = 450 USDC                   │
+│ Collateral = 125% × Setoran × (N - 1)   │
+│            = 1.25 × 50 × 9              │
+│            = 562.5 USDC                 │
 │                                         │
 │ ✅ Jika konsisten: Collateral + Yield   │
 │ ❌ Jika kabur: Collateral disita        │
+│                                         │
+│ ⚠️ KENAPA 125%?                         │
+│ Pot pertama = 500 USDC                  │
+│ Collateral = 562.5 USDC                 │
+│ Kabur setelah menang = RUGI 62.5 USDC!  │
 │                                         │
 │ "Anti Kabur System - No Trust Needed"   │
 │                                         │
@@ -242,34 +247,40 @@
 │ Semua peserta konsisten? ✅             │
 │                                         │
 │ Anda menerima:                          │
-│ ├─ Collateral kembali:    450 USDC      │
-│ ├─ Yield dari collateral: + 27 USDC     │
+│ ├─ Collateral kembali:    562.5 USDC    │
+│ ├─ Yield dari collateral: + 34 USDC     │
 │ └─ Share yield pool:      + 15 USDC     │
 │ ─────────────────────────────────────   │
-│   BONUS TOTAL:             492 USDC     │
+│   BONUS TOTAL:             611.5 USDC   │
 │                                         │
 │ "Double Yield = Yield Pool + Collateral"│
 │                                         │
 └─────────────────────────────────────────┘
 ```
 
-### Sistem Anti-Kabur
+### Sistem Anti-Kabur (125% Collateral)
 
 ```
 ╔═══════════════════════════════════════════════════════════════╗
 ║                    JIKA PESERTA KABUR                         ║
 ╠═══════════════════════════════════════════════════════════════╣
 ║                                                               ║
-║   Peserta X tidak bayar setoran bulan ke-5?                   ║
+║   Peserta X menang bulan ke-1, lalu tidak bayar?              ║
+║                                                               ║
+║   Pot diterima:       500 USDC                                ║
+║   Collateral dikunci: 562.5 USDC                              ║
+║   ─────────────────────────────────                           ║
+║   Net jika kabur:     -62.5 USDC (RUGI!)                      ║
 ║                                                               ║
 ║   1. Smart Contract otomatis potong collateral                ║
 ║   2. Dana disalurkan ke pool untuk peserta lain               ║
 ║   3. Peserta X kehilangan:                                    ║
-║      • Collateral (450 USDC)                                  ║
+║      • Collateral (562.5 USDC)                                ║
 ║      • Semua yield yang sudah terkumpul                       ║
 ║      • Hak dapat giliran                                      ║
 ║                                                               ║
-║   Arisan tetap jalan, peserta lain tidak dirugikan!           ║
+║   ✅ 125% memastikan tidak ada keuntungan ekonomi dari kabur  ║
+║   ✅ Arisan tetap jalan, peserta lain tidak dirugikan!        ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
 ```
@@ -402,33 +413,35 @@
 ║  │ ✅ AI Yield Strategy Contract                           │  ║
 ║  │ ✅ Frontend Landing Page                                │  ║
 ║  │ ✅ Wallet Connection (MetaMask, WalletConnect)          │  ║
-║  │ ✅ Testnet Deployment (Ethereum Sepolia)                │  ║
+║  │ ✅ Testnet Deployment (Mantle Sepolia)                  │  ║
 ║  │ ✅ Pool Explorer with Live Blockchain Data              │  ║
 ║  │ ✅ AI Yield Optimizer Backend & Dashboard               │  ║
 ║  │ ✅ Multi-Protocol Analysis (5 Protocols)                │  ║
+║  │ ✅ 125% Collateral Anti-Kabur System                    │  ║
+║  │ ✅ Multi-language Support (EN/ID)                       │  ║
+║  │ ✅ Pool Detail Page with Participants List              │  ║
 ║  └─────────────────────────────────────────────────────────┘  ║
 ║                                                               ║
 ║  Q2 2025: BETA LAUNCH                                         ║
 ║  ┌─────────────────────────────────────────────────────────┐  ║
 ║  │ ⬜ Mantle Mainnet Deployment                            │  ║
 ║  │ ✅ Pool Creation & Join Flow                            │  ║
-║  │ ⬜ Monthly Deposit Automation                           │  ║
+║  │ ✅ Monthly Deposit Mechanism                            │  ║
 ║  │ ⬜ Winner Selection (VRF Random)                        │  ║
 ║  │ ✅ AI Yield Integration (Live)                          │  ║
+║  │ ⬜ Security Audit                                       │  ║
 ║  └─────────────────────────────────────────────────────────┘  ║
 ║                                                               ║
 ║  Q3 2025: GROWTH                                              ║
 ║  ┌─────────────────────────────────────────────────────────┐  ║
 ║  │ ⬜ Mobile App (React Native)                            │  ║
 ║  │ ⬜ Telegram Mini App Integration                        │  ║
-║  │ ⬜ Multi-protocol Yield Support                         │  ║
+║  │ ⬜ Multi-protocol Yield Support (mETH integration)      │  ║
 ║  │ ⬜ Referral & Community Program                         │  ║
-║  │ ⬜ Bahasa Indonesia Full Localization                   │  ║
 ║  └─────────────────────────────────────────────────────────┘  ║
 ║                                                               ║
 ║  Q4 2025: SCALE                                               ║
 ║  ┌─────────────────────────────────────────────────────────┐  ║
-║  │ ⬜ Security Audit                                       │  ║
 ║  │ ⬜ ARCHA Governance Token                               │  ║
 ║  │ ⬜ DAO untuk voting fitur baru                          │  ║
 ║  │ ⬜ Cross-chain Expansion                                │  ║
@@ -562,22 +575,26 @@
 
 ## APPENDIX: DEPLOYED CONTRACTS
 
-### Ethereum Sepolia Testnet (Live)
+### Mantle Sepolia Testnet (Live ✅)
 
 | Contract | Address |
 |----------|---------|
-| ArisanFactory | `0x604D39A66D11C631af65e6dCc8BaeDea3c78BcAA` |
-| AIYieldStrategy | `0x61F48F7a192a0b48D32e4A3e8BaB4EF56b210A39` |
-| YieldVaultAdapter | `0x1c51a10aD3fE18F2567b2e3bdf54E5A09C12F5C6` |
-| MockUSDC | `0x5b65c1f9C55F5312bc55b52E607b2aC8E8eDa4e0` |
+| ArisanFactory | `0x15078CaEC56D393F8966999E12e1C03d34D27C16` |
+| AIYieldStrategy | `0x09beBF7c34b05234c0c2462DCCC9A828B595de12` |
+| MockUSDC | `0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D` |
+| Small Pool | `0xa5fe7e4db7cc25a6aeb67f787be0c3da6a4e1b05` |
+| Medium Pool | `0x71560fc237b64a7625a6056c7d02e303652ef1b7` |
+| Large Pool | `0x98e5733617b661aa7bb5dd71185174ee8d519d76` |
+
+**Explorer:** [explorer.sepolia.mantle.xyz](https://explorer.sepolia.mantle.xyz)
 
 ### Live Pools
 
-| Pool | Deposit | Participants | Status |
-|------|---------|--------------|--------|
-| Small Pool | 10 USDC | 5 | Open |
-| Medium Pool | 50 USDC | 10 | Open |
-| Large Pool | 100 USDC | 20 | Open |
+| Pool | Deposit | Participants | Collateral (125%) | Status |
+|------|---------|--------------|-------------------|--------|
+| Small Pool | 10 USDC | 5 | 50 USDC | Open |
+| Medium Pool | 50 USDC | 10 | 563 USDC | Open |
+| Large Pool | 100 USDC | 20 | 2,375 USDC | Open |
 
 ### AI Yield Protocols Analyzed
 
