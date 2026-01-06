@@ -1,10 +1,10 @@
 # 👛 Connect Wallet
 
-Panduan lengkap untuk menghubungkan wallet ke Archa.
+Complete guide to connecting your wallet to Archa.
 
 ## Supported Wallets
 
-Archa mendukung wallet berikut:
+Archa supports the following wallets:
 
 | Wallet | Platform | Recommended |
 |--------|----------|-------------|
@@ -18,15 +18,15 @@ Archa mendukung wallet berikut:
 
 ### 1. Install MetaMask
 
-Jika belum punya MetaMask:
-1. Kunjungi [metamask.io](https://metamask.io)
-2. Download extension untuk browser Anda
-3. Ikuti setup wizard untuk membuat wallet baru
-4. **PENTING:** Simpan seed phrase dengan aman!
+If you don't have MetaMask:
+1. Visit [metamask.io](https://metamask.io)
+2. Download the extension for your browser
+3. Follow the setup wizard to create a new wallet
+4. **IMPORTANT:** Store your seed phrase securely!
 
 ### 2. Add Mantle Network
 
-Archa akan otomatis menambahkan Mantle Network ke MetaMask Anda. Jika perlu menambahkan manual:
+Archa will automatically add Mantle Network to your MetaMask. If you need to add it manually:
 
 **Mantle Mainnet:**
 ```
@@ -48,13 +48,13 @@ Block Explorer: https://explorer.sepolia.mantle.xyz
 
 ### 3. Connect to Archa
 
-1. Kunjungi [arisanonchain.vercel.app](https://arisanonchain.vercel.app)
-2. Klik **"Connect Wallet"**
-3. Pilih **"MetaMask"**
-4. MetaMask popup akan muncul
-5. Pilih account yang ingin digunakan
-6. Klik **"Connect"**
-7. Jika diminta switch network, klik **"Switch Network"**
+1. Visit [arisanonchain.vercel.app](https://arisanonchain.vercel.app)
+2. Click **"Connect Wallet"**
+3. Select **"MetaMask"**
+4. MetaMask popup will appear
+5. Select the account you want to use
+6. Click **"Connect"**
+7. If prompted to switch network, click **"Switch Network"**
 
 <figure><img src="../.gitbook/assets/metamask-connect.png" alt=""><figcaption><p>MetaMask Connection</p></figcaption></figure>
 
@@ -62,79 +62,79 @@ Block Explorer: https://explorer.sepolia.mantle.xyz
 
 ### 1. Open Archa
 
-1. Kunjungi [arisanonchain.vercel.app](https://arisanonchain.vercel.app)
-2. Klik **"Connect Wallet"**
-3. Pilih **"WalletConnect"**
+1. Visit [arisanonchain.vercel.app](https://arisanonchain.vercel.app)
+2. Click **"Connect Wallet"**
+3. Select **"WalletConnect"**
 
 ### 2. Scan QR Code
 
-1. QR code akan muncul
-2. Buka wallet app di HP Anda
-3. Cari fitur "WalletConnect" atau "Scan"
-4. Scan QR code
-5. Approve connection di wallet app
+1. QR code will appear
+2. Open your wallet app on your phone
+3. Find the "WalletConnect" or "Scan" feature
+4. Scan the QR code
+5. Approve connection in the wallet app
 
 ### 3. Confirm Connection
 
-1. Wallet app akan meminta konfirmasi
+1. Wallet app will ask for confirmation
 2. Review permissions
-3. Klik **"Approve"** atau **"Connect"**
-4. Anda sekarang terhubung ke Archa
+3. Click **"Approve"** or **"Connect"**
+4. You're now connected to Archa
 
 ## Troubleshooting
 
-### Wallet tidak terdeteksi
-- Pastikan MetaMask extension sudah ter-install
-- Refresh halaman browser
-- Coba disable ad blocker
+### Wallet not detected
+- Make sure MetaMask extension is installed
+- Refresh the browser page
+- Try disabling ad blocker
 
-### Network salah
-- Pastikan wallet di Mantle Network
-- Klik icon network di MetaMask
-- Pilih "Mantle" atau tambahkan manual
+### Wrong network
+- Make sure wallet is on Mantle Network
+- Click the network icon in MetaMask
+- Select "Mantle" or add manually
 
-### Transaction gagal
-- Pastikan ada cukup MNT untuk gas
-- Coba naikkan gas limit
-- Tunggu beberapa saat dan coba lagi
+### Transaction failed
+- Make sure you have enough MNT for gas
+- Try increasing gas limit
+- Wait a moment and try again
 
-### Connection terputus
-- Refresh halaman
+### Connection lost
+- Refresh the page
 - Re-connect wallet
-- Clear browser cache jika masih bermasalah
+- Clear browser cache if problem persists
 
 ## Security Tips
 
 {% hint style="danger" %}
-**JANGAN PERNAH:**
-- Share seed phrase / private key
-- Approve unlimited spending ke contract yang tidak dipercaya
-- Connect wallet ke situs yang mencurigakan
+**NEVER:**
+- Share your seed phrase / private key
+- Approve unlimited spending to untrusted contracts
+- Connect wallet to suspicious sites
 {% endhint %}
 
 {% hint style="success" %}
-**SELALU:**
-- Verify URL situs (arisanonchain.vercel.app)
-- Review transaction sebelum approve
-- Disconnect wallet setelah selesai menggunakan
+**ALWAYS:**
+- Verify the site URL (arisanonchain.vercel.app)
+- Review transactions before approving
+- Disconnect wallet after you're done using it
 {% endhint %}
 
 ## Disconnect Wallet
 
-Untuk memutus koneksi wallet:
+To disconnect your wallet:
 
-1. Klik address Anda di pojok kanan atas
-2. Klik **"Disconnect"**
-3. Wallet Anda sekarang tidak terhubung
+1. Click your address in the top right corner
+2. Click **"Disconnect"**
+3. Your wallet is now disconnected
 
-Atau dari MetaMask:
-1. Klik icon MetaMask
-2. Klik tiga titik di pojok kanan atas
-3. Pilih **"Connected sites"**
+Or from MetaMask:
+1. Click the MetaMask icon
+2. Click the three dots in the top right corner
+3. Select **"Connected sites"**
 4. Disconnect Archa
 
 ## Next Steps
 
-Setelah wallet terhubung:
-- [💰 Dapatkan USDC di Mantle](get-usdc.md)
-- [📝 Join pool pertama Anda](../guides/join-pool.md)
+After connecting your wallet:
+- [💰 Get USDC on Mantle](get-usdc.md)
+- [📝 Join your first pool](../guides/join-pool.md)

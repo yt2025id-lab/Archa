@@ -1,85 +1,85 @@
 # 🚀 Quickstart
 
-Ikuti panduan ini untuk mulai menggunakan Archa dalam 5 menit.
+Follow this guide to start using Archa in 5 minutes.
 
 ## Prerequisites
 
-Sebelum mulai, pastikan Anda memiliki:
+Before starting, make sure you have:
 
-- [ ] Wallet (MetaMask, WalletConnect, atau wallet EVM lainnya)
-- [ ] USDC di Mantle Network
-- [ ] Sedikit MNT untuk gas fee
+- [ ] Wallet (MetaMask, WalletConnect, or other EVM wallet)
+- [ ] USDC on Mantle Network
+- [ ] Some MNT for gas fees
 
 ## Step 1: Connect Wallet
 
-1. Kunjungi [arisanonchain.vercel.app](https://arisanonchain.vercel.app)
-2. Klik tombol **"Connect Wallet"** di pojok kanan atas
-3. Pilih wallet Anda (MetaMask atau WalletConnect)
-4. Approve connection di wallet Anda
-5. Pastikan network sudah di **Mantle Mainnet**
+1. Visit [arisanonchain.vercel.app](https://arisanonchain.vercel.app)
+2. Click the **"Connect Wallet"** button in the top right corner
+3. Select your wallet (MetaMask or WalletConnect)
+4. Approve the connection in your wallet
+5. Make sure you're on **Mantle Mainnet**
 
 <figure><img src="../.gitbook/assets/connect-wallet.png" alt=""><figcaption><p>Connect Wallet</p></figcaption></figure>
 
 {% hint style="info" %}
-Jika wallet belum ada Mantle Network, Archa akan otomatis menambahkan network untuk Anda.
+If your wallet doesn't have Mantle Network, Archa will automatically add the network for you.
 {% endhint %}
 
 ## Step 2: Explore Pools
 
-1. Klik menu **"Pools"** di navigation
-2. Anda akan melihat daftar pool yang tersedia
-3. Filter berdasarkan status: All, Open, Active, Completed
-4. Perhatikan informasi setiap pool:
-   - Deposit amount (setoran bulanan)
-   - Jumlah peserta (current/max)
-   - APY estimasi
-   - Status pool
+1. Click the **"Pools"** menu in the navigation
+2. You'll see a list of available pools
+3. Filter by status: All, Open, Active, Completed
+4. Note the information for each pool:
+   - Deposit amount (monthly deposit)
+   - Number of participants (current/max)
+   - Estimated APY
+   - Pool status
 
 <figure><img src="../.gitbook/assets/explore-pools.png" alt=""><figcaption><p>Explore Pools</p></figcaption></figure>
 
 ## Step 3: Join a Pool
 
-1. Pilih pool dengan status **"Open"**
-2. Klik tombol **"Join Pool"**
-3. Modal akan muncul menunjukkan:
+1. Select a pool with **"Open"** status
+2. Click the **"Join Pool"** button
+3. A modal will appear showing:
    - Monthly deposit amount
    - Required collateral
    - Estimated APY
-4. Klik **"Approve USDC"** untuk approve spending
-5. Setelah approve, klik **"Join Pool"**
-6. Confirm transaction di wallet Anda
+4. Click **"Approve USDC"** to approve spending
+5. After approval, click **"Join Pool"**
+6. Confirm the transaction in your wallet
 
 <figure><img src="../.gitbook/assets/join-pool.png" alt=""><figcaption><p>Join Pool Modal</p></figcaption></figure>
 
 {% hint style="warning" %}
-Pastikan Anda memiliki cukup USDC untuk collateral + setoran pertama.
+Make sure you have enough USDC for collateral + first deposit.
 {% endhint %}
 
 ## Step 4: Wait for Pool to Start
 
-1. Pool akan start ketika semua slot terisi
-2. Anda akan menerima notifikasi
-3. Setoran bulan pertama akan otomatis dipotong dari balance
+1. Pool will start when all slots are filled
+2. You'll receive a notification
+3. First month's deposit will be automatically deducted from your balance
 
 ## Step 5: Make Monthly Deposits
 
-1. Setiap bulan, Anda perlu deposit sesuai jadwal
-2. Kunjungi halaman **"My Pools"**
-3. Klik **"Make Deposit"** sebelum deadline
-4. Jika tidak deposit tepat waktu, collateral akan dipotong
+1. Each month, you need to deposit on schedule
+2. Visit the **"My Pools"** page
+3. Click **"Make Deposit"** before the deadline
+4. If you don't deposit on time, collateral will be slashed
 
 ## Step 6: Get Your Turn
 
-1. Setiap bulan, 1 peserta akan menerima pot
-2. Pemenang ditentukan secara random oleh smart contract
-3. Jika Anda menang, pot + yield otomatis masuk wallet
-4. Anda tetap harus deposit bulan-bulan berikutnya
+1. Each month, 1 participant receives the pot
+2. Winner is determined randomly by smart contract
+3. If you win, pot + yield automatically goes to your wallet
+4. You still need to deposit for subsequent months
 
 ## Step 7: Arisan Complete
 
-1. Setelah semua peserta dapat giliran, arisan selesai
-2. Collateral Anda + yield dikembalikan
-3. Selamat! Anda telah menyelesaikan arisan onchain pertama Anda
+1. After all participants have received their turn, arisan is complete
+2. Your collateral + yield is returned
+3. Congratulations! You've completed your first onchain arisan
 
 ---
 
@@ -94,13 +94,13 @@ Pastikan Anda memiliki cukup USDC untuk collateral + setoran pertama.
 
 ## Next Steps
 
-- [📖 Pelajari cara kerja Archa lebih detail](../concepts/how-it-works.md)
-- [🔒 Pahami Collateral System](../concepts/collateral-system.md)
-- [🤖 Pelajari AI Yield Optimizer](../concepts/ai-yield-optimizer.md)
-- [➕ Buat pool sendiri](../guides/create-pool.md)
+- [📖 Learn how Archa works in detail](../concepts/how-it-works.md)
+- [🔒 Understand the Collateral System](../concepts/collateral-system.md)
+- [🤖 Learn about AI Yield Optimizer](../concepts/ai-yield-optimizer.md)
+- [➕ Create your own pool](../guides/create-pool.md)
 
 ## Need Help?
 
 - **Telegram:** [t.me/archaonchain](https://t.me/archaonchain)
 - **Twitter:** [@archaonchain](https://twitter.com/archaonchain)
-- **FAQ:** [Pertanyaan yang sering ditanyakan](../resources/faq.md)
+- **FAQ:** [Frequently Asked Questions](../resources/faq.md)

@@ -1,80 +1,80 @@
 # 💰 Get USDC on Mantle
 
-Panduan untuk mendapatkan USDC di Mantle Network.
+Guide to getting USDC on Mantle Network.
 
-## Apa itu USDC?
+## What is USDC?
 
-USDC (USD Coin) adalah stablecoin yang dipatok 1:1 dengan US Dollar. Archa menggunakan USDC sebagai mata uang untuk semua transaksi karena:
+USDC (USD Coin) is a stablecoin pegged 1:1 with the US Dollar. Archa uses USDC as the currency for all transactions because:
 
-- **Stabil:** Nilai tidak fluktuatif seperti crypto lain
-- **Trusted:** Diterbitkan oleh Circle, fully backed
-- **Widely adopted:** Tersedia di hampir semua exchange
+- **Stable:** Value doesn't fluctuate like other crypto
+- **Trusted:** Issued by Circle, fully backed
+- **Widely adopted:** Available on almost all exchanges
 
 ## Methods
 
-### Method 1: Bridge dari Ethereum/Other Chains
+### Method 1: Bridge from Ethereum/Other Chains
 
-Cara paling umum untuk mendapatkan USDC di Mantle adalah bridge dari chain lain.
+The most common way to get USDC on Mantle is to bridge from another chain.
 
-#### Menggunakan Mantle Bridge
+#### Using Mantle Bridge
 
-1. Kunjungi [bridge.mantle.xyz](https://bridge.mantle.xyz)
-2. Connect wallet Anda
-3. Pilih:
-   - From: Ethereum (atau chain lain)
+1. Visit [bridge.mantle.xyz](https://bridge.mantle.xyz)
+2. Connect your wallet
+3. Select:
+   - From: Ethereum (or other chain)
    - To: Mantle
    - Asset: USDC
-4. Masukkan jumlah yang ingin di-bridge
-5. Klik **"Bridge"**
-6. Confirm transaction
-7. Tunggu ~10-15 menit untuk finalisasi
+4. Enter the amount you want to bridge
+5. Click **"Bridge"**
+6. Confirm the transaction
+7. Wait ~10-15 minutes for finalization
 
 {% hint style="info" %}
-Bridge dari Ethereum memerlukan gas fee ETH. Pastikan ada cukup ETH di wallet Anda.
+Bridging from Ethereum requires ETH gas fees. Make sure you have enough ETH in your wallet.
 {% endhint %}
 
-#### Bridge Alternatif
+#### Alternative Bridges
 
 | Bridge | URL | Supported Chains |
 |--------|-----|------------------|
-| Stargate | [stargate.finance](https://stargate.finance) | ETH, Arbitrum, Optimism, dll |
-| Across | [across.to](https://across.to) | ETH, Arbitrum, Optimism, dll |
-| Orbiter | [orbiter.finance](https://orbiter.finance) | ETH, Arbitrum, zkSync, dll |
+| Stargate | [stargate.finance](https://stargate.finance) | ETH, Arbitrum, Optimism, etc. |
+| Across | [across.to](https://across.to) | ETH, Arbitrum, Optimism, etc. |
+| Orbiter | [orbiter.finance](https://orbiter.finance) | ETH, Arbitrum, zkSync, etc. |
 
-### Method 2: Buy dari CEX lalu Withdraw
+### Method 2: Buy from CEX then Withdraw
 
-1. Beli USDC di exchange favorit Anda:
+1. Buy USDC on your favorite exchange:
    - Binance
    - Bybit
    - OKX
    - KuCoin
 
-2. Withdraw ke Mantle Network:
-   - Pilih USDC
+2. Withdraw to Mantle Network:
+   - Select USDC
    - Network: **Mantle**
-   - Paste address wallet Anda
+   - Paste your wallet address
    - Confirm withdrawal
 
 {% hint style="warning" %}
-Pastikan exchange Anda support withdrawal ke Mantle Network. Jika tidak, bridge dari Ethereum.
+Make sure your exchange supports withdrawal to Mantle Network. If not, bridge from Ethereum.
 {% endhint %}
 
-### Method 3: Swap di Mantle DEX
+### Method 3: Swap on Mantle DEX
 
-Jika Anda sudah punya token lain di Mantle (misal: MNT, WETH), Anda bisa swap ke USDC.
+If you already have other tokens on Mantle (e.g., MNT, WETH), you can swap to USDC.
 
-#### Menggunakan Merchant Moe
+#### Using Merchant Moe
 
-1. Kunjungi [merchantmoe.com](https://merchantmoe.com)
+1. Visit [merchantmoe.com](https://merchantmoe.com)
 2. Connect wallet
-3. Pilih:
-   - From: MNT (atau token lain)
+3. Select:
+   - From: MNT (or other token)
    - To: USDC
-4. Masukkan jumlah
-5. Klik **"Swap"**
+4. Enter amount
+5. Click **"Swap"**
 6. Confirm transaction
 
-#### DEX Alternatif
+#### Alternative DEXs
 
 | DEX | URL |
 |-----|-----|
@@ -84,34 +84,34 @@ Jika Anda sudah punya token lain di Mantle (misal: MNT, WETH), Anda bisa swap ke
 
 ## Get MNT for Gas
 
-Anda memerlukan MNT (native token Mantle) untuk membayar gas fee.
+You need MNT (Mantle's native token) to pay for gas fees.
 
 ### Method 1: Faucet (Testnet Only)
 
-Untuk testnet (Mantle Sepolia):
-1. Kunjungi [faucet.sepolia.mantle.xyz](https://faucet.sepolia.mantle.xyz)
+For testnet (Mantle Sepolia):
+1. Visit [faucet.sepolia.mantle.xyz](https://faucet.sepolia.mantle.xyz)
 2. Connect wallet
 3. Request MNT
-4. Tunggu beberapa detik
+4. Wait a few seconds
 
 ### Method 2: Buy MNT
 
-Untuk mainnet, beli MNT dari:
+For mainnet, buy MNT from:
 - Binance
 - Bybit
 - OKX
 - Gate.io
 
-Lalu withdraw ke Mantle Network.
+Then withdraw to Mantle Network.
 
-### Method 3: Bridge ETH lalu Swap
+### Method 3: Bridge ETH then Swap
 
-1. Bridge ETH ke Mantle via [bridge.mantle.xyz](https://bridge.mantle.xyz)
-2. Swap sebagian ETH ke MNT di DEX
+1. Bridge ETH to Mantle via [bridge.mantle.xyz](https://bridge.mantle.xyz)
+2. Swap some ETH to MNT on a DEX
 
 ## USDC Contract Address
 
-Jika perlu menambahkan USDC ke wallet secara manual:
+If you need to add USDC to your wallet manually:
 
 **Mantle Mainnet:**
 ```
@@ -120,48 +120,48 @@ USDC: 0x09Bc4E0D10e52467B7e7b1bB0467eB27d93c1C7e
 
 **Mantle Sepolia (Testnet):**
 ```
-MockUSDC: [Check contract addresses page]
+MockUSDC: 0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D
 ```
 
 ## How Much USDC Do I Need?
 
-Untuk ikut Archa, Anda memerlukan:
+To join Archa, you need:
 
 ```
 Required = Collateral + First Deposit + Buffer for Gas
 
-Contoh Pool 50 USDC/bulan, 10 peserta:
-- Collateral: 450 USDC
+Example Pool 50 USDC/month, 10 participants:
+- Collateral: 562.5 USDC (125% × 50 × 9)
 - First deposit: 50 USDC
 - Recommended buffer: 10 USDC
-- TOTAL: ~510 USDC
+- TOTAL: ~623 USDC
 ```
 
-| Pool Type | Monthly | Collateral | Min. USDC |
-|-----------|---------|------------|-----------|
-| Starter | 10 USDC | 40 USDC | ~55 USDC |
-| Standard | 50 USDC | 450 USDC | ~510 USDC |
-| Premium | 100 USDC | 1,900 USDC | ~2,010 USDC |
+| Pool Type | Monthly | Collateral (125%) | Min. USDC |
+|-----------|---------|-------------------|-----------|
+| Starter | 10 USDC | 50 USDC | ~65 USDC |
+| Standard | 50 USDC | 562.5 USDC | ~625 USDC |
+| Premium | 100 USDC | 2,375 USDC | ~2,485 USDC |
 
 ## Troubleshooting
 
-### USDC tidak muncul di wallet
-- Pastikan sudah switch ke Mantle Network
-- Add token manually dengan contract address di atas
+### USDC not showing in wallet
+- Make sure you've switched to Mantle Network
+- Add token manually with the contract address above
 - Refresh wallet / reconnect
 
 ### Bridge stuck
-- Tunggu beberapa menit (bisa sampai 30 menit)
-- Check status di bridge website
-- Jika lebih dari 1 jam, contact support bridge
+- Wait a few minutes (can take up to 30 minutes)
+- Check status on the bridge website
+- If more than 1 hour, contact bridge support
 
 ### Swap failed
-- Pastikan ada cukup MNT untuk gas
-- Coba naikkan slippage tolerance
-- Coba jumlah yang lebih kecil
+- Make sure you have enough MNT for gas
+- Try increasing slippage tolerance
+- Try a smaller amount
 
 ## Next Steps
 
-Setelah punya USDC dan MNT:
+After you have USDC and MNT:
 - [🚀 Quickstart](quickstart.md)
 - [📝 Join Pool](../guides/join-pool.md)

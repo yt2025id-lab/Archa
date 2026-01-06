@@ -2,46 +2,47 @@
 
 ## 1. Collateral System
 
-### Apa itu Collateral?
-Collateral adalah deposit jaminan yang wajib dibayar setiap peserta sebelum ikut arisan. Collateral berfungsi sebagai "jaminan komitmen" - jika peserta tidak konsisten, collateral akan disita.
+### What is Collateral?
+Collateral is a security deposit that every participant must pay before joining an arisan. Collateral serves as a "commitment guarantee" - if a participant is not consistent, collateral will be seized.
 
-### Cara Perhitungan
+### Calculation Formula
 ```
-Collateral = 125% × Setoran Bulanan × (Jumlah Peserta - 1)
+Collateral = 125% × Monthly Deposit × (Number of Participants - 1)
 ```
 
-**Contoh:**
-- Pool dengan 10 peserta
-- Setoran bulanan: 50 USDC
+**Example:**
+- Pool with 10 participants
+- Monthly deposit: 50 USDC
 - Collateral = 1.25 × 50 × 9 = **562.5 USDC**
 
-### Kenapa 125%?
-Multiplier 125% memastikan tidak ada keuntungan ekonomi dari kabur setelah menang pertama. Dengan collateral lebih besar dari pot pertama, peserta yang kabur akan RUGI - bukan untung.
+### Why 125%?
+The 125% multiplier ensures there's no economic benefit from running away after winning first. With collateral larger than the first pot, participants who flee will LOSE - not profit.
 
-### Kapan Collateral Dikembalikan?
-- **Arisan selesai:** Collateral + yield dikembalikan penuh
-- **Peserta kabur:** Collateral disita untuk menutupi kewajiban
+### When is Collateral Returned?
+- **Arisan completed:** Collateral + yield returned in full
+- **Participant runs away:** Collateral seized to cover obligations
 
 ---
 
 ## 2. AI Yield Optimizer
 
-### Bagaimana Cara Kerjanya?
-AI menganalisis semua DeFi protocols di Mantle Network dan secara otomatis mengalokasikan dana ke protocol dengan risk-adjusted yield terbaik.
+### How Does It Work?
+AI analyzes all DeFi protocols on Mantle Network and automatically allocates funds to protocols with the best risk-adjusted yields.
 
-### Protocol yang Dianalisis
+### Protocols Analyzed
 - Lendle (Lending)
 - Merchant Moe (DEX/AMM)
 - Agni Finance (Lending)
-- Dan protocol lainnya di Mantle
+- Minterest (Lending)
+- KTX Finance (Perpetuals)
 
-### Strategi
+### Strategy
 ```
 ┌─────────────────────────────────────────┐
 │ AI YIELD OPTIMIZER                      │
 ├─────────────────────────────────────────┤
 │                                         │
-│ Input: Dana Pool + Collateral           │
+│ Input: Pool Funds + Collateral          │
 │                                         │
 │ Analysis:                               │
 │ ├─ APY comparison                       │
@@ -66,31 +67,31 @@ AI menganalisis semua DeFi protocols di Mantle Network dan secara otomatis menga
 
 ## 3. Double Yield
 
-### Dua Sumber Passive Income
-Peserta Archa mendapat yield dari dua tempat:
+### Two Sources of Passive Income
+Archa participants earn yield from two places:
 
 #### 1. Pool Yield
-Dana yang terkumpul setiap bulan tidak didiamkan. AI menginvestasikan ke DeFi dan yield dibagikan ke pemenang setiap bulan.
+Funds collected each month don't sit idle. AI invests into DeFi and yield is distributed to the winner each month.
 
 #### 2. Collateral Yield
-Collateral yang dikunci juga diinvestasikan. Yield dari collateral dikembalikan bersama collateral di akhir arisan.
+Locked collateral is also invested. Collateral yield is returned together with collateral at the end of arisan.
 
-### Simulasi Keuntungan
+### Profit Simulation
 ```
-Pool: 10 orang × 50 USDC/bulan × 10 bulan
+Pool: 10 people × 50 USDC/month × 10 months
 
 Total Pool: 5,000 USDC
-Collateral per orang: 562.5 USDC (125% × 50 × 9)
+Collateral per person: 562.5 USDC (125% × 50 × 9)
 Total Collateral: 5,625 USDC
 
-Asumsi APY 10%:
-- Pool yield (10 bulan): ~420 USDC
-- Collateral yield (10 bulan): ~470 USDC
+Assuming 10% APY:
+- Pool yield (10 months): ~420 USDC
+- Collateral yield (10 months): ~470 USDC
 - Total extra yield: ~890 USDC
 - Per person extra: ~89 USDC
 
-Tanpa Archa: 0 USDC yield
-Dengan Archa: +89 USDC per orang
+Without Archa: 0 USDC yield
+With Archa: +89 USDC per person
 ```
 
 ---
@@ -98,66 +99,66 @@ Dengan Archa: +89 USDC per orang
 ## 4. Fair Winner Selection
 
 ### Transparent Randomness
-Pemenang setiap bulan ditentukan oleh smart contract menggunakan verifiable random function (VRF). Tidak ada yang bisa memanipulasi siapa yang dapat giliran.
+The winner each month is determined by smart contract using verifiable random function (VRF). No one can manipulate who gets their turn.
 
-### Mekanisme
-1. Setiap peserta mendapat "nomor urut" saat join
-2. Di akhir setiap cycle, VRF generate random number
-3. Random number menentukan pemenang dari eligible participants
-4. Pemenang menerima pot + yield bulan itu
-5. Pemenang marked sebagai "sudah dapat giliran"
+### Mechanism
+1. Each participant gets a "sequence number" when joining
+2. At the end of each cycle, VRF generates a random number
+3. Random number determines winner from eligible participants
+4. Winner receives pot + that month's yield
+5. Winner marked as "already received turn"
 
 ### Fairness Guarantee
-- Semua peserta pasti dapat giliran tepat 1x
-- Urutan tidak bisa diprediksi atau dimanipulasi
-- Hasil random bisa diverifikasi on-chain
+- All participants will get their turn exactly once
+- Order cannot be predicted or manipulated
+- Random results can be verified on-chain
 
 ---
 
-## 5. Anti-Kabur System
+## 5. Anti Run-away System
 
-### Skenario: Peserta Tidak Bayar
+### Scenario: Participant Doesn't Pay
 ```
-Peserta X tidak bayar setoran bulan ke-5?
+Participant X doesn't pay month 5 deposit?
 
-1. Grace period 3 hari
-2. Jika tidak bayar: Collateral dipotong
-3. Setoran diambil dari collateral
-4. Arisan tetap berjalan normal
-5. Peserta lain tidak dirugikan
-```
-
-### Skenario: Peserta Kabur Setelah Dapat Giliran
-```
-Peserta Y dapat giliran bulan ke-2, lalu kabur?
-
-1. Bulan ke-3: Tidak bayar setoran
-2. Collateral dipotong untuk menutupi setoran
-3. Bulan ke-4 dst: Sama
-4. Jika collateral habis: Peserta auto-removed
-5. Peserta lain tidak dirugikan
+1. 3-day grace period
+2. If no payment: Collateral is slashed
+3. Deposit taken from collateral
+4. Arisan continues normally
+5. Other participants not affected
 ```
 
-### Kenapa Sistem Ini Efektif?
-- **Insentif ekonomi:** Kabur = rugi collateral + yield
-- **Automatic enforcement:** Smart contract eksekusi tanpa kompromi
-- **No human intervention:** Tidak ada "maaf-maafan"
+### Scenario: Participant Runs After Winning
+```
+Participant Y wins month 2, then runs away?
+
+1. Month 3: Doesn't pay deposit
+2. Collateral slashed to cover deposit
+3. Month 4 onwards: Same
+4. If collateral depleted: Participant auto-removed
+5. Other participants not affected
+```
+
+### Why This System is Effective
+- **Economic incentive:** Running away = losing collateral + yield
+- **Automatic enforcement:** Smart contract executes without compromise
+- **No human intervention:** No "forgiveness" possible
 
 ---
 
 ## 6. Transparency
 
 ### On-Chain Data
-Semua data arisan tercatat di blockchain:
-- Siapa saja peserta
-- Berapa collateral masing-masing
-- History setoran
-- Siapa yang sudah dapat giliran
-- Yield yang dihasilkan
-- Alokasi AI ke protocols
+All arisan data is recorded on blockchain:
+- Who the participants are
+- How much collateral each has
+- Deposit history
+- Who has already received their turn
+- Yield generated
+- AI allocation to protocols
 
 ### Verifiable
-Siapapun bisa verify:
+Anyone can verify:
 - Pool balance
 - Collateral status
 - Yield accrual
@@ -171,7 +172,7 @@ Siapapun bisa verify:
 | Feature | Archa | Traditional Arisan | Other DeFi |
 |---------|-------|-------------------|------------|
 | Rotating Savings | ✅ | ✅ | ❌ |
-| Anti-Kabur | ✅ Collateral | ❌ Trust only | N/A |
+| Anti Run-away | ✅ Collateral | ❌ Trust only | N/A |
 | Yield | ✅ AI Optimized | ❌ 0% | ✅ Manual |
 | Transparency | ✅ On-chain | ❌ Manual | ✅ On-chain |
 | Cultural Fit | ✅ Indonesian | ✅ Indonesian | ❌ Foreign |

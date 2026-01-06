@@ -2,36 +2,36 @@
 
 <figure><img src=".gitbook/assets/archa-banner.png" alt="Archa Banner"><figcaption><p>Archa - Arisan Onchain</p></figcaption></figure>
 
-## Apa itu Archa?
+## What is Archa?
 
-**Archa** adalah platform arisan terdesentralisasi pertama yang membawa tradisi keuangan komunal Indonesia ke blockchain. Dibangun di atas **Mantle Network**, Archa menggabungkan tradisi arisan yang sudah mengakar di budaya Indonesia dengan teknologi smart contract dan AI Yield Optimizer.
+**Archa** is the first decentralized arisan platform that brings Indonesia's communal financial tradition to the blockchain. Built on **Mantle Network**, Archa combines the arisan tradition deeply rooted in Indonesian culture with smart contract technology and AI Yield Optimizer.
 
-> "Tabungan Bergilir yang Menghasilkan Passive Income"
+> "Rotating Savings That Generate Passive Income"
 
-## Mengapa Archa?
+## Why Archa?
 
-| Masalah Arisan Tradisional | Solusi Archa |
+| Traditional Arisan Problems | Archa's Solution |
 |---------------------------|--------------|
-| Risiko peserta kabur | Collateral System sebagai jaminan |
-| Dana nganggur tanpa yield | AI Yield Optimizer |
-| Pencatatan manual & manipulatif | 100% on-chain & transparan |
-| Hanya dengan orang yang dikenal | Trustless - siapapun bisa ikut |
+| Risk of participants running away | Collateral System as guarantee |
+| Idle funds with no yield | AI Yield Optimizer |
+| Manual & manipulative record-keeping | 100% on-chain & transparent |
+| Only with people you know | Trustless - anyone can join |
 
-## Fitur Utama
+## Key Features
 
-### 🔒 Collateral System
-Setiap peserta wajib deposit collateral sebelum ikut arisan. Jika tidak konsisten membayar setoran, collateral akan disita. Sistem ini menghilangkan kebutuhan "trust" dalam arisan.
+### 🔒 Collateral System (125%)
+Every participant must deposit collateral before joining an arisan. If they fail to make consistent payments, collateral will be seized. This system eliminates the need for "trust" in arisan.
 
 ### 🤖 AI Yield Optimizer
-Dana pool dan collateral tidak didiamkan - AI secara otomatis mengalokasikan dana ke DeFi protocols dengan yield terbaik di Mantle Network.
+Pool funds and collateral don't sit idle - AI automatically allocates funds to DeFi protocols with the best yields on Mantle Network.
 
 ### 📜 Smart Contract
-Semua aturan arisan di-encode dalam smart contract. Tidak ada yang bisa dicurangi, tidak ada yang bisa dimanipulasi.
+All arisan rules are encoded in smart contracts. Nothing can be cheated, nothing can be manipulated.
 
 ### 💰 Double Yield
-Peserta mendapat yield dari dua sumber:
-1. Yield dari dana pool
-2. Yield dari collateral
+Participants earn yield from two sources:
+1. Yield from pool funds
+2. Yield from collateral
 
 ## Quick Links
 
@@ -46,22 +46,22 @@ Peserta mendapat yield dari dua sumber:
 <tbody>
 <tr>
 <td><strong>🚀 Getting Started</strong></td>
-<td>Mulai gunakan Archa dalam 5 menit</td>
+<td>Start using Archa in 5 minutes</td>
 <td><a href="getting-started/quickstart.md">quickstart.md</a></td>
 </tr>
 <tr>
 <td><strong>📖 How It Works</strong></td>
-<td>Pelajari cara kerja Archa</td>
+<td>Learn how Archa works</td>
 <td><a href="concepts/how-it-works.md">how-it-works.md</a></td>
 </tr>
 <tr>
 <td><strong>🔧 Smart Contracts</strong></td>
-<td>Dokumentasi teknis contracts</td>
+<td>Technical contract documentation</td>
 <td><a href="technical/smart-contracts.md">smart-contracts.md</a></td>
 </tr>
 <tr>
 <td><strong>❓ FAQ</strong></td>
-<td>Pertanyaan yang sering ditanyakan</td>
+<td>Frequently asked questions</td>
 <td><a href="resources/faq.md">faq.md</a></td>
 </tr>
 </tbody>
