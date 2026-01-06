@@ -24,7 +24,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.connectWallet": "Connect Wallet",
 
     // Hero Section
-    "hero.preTitle1": "270 Juta Orang Sudah Paham DeFi",
+    "hero.preTitle1": "Jutaan Orang Indonesia Sudah Paham DeFi",
     "hero.preTitle2": "Mereka Menyebutnya",
     "hero.title": "Arisan",
     "hero.description": "Selama puluhan tahun, arisan membuktikan bahwa kepercayaan bisa dibangun tanpa bank. Sekarang, kami membawanya ke level berikutnya dengan AI yang mengoptimalkan yield dan smart contract yang tidak bisa berbohong.",
@@ -240,7 +240,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.connectWallet": "Connect Wallet",
 
     // Hero Section
-    "hero.preTitle1": "270 Million People Already Understand DeFi",
+    "hero.preTitle1": "Millions of Indonesians Already Understand DeFi",
     "hero.preTitle2": "They Call It",
     "hero.title": "Arisan",
     "hero.description": "For decades, arisan has proven that trust can be built without banks. Now, we're taking it to the next level with AI that optimizes yield and smart contracts that cannot lie.",

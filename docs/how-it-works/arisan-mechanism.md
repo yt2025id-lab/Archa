@@ -10,7 +10,7 @@ Arisan is a centuries-old Indonesian practice of communal savings. A group gathe
 - Built on community trust (gotong royong)
 - Common in neighborhoods, workplaces, and families
 - Combines saving, socializing, and mutual aid
-- Estimated 270+ million participants in Indonesia
+- Practiced by millions of Indonesians across generations
 
 ## Archa's On-Chain Arisan
 
