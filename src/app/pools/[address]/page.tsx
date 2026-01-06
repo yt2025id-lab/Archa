@@ -433,7 +433,7 @@ export default function PoolDetailPage() {
               </div>
 
               <div className="p-4 bg-blue-50 rounded-xl">
-                <p className="text-sm text-blue-600 mb-1">Required Collateral</p>
+                <p className="text-sm text-blue-600 mb-1">Required Collateral (125%)</p>
                 <p className="text-2xl font-bold text-blue-700">{requiredCollateral?.toFixed(0) || 0} USDC</p>
                 <p className="text-xs text-blue-500 mt-1">Returned at end of arisan + yield bonus</p>
               </div>

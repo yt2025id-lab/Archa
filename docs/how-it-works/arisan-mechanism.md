@@ -96,24 +96,26 @@ How winners are selected:
 
 ## Pool Types
 
+Collateral = 125% × Deposit × (Participants - 1)
+
 ### Starter Pool
 - 10 USDC/month
 - 5 participants
-- 20 USDC collateral
+- 50 USDC collateral (125% × 10 × 4)
 - 5 months duration
 - Best for: Beginners
 
 ### Standard Pool
 - 50 USDC/month
 - 10 participants
-- 100 USDC collateral
+- 563 USDC collateral (125% × 50 × 9)
 - 10 months duration
 - Best for: Regular savers
 
 ### Premium Pool
 - 100 USDC/month
 - 20 participants
-- 200 USDC collateral
+- 2,375 USDC collateral (125% × 100 × 19)
 - 20 months duration
 - Best for: Serious savers
 

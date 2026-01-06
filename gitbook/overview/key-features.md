@@ -7,16 +7,16 @@ Collateral adalah deposit jaminan yang wajib dibayar setiap peserta sebelum ikut
 
 ### Cara Perhitungan
 ```
-Collateral = Setoran Bulanan × (Jumlah Peserta - 1)
+Collateral = 125% × Setoran Bulanan × (Jumlah Peserta - 1)
 ```
 
 **Contoh:**
 - Pool dengan 10 peserta
 - Setoran bulanan: 50 USDC
-- Collateral = 50 × 9 = **450 USDC**
+- Collateral = 1.25 × 50 × 9 = **562.5 USDC**
 
-### Kenapa Harus Sebesar Itu?
-Collateral dihitung setara dengan total kewajiban peserta di masa depan. Jika peserta dapat giliran di bulan ke-3 dari 10 bulan, mereka masih punya kewajiban 7 bulan ke depan. Collateral menjamin kewajiban ini terpenuhi.
+### Kenapa 125%?
+Multiplier 125% memastikan tidak ada keuntungan ekonomi dari kabur setelah menang pertama. Dengan collateral lebih besar dari pot pertama, peserta yang kabur akan RUGI - bukan untung.
 
 ### Kapan Collateral Dikembalikan?
 - **Arisan selesai:** Collateral + yield dikembalikan penuh
@@ -80,17 +80,17 @@ Collateral yang dikunci juga diinvestasikan. Yield dari collateral dikembalikan 
 Pool: 10 orang × 50 USDC/bulan × 10 bulan
 
 Total Pool: 5,000 USDC
-Collateral per orang: 450 USDC
-Total Collateral: 4,500 USDC
+Collateral per orang: 562.5 USDC (125% × 50 × 9)
+Total Collateral: 5,625 USDC
 
 Asumsi APY 10%:
 - Pool yield (10 bulan): ~420 USDC
-- Collateral yield (10 bulan): ~375 USDC
-- Total extra yield: ~795 USDC
-- Per person extra: ~80 USDC
+- Collateral yield (10 bulan): ~470 USDC
+- Total extra yield: ~890 USDC
+- Per person extra: ~89 USDC
 
 Tanpa Archa: 0 USDC yield
-Dengan Archa: +80 USDC per orang
+Dengan Archa: +89 USDC per orang
 ```
 
 ---

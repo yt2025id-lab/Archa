@@ -39,7 +39,7 @@ Dengan Collateral:
 ## Formula Collateral
 
 ```
-Collateral = Deposit Amount × (Number of Participants - 1)
+Collateral = 125% × Deposit Amount × (Number of Participants - 1)
 ```
 
 ### Penjelasan Formula
@@ -48,21 +48,25 @@ Collateral = Deposit Amount × (Number of Participants - 1)
 
 Karena setiap peserta akan menerima pot tepat 1 kali. Saat menerima pot, mereka tidak perlu deposit bulan itu (pot sudah menutupi). Jadi kewajiban maksimal adalah `(N-1)` deposits.
 
+**Kenapa 125%?**
+
+Multiplier 125% memastikan tidak ada keuntungan ekonomi dari kabur setelah menang. Jika seseorang menang di giliran pertama dan kabur, mereka akan kehilangan lebih banyak collateral daripada yang mereka terima dari pot.
+
 ### Contoh Perhitungan
 
 **Pool 5 orang × 10 USDC:**
 ```
-Collateral = 10 × (5-1) = 10 × 4 = 40 USDC
+Collateral = 1.25 × 10 × (5-1) = 1.25 × 10 × 4 = 50 USDC
 ```
 
 **Pool 10 orang × 50 USDC:**
 ```
-Collateral = 50 × (10-1) = 50 × 9 = 450 USDC
+Collateral = 1.25 × 50 × (10-1) = 1.25 × 50 × 9 = 562.5 USDC
 ```
 
 **Pool 20 orang × 100 USDC:**
 ```
-Collateral = 100 × (20-1) = 100 × 19 = 1,900 USDC
+Collateral = 1.25 × 100 × (20-1) = 1.25 × 100 × 19 = 2,375 USDC
 ```
 
 ## Skenario Collateral
@@ -71,11 +75,11 @@ Collateral = 100 × (20-1) = 100 × 19 = 1,900 USDC
 
 ```
 Timeline Peserta yang Konsisten:
-├─ Bulan 0: Deposit collateral 450 USDC + setoran 50 USDC
+├─ Bulan 0: Deposit collateral 562.5 USDC + setoran 50 USDC
 ├─ Bulan 1-9: Deposit 50 USDC setiap bulan
 ├─ Bulan X: Dapat giliran, terima pot + yield
 ├─ Bulan 10: Arisan selesai
-└─ Terima: Collateral 450 USDC + yield collateral ~27 USDC
+└─ Terima: Collateral 562.5 USDC + yield collateral ~34 USDC
 ```
 
 **Hasil:** Peserta mendapat semua uang kembali plus yield bonus.
@@ -87,36 +91,34 @@ Peserta B default di bulan ke-4 (belum dapat giliran):
 ├─ Bulan 0-3: Deposit normal
 ├─ Bulan 4: TIDAK deposit
 ├─ Grace period 3 hari: Tidak bayar
-├─ Collateral dipotong: 450 - 50 = 400 USDC
+├─ Collateral dipotong: 562.5 - 50 = 512.5 USDC
 ├─ Bulan 5: TIDAK deposit
-├─ Collateral dipotong: 400 - 50 = 350 USDC
+├─ Collateral dipotong: 512.5 - 50 = 462.5 USDC
 ├─ ... (berlanjut sampai collateral habis)
 └─ Peserta B di-remove dari pool
 ```
 
 **Hasil:** Peserta B kehilangan collateral, tidak dapat giliran.
 
-### Skenario 3: Peserta Default Setelah Dapat Giliran
+### Skenario 3: Peserta Default Setelah Dapat Giliran (Dengan 125%)
 
 ```
-Peserta C dapat giliran bulan ke-2, lalu default:
-├─ Bulan 0-1: Deposit normal
-├─ Bulan 2: DAPAT GILIRAN, terima 542 USDC
-├─ Bulan 3: TIDAK deposit
-├─ Collateral dipotong: 450 - 50 = 400 USDC
-├─ Bulan 4-10: Tidak deposit (7 bulan)
-├─ Collateral dipotong: 7 × 50 = 350 USDC
-├─ Sisa collateral: 400 - 350 = 50 USDC
-└─ Peserta C dapat sisa 50 USDC di akhir
+Peserta C dapat giliran bulan ke-1 (pertama), lalu default:
+├─ Bulan 1: DAPAT GILIRAN, terima pot 500 USDC
+├─ Bulan 2-10: Tidak deposit (9 bulan)
+├─ Collateral awal: 562.5 USDC
+├─ Collateral dipotong: 9 × 50 = 450 USDC
+├─ Sisa collateral: 562.5 - 450 = 112.5 USDC (hangus)
+└─ Net position: 500 - 562.5 = -62.5 USDC (RUGI!)
 ```
 
-**Hasil:** Peserta C net position = Pot received - Collateral lost = 542 - 400 = +142 USDC
+**Hasil:** Dengan multiplier 125%, peserta yang kabur setelah menang tetap RUGI!
 
-{% hint style="warning" %}
-Meskipun masih "untung", peserta yang default:
-- Kehilangan yield dari collateral
-- Reputasi on-chain tercatat
-- Mungkin di-blacklist dari pool lain
+{% hint style="success" %}
+Sistem 125% collateral memastikan tidak ada keuntungan ekonomi dari kabur:
+- Pot pertama = N × deposit = 500 USDC
+- Collateral = 1.25 × deposit × (N-1) = 562.5 USDC
+- Kabur setelah menang pertama = RUGI 62.5 USDC
 {% endhint %}
 
 ## Mekanisme Slashing
@@ -175,10 +177,10 @@ Collateral Yield Distribution:
 └─ Distributed at pool completion
 
 Example:
-├─ Your collateral: 450 USDC
+├─ Your collateral: 562.5 USDC
 ├─ Pool duration: 10 months
 ├─ Average APY: 8%
-├─ Your yield: 450 × 8% × (10/12) = ~30 USDC
+├─ Your yield: 562.5 × 8% × (10/12) = ~37.5 USDC
 ```
 
 ## Collateral vs Trust
@@ -206,13 +208,13 @@ Example:
 
 **Opsi 1:** Join pool dengan deposit amount lebih kecil
 ```
-Pool 10 USDC/bulan → Collateral hanya 40-90 USDC
+Pool 10 USDC/bulan → Collateral hanya 50-238 USDC (tergantung jumlah peserta)
 ```
 
 **Opsi 2:** Join pool dengan peserta lebih sedikit
 ```
-Pool 5 orang → Collateral = 4× deposit
-Pool 20 orang → Collateral = 19× deposit
+Pool 5 orang → Collateral = 1.25 × 4 × deposit = 5× deposit
+Pool 20 orang → Collateral = 1.25 × 19 × deposit = 23.75× deposit
 ```
 
 ### "Kapan collateral dikembalikan?"

@@ -74,11 +74,15 @@
 
 ## Pool Templates
 
+Collateral = 125% × Deposit × (Participants - 1)
+
 | Pool Type | Monthly Deposit | Participants | Collateral | Duration |
 |-----------|-----------------|--------------|------------|----------|
-| Starter | 10 USDC | 5 people | 20 USDC | 5 months |
-| Standard | 50 USDC | 10 people | 100 USDC | 10 months |
-| Premium | 100 USDC | 20 people | 200 USDC | 20 months |
+| Starter | 10 USDC | 5 people | 50 USDC | 5 months |
+| Standard | 50 USDC | 10 people | 563 USDC | 10 months |
+| Premium | 100 USDC | 20 people | 2,375 USDC | 20 months |
+
+> **Anti Run-away Protection:** The 125% multiplier ensures there's no economic benefit from winning early and leaving. Even if you receive your pot first and disappear, you'll lose more in collateral than you gained.
 
 ---
 
