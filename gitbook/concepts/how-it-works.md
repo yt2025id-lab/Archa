@@ -1,10 +1,10 @@
 # 📖 How It Works
 
-Pelajari cara kerja Archa secara detail.
+Learn how Archa works in detail.
 
 ## Overview
 
-Archa mengimplementasikan arisan tradisional dalam bentuk smart contract dengan tambahan yield optimization. Berikut adalah lifecycle lengkap sebuah pool arisan.
+Archa implements traditional arisan in the form of smart contracts with added yield optimization. Here is the complete lifecycle of an arisan pool.
 
 ## Pool Lifecycle
 
@@ -25,42 +25,42 @@ Archa mengimplementasikan arisan tradisional dalam bentuk smart contract dengan 
 
 ## Phase 1: Pool Creation
 
-### Membuat Pool
-Creator menentukan parameter pool:
-- **Deposit Amount:** Setoran bulanan (misal: 50 USDC)
-- **Max Participants:** Jumlah peserta (misal: 10 orang)
-- **Cycle Duration:** Durasi per cycle (biasanya 30 hari)
+### Creating a Pool
+Creator determines pool parameters:
+- **Deposit Amount:** Monthly deposit (e.g., 50 USDC)
+- **Max Participants:** Number of participants (e.g., 10 people)
+- **Cycle Duration:** Duration per cycle (usually 30 days)
 
 ### Smart Contract Deployment
-Ketika pool dibuat, smart contract otomatis menghitung:
+When a pool is created, the smart contract automatically calculates:
 ```solidity
-collateralRequired = depositAmount * (maxParticipants - 1)
+collateralRequired = 1.25 * depositAmount * (maxParticipants - 1)
 totalCycles = maxParticipants
 estimatedDuration = totalCycles * cycleDuration
 ```
 
 ### Pool Status: OPEN
-Pool sekarang tersedia untuk diikuti. Status akan berubah ke ACTIVE ketika semua slot terisi.
+The pool is now available to join. Status will change to ACTIVE when all slots are filled.
 
 ## Phase 2: Joining
 
 ### Requirements
-Untuk join pool, user harus:
-1. Approve USDC spending ke smart contract
+To join a pool, users must:
+1. Approve USDC spending to smart contract
 2. Deposit collateral
-3. Deposit setoran bulan pertama
+3. Deposit first month's payment
 
 ### Join Transaction
 ```
 User deposits:
-├─ Collateral: 450 USDC (locked until completion)
+├─ Collateral: 562.5 USDC (locked until completion)
 └─ First deposit: 50 USDC (goes to pool)
 
-Total: 500 USDC
+Total: 612.5 USDC
 ```
 
 ### Participant Registration
-Smart contract menyimpan:
+Smart contract stores:
 - User address
 - Collateral amount
 - Join timestamp
@@ -68,10 +68,10 @@ Smart contract menyimpan:
 - Has received pot: FALSE
 
 ### Pool Full
-Ketika participant terakhir join:
+When the last participant joins:
 1. Pool status → ACTIVE
 2. First cycle starts
-3. AI Yield Optimizer mulai bekerja
+3. AI Yield Optimizer begins working
 
 ## Phase 3: Active Cycles
 
@@ -113,7 +113,7 @@ Scenario B: User doesn't deposit
 ```
 
 ### Winner Selection
-Setiap akhir cycle:
+At the end of each cycle:
 1. Smart contract calls VRF (Verifiable Random Function)
 2. Random number generated
 3. Winner selected from eligible participants
@@ -138,11 +138,11 @@ Pool completes when:
 ### Final Settlement
 ```
 For each participant who completed all deposits:
-├─ Collateral returned: 450 USDC
-├─ Collateral yield: +27 USDC
+├─ Collateral returned: 562.5 USDC
+├─ Collateral yield: +34 USDC
 └─ Share of remaining pool yield: +15 USDC
 ─────────────────────────────────────
-TOTAL BONUS: 492 USDC
+TOTAL BONUS: 611.5 USDC
 ```
 
 ### For Defaulters
@@ -201,13 +201,14 @@ AI may move funds if:
 ### Why This Formula?
 
 ```
-Collateral = Deposit × (Participants - 1)
+Collateral = 125% × Deposit × (Participants - 1)
 ```
 
 **Logic:**
 - Worst case: You win cycle 1, then must deposit 9 more times
 - Your remaining obligation: 9 × 50 = 450 USDC
-- Collateral covers this exact amount
+- Collateral at 125%: 1.25 × 450 = 562.5 USDC
+- This ensures running away = financial loss
 
 ### Slashing Mechanics
 

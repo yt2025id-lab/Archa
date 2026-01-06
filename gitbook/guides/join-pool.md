@@ -1,57 +1,57 @@
-# 🏊 Bergabung ke Pool
+# 🏊 Join a Pool
 
-Panduan lengkap untuk bergabung ke pool arisan di Archa.
+Complete guide to joining an arisan pool in Archa.
 
-## Sebelum Bergabung
+## Before Joining
 
-### Persiapan
+### Preparation
 
-Pastikan Anda sudah:
-- ✅ Connect wallet ke Archa
-- ✅ Punya USDC di Mantle Network
-- ✅ Punya MNT untuk gas fees
-- ✅ Memahami konsep arisan dan collateral
+Make sure you have:
+- ✅ Connected wallet to Archa
+- ✅ USDC on Mantle Network
+- ✅ MNT for gas fees
+- ✅ Understanding of arisan and collateral concepts
 
-### Berapa USDC yang Dibutuhkan?
+### How Much USDC is Needed?
 
 ```
-Total USDC Dibutuhkan:
-├─ Deposit bulanan pertama
-└─ Collateral (deposit × sisa cycle)
+Total USDC Needed:
+├─ First monthly deposit
+└─ Collateral (125% × deposit × remaining cycles)
 
-Contoh Pool 50 USDC × 10 bulan:
+Example Pool 50 USDC × 10 months:
 ├─ Deposit: 50 USDC
-├─ Collateral: 50 × 9 = 450 USDC
-└─ TOTAL: 500 USDC
+├─ Collateral: 1.25 × 50 × 9 = 562.5 USDC
+└─ TOTAL: 612.5 USDC
 ```
 
-## Cara Bergabung
+## How to Join
 
 ### Step 1: Browse Available Pools
 
-1. Buka halaman **Explore Pools**
-2. Lihat daftar pool yang tersedia
-3. Filter berdasarkan:
-   - Jumlah deposit
-   - Durasi
-   - Jumlah peserta
-   - Status pool
+1. Open the **Explore Pools** page
+2. View the list of available pools
+3. Filter by:
+   - Deposit amount
+   - Duration
+   - Number of participants
+   - Pool status
 
-### Step 2: Pilih Pool
+### Step 2: Choose a Pool
 
-Pertimbangkan faktor-faktor ini:
+Consider these factors:
 
-| Faktor | Pertimbangan |
-|--------|-------------|
-| **Deposit Amount** | Sesuaikan dengan kemampuan finansial |
-| **Duration** | Pool panjang = komitmen lebih lama |
-| **Participants** | Lebih banyak = pot lebih besar |
-| **Slots Left** | Pastikan masih ada slot kosong |
-| **Expected Yield** | Perkiraan APY dari AI optimizer |
+| Factor | Consideration |
+|--------|---------------|
+| **Deposit Amount** | Match your financial capability |
+| **Duration** | Longer pool = longer commitment |
+| **Participants** | More = larger pot |
+| **Slots Left** | Ensure slots are available |
+| **Expected Yield** | Estimated APY from AI optimizer |
 
 ### Step 3: Review Pool Details
 
-Klik pool untuk melihat detail:
+Click on a pool to see details:
 
 ```
 Pool Details:
@@ -59,40 +59,40 @@ Pool Details:
 ├─ Deposit per Cycle: 50 USDC
 ├─ Total Cycles: 10
 ├─ Participants: 7/10
-├─ Current Cycle: 0 (belum mulai)
-├─ Collateral Required: 450 USDC
+├─ Current Cycle: 0 (not started)
+├─ Collateral Required: 562.5 USDC
 ├─ Estimated Total Pot: 500+ USDC
 └─ AI Strategy: Active
 ```
 
 ### Step 4: Join Pool
 
-1. Klik tombol **"Join Pool"**
+1. Click the **"Join Pool"** button
 2. Review transaction details:
    ```
    Transaction Summary:
    ├─ First Deposit: 50 USDC
-   ├─ Collateral Lock: 450 USDC
-   ├─ Total Transfer: 500 USDC
+   ├─ Collateral Lock: 562.5 USDC
+   ├─ Total Transfer: 612.5 USDC
    └─ Estimated Gas: ~0.01 MNT
    ```
-3. Klik **"Approve USDC"** (jika pertama kali)
-4. Klik **"Confirm Join"**
-5. Approve transaction di wallet
+3. Click **"Approve USDC"** (if first time)
+4. Click **"Confirm Join"**
+5. Approve transaction in wallet
 
-### Step 5: Konfirmasi
+### Step 5: Confirmation
 
-Setelah transaction confirmed:
-- ✅ Anda terdaftar sebagai participant
-- ✅ Deposit pertama sudah masuk
-- ✅ Collateral sudah terkunci
-- ✅ Eligible untuk menerima pot
+After transaction is confirmed:
+- ✅ You are registered as a participant
+- ✅ First deposit is in
+- ✅ Collateral is locked
+- ✅ Eligible to receive pot
 
-## Setelah Bergabung
+## After Joining
 
-### Dashboard Anda
+### Your Dashboard
 
-Di dashboard, Anda bisa melihat:
+On the dashboard, you can see:
 
 ```
 My Pool Status:
@@ -100,103 +100,103 @@ My Pool Status:
 ├─ My Position: Participant #7
 ├─ Deposits Made: 1/10
 ├─ Has Received Pot: No
-├─ Collateral Locked: 450 USDC
+├─ Collateral Locked: 562.5 USDC
 ├─ Collateral Yield: 0 USDC (accruing)
 └─ Next Deposit Due: Jan 15, 2025
 ```
 
-### Notifikasi
+### Notifications
 
-Anda akan menerima notifikasi untuk:
-- 🔔 Reminder deposit sebelum deadline
-- 🎉 Pengumuman pemenang
-- 💰 Jika Anda menang
-- ⚠️ Warning jika hampir terlambat
+You will receive notifications for:
+- 🔔 Deposit reminder before deadline
+- 🎉 Winner announcement
+- 💰 If you win
+- ⚠️ Warning if running late
 
 ## Edge Cases
 
-### Pool Belum Mulai
+### Pool Not Started
 
 ```
-Jika pool belum full:
-├─ Tunggu sampai semua slot terisi
-├─ Pool akan mulai setelah full
-└─ Deposit & collateral sudah terkunci
+If pool is not full:
+├─ Wait until all slots are filled
+├─ Pool starts after full
+└─ Deposit & collateral already locked
 ```
 
-### Slot Habis
+### Slots Full
 
 ```
-Jika pool sudah penuh:
-├─ Anda tidak bisa join pool ini
-├─ Cari pool lain yang masih tersedia
-└─ Atau buat pool sendiri
+If pool is full:
+├─ You cannot join this pool
+├─ Find another available pool
+└─ Or create your own pool
 ```
 
 ### Transaction Failed
 
 ```
-Jika transaction gagal:
-├─ Cek balance USDC Anda
-├─ Cek balance MNT untuk gas
-├─ Pastikan allowance sudah di-approve
-└─ Coba lagi dengan gas price lebih tinggi
+If transaction fails:
+├─ Check your USDC balance
+├─ Check MNT balance for gas
+├─ Ensure allowance is approved
+└─ Try again with higher gas price
 ```
 
-## Tips Memilih Pool
+## Tips for Choosing Pools
 
-### Untuk Pemula
+### For Beginners
 
 ✅ **DO:**
-- Pilih pool dengan deposit kecil dulu (10-50 USDC)
-- Pilih durasi pendek (3-6 bulan)
-- Cek apakah creator terpercaya
+- Choose pools with small deposits first (10-50 USDC)
+- Choose short duration (3-6 months)
+- Check if creator is trustworthy
 
 ❌ **DON'T:**
-- Jangan langsung join pool besar
-- Jangan abaikan collateral requirement
-- Jangan join jika tidak siap komitmen
+- Don't jump into large pools right away
+- Don't ignore collateral requirements
+- Don't join if not ready to commit
 
-### Untuk Advanced Users
+### For Advanced Users
 
-- Diversifikasi ke beberapa pool berbeda
-- Perhatikan expected yield dari AI
-- Hitung opportunity cost dari collateral lock
+- Diversify across different pools
+- Pay attention to expected yield from AI
+- Calculate opportunity cost of collateral lock
 
-## Keluar dari Pool
+## Leaving a Pool
 
-### Bisa Keluar?
+### Can You Leave?
 
 ```
-Aturan keluar:
-├─ SEBELUM pool mulai: Bisa withdraw full
-├─ SETELAH pool mulai: TIDAK bisa keluar
-└─ Collateral terkunci sampai pool selesai
+Exit rules:
+├─ BEFORE pool starts: Can withdraw fully
+├─ AFTER pool starts: CANNOT leave
+└─ Collateral locked until pool completes
 ```
 
 ### Emergency Exit
 
-Tidak ada emergency exit setelah pool aktif. Ini untuk melindungi semua participant dari:
-- Peserta yang kabur setelah menang
-- Manipulasi pool
-- Ketidakadilan bagi peserta lain
+No emergency exit after pool is active. This protects all participants from:
+- Participants who run away after winning
+- Pool manipulation
+- Unfairness to other participants
 
 ## FAQ
 
-### "Berapa lama proses join?"
+### "How long does joining take?"
 
-Transaction biasanya selesai dalam 2-5 detik di Mantle.
+Transaction usually completes in 2-5 seconds on Mantle.
 
-### "Apakah bisa join multiple pools?"
+### "Can I join multiple pools?"
 
-Ya, Anda bisa join sebanyak mungkin pool selama punya USDC yang cukup.
+Yes, you can join as many pools as you have USDC for.
 
-### "Collateral aman?"
+### "Is collateral safe?"
 
-Collateral dikelola oleh smart contract yang sudah diaudit. Tidak ada yang bisa mengambil collateral Anda kecuali:
-- Anda tidak deposit (slashing)
-- Pool selesai (dikembalikan)
+Collateral is managed by an audited smart contract. No one can take your collateral except:
+- You don't deposit (slashing)
+- Pool completes (returned)
 
-### "Kapan pool mulai?"
+### "When does pool start?"
 
-Pool mulai ketika semua slot terisi. Setelah itu, cycle pertama langsung dimulai.
+Pool starts when all slots are filled. After that, the first cycle begins immediately.

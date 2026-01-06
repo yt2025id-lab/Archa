@@ -1,36 +1,36 @@
-# 💳 Melakukan Deposit
+# 💳 Make Deposits
 
-Panduan lengkap untuk melakukan deposit bulanan di pool Archa.
+Complete guide to making monthly deposits in Archa pools.
 
 ## Overview
 
-Setiap cycle, semua participant wajib deposit. Deposit ini akan dikumpulkan dan diberikan ke pemenang cycle tersebut.
+Every cycle, all participants must deposit. These deposits are collected and given to that cycle's winner.
 
 ```
-Flow Deposit:
-├─ Cycle dimulai
-├─ Deposit window terbuka (25 hari)
-├─ Grace period (3 hari)
+Deposit Flow:
+├─ Cycle starts
+├─ Deposit window opens (25 days)
+├─ Grace period (3 days)
 ├─ Deadline
-├─ Slashing (jika tidak deposit)
+├─ Slashing (if not deposited)
 └─ Winner selection + distribution
 ```
 
-## Kapan Harus Deposit?
+## When to Deposit?
 
-### Timeline Setiap Cycle
+### Timeline Each Cycle
 
 ```
 30-Day Cycle Example:
 ├─ Day 1-25: Regular deposit window
-├─ Day 26-28: Grace period (masih bisa deposit)
+├─ Day 26-28: Grace period (can still deposit)
 ├─ Day 29: Final check
 └─ Day 30: Winner selection
 ```
 
-### Status Deposit Anda
+### Your Deposit Status
 
-Di dashboard, cek status deposit:
+On the dashboard, check your deposit status:
 
 ```
 My Deposit Status:
@@ -41,13 +41,13 @@ My Deposit Status:
 └─ Collateral Buffer: Available (auto-deposit if missed)
 ```
 
-## Cara Deposit
+## How to Deposit
 
-### Step 1: Buka Pool
+### Step 1: Open Pool
 
-1. Navigasi ke dashboard atau **My Pools**
-2. Pilih pool yang ingin Anda deposit
-3. Klik **"View Pool"**
+1. Navigate to dashboard or **My Pools**
+2. Select the pool you want to deposit to
+3. Click **"View Pool"**
 
 ### Step 2: Deposit Section
 
@@ -61,7 +61,7 @@ Deposit This Cycle:
 
 ### Step 3: Execute Deposit
 
-1. Klik **"Deposit Now"**
+1. Click **"Deposit Now"**
 2. Review transaction:
    ```
    Deposit Confirmation:
@@ -70,8 +70,8 @@ Deposit This Cycle:
    ├─ Amount: 50 USDC
    └─ Gas: ~0.01 MNT
    ```
-3. Confirm di wallet
-4. Tunggu confirmation
+3. Confirm in wallet
+4. Wait for confirmation
 
 ### Step 4: Deposit Complete
 
@@ -83,11 +83,11 @@ Deposit This Cycle:
 └─ Eligible for winner selection: YES
 ```
 
-## Auto-Deposit dari Collateral
+## Auto-Deposit from Collateral
 
-### Bagaimana Cara Kerjanya?
+### How Does It Work?
 
-Jika Anda lupa atau tidak bisa deposit:
+If you forget or can't deposit:
 
 ```
 Auto-Deposit Flow:
@@ -100,10 +100,10 @@ Auto-Deposit Flow:
 └─ You remain eligible (if collateral covered)
 ```
 
-### Contoh Skenario
+### Example Scenario
 
 ```
-Scenario: Lupa deposit cycle 5
+Scenario: Forgot to deposit cycle 5
 
 Your status:
 ├─ Deposit due: 50 USDC
@@ -115,40 +115,40 @@ Your status:
 
 ### Warning!
 
-⚠️ **Collateral auto-deposit adalah safety net, bukan solusi utama!**
+⚠️ **Collateral auto-deposit is a safety net, not the main solution!**
 
-Risiko mengandalkan collateral:
-- Collateral yield berkurang
-- Collateral bisa habis
-- Jika habis, Anda di-slash dan excluded
+Risks of relying on collateral:
+- Collateral yield decreases
+- Collateral can run out
+- If depleted, you're slashed and excluded
 
-## Notifikasi
+## Notifications
 
 ### Reminder System
 
-Archa akan mengingatkan Anda:
+Archa will remind you:
 
-| Waktu | Notifikasi |
-|-------|-----------|
-| Day 1 | "Cycle X dimulai, deposit window open" |
-| Day 20 | "5 hari lagi deadline deposit" |
-| Day 25 | "Besok masuk grace period" |
-| Day 28 | "HARI TERAKHIR untuk deposit!" |
+| Time | Notification |
+|------|-------------|
+| Day 1 | "Cycle X started, deposit window open" |
+| Day 20 | "5 days left until deposit deadline" |
+| Day 25 | "Tomorrow enters grace period" |
+| Day 28 | "LAST DAY to deposit!" |
 
-### Cara Aktifkan Notifikasi
+### How to Enable Notifications
 
 1. Connect wallet
-2. Buka Settings
+2. Open Settings
 3. Enable notifications:
    - Browser push notifications
-   - Email (jika tersedia)
+   - Email (if available)
    - Telegram bot (coming soon)
 
 ## Batch Deposit
 
 ### Multiple Pools
 
-Jika Anda bergabung di beberapa pool:
+If you've joined multiple pools:
 
 ```
 My Pending Deposits:
@@ -161,7 +161,7 @@ My Pending Deposits:
 
 ### Single Transaction
 
-Fitur batch deposit memungkinkan Anda deposit ke semua pool dalam satu transaction, menghemat gas.
+The batch deposit feature allows you to deposit to all pools in one transaction, saving gas.
 
 ## Deposit History
 
@@ -178,7 +178,7 @@ Deposit History - Pool #42:
 
 ### Export Records
 
-Untuk keperluan tax atau tracking:
+For tax or tracking purposes:
 - Download CSV deposit history
 - View on-chain transactions
 
@@ -187,12 +187,12 @@ Untuk keperluan tax atau tracking:
 ### "Insufficient Balance"
 
 ```
-Problem: USDC balance tidak cukup
+Problem: USDC balance not enough
 
 Solutions:
-├─ Bridge more USDC ke Mantle
-├─ Swap MNT/other tokens ke USDC
-└─ Collateral akan cover (jika tersedia)
+├─ Bridge more USDC to Mantle
+├─ Swap MNT/other tokens to USDC
+└─ Collateral will cover (if available)
 ```
 
 ### "Transaction Failed"
@@ -201,10 +201,10 @@ Solutions:
 Problem: Deposit transaction failed
 
 Solutions:
-├─ Cek gas balance (MNT)
-├─ Cek USDC approval
-├─ Retry dengan gas lebih tinggi
-└─ Cek network congestion
+├─ Check gas balance (MNT)
+├─ Check USDC approval
+├─ Retry with higher gas
+└─ Check network congestion
 ```
 
 ### "Already Deposited"
@@ -213,9 +213,9 @@ Solutions:
 Problem: Trying to deposit twice
 
 Note:
-├─ Anda hanya perlu deposit 1x per cycle
-├─ Double deposit tidak dimungkinkan
-└─ Excess akan di-reject
+├─ You only need to deposit 1x per cycle
+├─ Double deposit is not allowed
+└─ Excess will be rejected
 ```
 
 ### "Pool Not Active"
@@ -224,55 +224,55 @@ Note:
 Problem: Cannot deposit
 
 Possible reasons:
-├─ Pool masih WAITING (belum full)
-├─ Pool sudah COMPLETED
-├─ Cycle belum dimulai
-└─ Deposit window belum open
+├─ Pool still WAITING (not full)
+├─ Pool already COMPLETED
+├─ Cycle hasn't started
+└─ Deposit window not open
 ```
 
 ## Best Practices
 
-### Deposit Tepat Waktu
+### Deposit on Time
 
 ✅ **DO:**
 - Set calendar reminder
-- Deposit di awal cycle
+- Deposit early in the cycle
 - Maintain USDC buffer
 - Enable notifications
 
 ❌ **DON'T:**
-- Jangan tunggu last minute
-- Jangan rely on collateral
-- Jangan abaikan notifications
+- Don't wait until last minute
+- Don't rely on collateral
+- Don't ignore notifications
 
 ### Financial Planning
 
 ```
 Monthly Planning:
-├─ Pool A deposit: 50 USDC (tanggal 1)
-├─ Pool B deposit: 100 USDC (tanggal 15)
+├─ Pool A deposit: 50 USDC (1st of month)
+├─ Pool B deposit: 100 USDC (15th of month)
 ├─ Total monthly: 150 USDC
 └─ Buffer: Always keep extra 50 USDC
 ```
 
 ## FAQ
 
-### "Bisa deposit lebih awal?"
+### "Can I deposit early?"
 
-Ya! Anda bisa deposit kapan saja selama deposit window. Tidak perlu tunggu mendekati deadline.
+Yes! You can deposit anytime during the deposit window. No need to wait until the deadline.
 
-### "Kalau deposit telat gimana?"
+### "What if I deposit late?"
 
-Selama masih dalam grace period, deposit masih diterima. Setelah deadline, collateral akan digunakan (jika ada).
+As long as it's within the grace period, deposit is still accepted. After the deadline, collateral is used (if available).
 
-### "Bisa deposit partial?"
+### "Can I deposit partial?"
 
-Tidak. Deposit harus full amount sesuai pool requirement.
+No. Deposit must be the full amount per pool requirement.
 
-### "Deposit kemana uangnya?"
+### "Where does my deposit go?"
 
-Deposit masuk ke smart contract pool dan langsung di-deploy ke AI yield optimizer. Di akhir cycle, pot + yield diberikan ke pemenang.
+Deposit goes to the pool smart contract and is immediately deployed to the AI yield optimizer. At cycle end, pot + yield goes to the winner.
 
-### "Apakah deposit bisa di-refund?"
+### "Can deposits be refunded?"
 
-Tidak. Deposit untuk cycle yang sedang berjalan tidak bisa di-refund. Ini masuk ke pot pemenang.
+No. Deposits for the current cycle cannot be refunded. They go into the winner's pot.

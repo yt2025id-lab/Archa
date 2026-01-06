@@ -1,31 +1,31 @@
 # 🤖 AI Yield Optimizer
 
-Panduan lengkap tentang AI Yield Optimizer di Archa.
+Complete guide to the AI Yield Optimizer in Archa.
 
 ## Overview
 
-AI Yield Optimizer adalah sistem otomatis yang mengelola dana pool dan collateral untuk menghasilkan yield maksimal dengan risiko terkontrol.
+AI Yield Optimizer is an automated system that manages pool and collateral funds to generate maximum yield with controlled risk.
 
-## Mengapa AI?
+## Why AI?
 
-### Masalah Manual DeFi Management
+### Problems with Manual DeFi Management
 
 | Problem | Impact |
 |---------|--------|
 | 500+ protocols | Impossible to track manually |
-| APY berubah tiap jam | Missed opportunities |
+| APY changes hourly | Missed opportunities |
 | Whale movements | Risk detection requires 24/7 monitoring |
 | Complex analysis | Requires deep expertise |
 
-### Solusi AI
+### AI Solution
 
 ```
 ┌─────────────────────────────────────────┐
 │         AI YIELD OPTIMIZER              │
 ├─────────────────────────────────────────┤
 │                                         │
-│  ✅ Monitor 24/7 tanpa tidur            │
-│  ✅ Analyze semua protocols instantly   │
+│  ✅ Monitor 24/7 without sleeping       │
+│  ✅ Analyze all protocols instantly     │
 │  ✅ Detect risks before they happen     │
 │  ✅ Rebalance automatically             │
 │  ✅ Optimize risk-adjusted returns      │
@@ -33,11 +33,11 @@ AI Yield Optimizer adalah sistem otomatis yang mengelola dana pool dan collatera
 └─────────────────────────────────────────┘
 ```
 
-## Cara Kerja
+## How It Works
 
 ### 1. Data Collection
 
-AI mengumpulkan data dari berbagai sumber:
+AI collects data from various sources:
 
 ```
 Data Sources:
@@ -50,7 +50,7 @@ Data Sources:
 
 ### 2. Analysis
 
-AI menganalisis setiap protocol:
+AI analyzes each protocol:
 
 ```
 For each protocol:
@@ -66,7 +66,7 @@ For each protocol:
 
 ### 3. Scoring
 
-AI memberikan skor untuk setiap protocol:
+AI assigns a score to each protocol:
 
 ```
 Score = (APY × 0.3) + (TVL_stability × 0.25) +
@@ -81,7 +81,7 @@ Example:
 
 ### 4. Allocation
 
-AI mengalokasikan dana berdasarkan skor dan risk profile:
+AI allocates funds based on score and risk profile:
 
 ```
 Conservative Strategy:
@@ -104,7 +104,7 @@ Aggressive Strategy:
 
 ### 5. Monitoring & Rebalancing
 
-AI terus monitor dan rebalance jika diperlukan:
+AI continuously monitors and rebalances when needed:
 
 ```
 Rebalance Triggers:
@@ -176,7 +176,7 @@ AI Risk Controls:
 
 ### Yield Prophet Feature
 
-AI memprediksi APY 7 hari ke depan menggunakan:
+AI predicts APY for the next 7 days using:
 
 ```
 Prediction Factors:
@@ -217,7 +217,7 @@ Prediction Factors:
 
 ### Whale Detection
 
-AI mendeteksi pergerakan whale (large holders):
+AI detects whale (large holder) movements:
 
 ```
 ┌─────────────────────────────────────────┐
@@ -283,32 +283,32 @@ Every AI action is recorded:
 
 ### Verifiable
 
-Anda bisa verify semua:
-- Current allocations di block explorer
+You can verify everything:
+- Current allocations on block explorer
 - Historical transactions
 - Yield accrual
 - Protocol interactions
 
 ## FAQ
 
-### "Apakah AI bisa rugi?"
+### "Can the AI lose money?"
 
-AI meminimalkan risiko tapi tidak menghilangkan sepenuhnya. Risiko yang tersisa:
-- Smart contract bugs di underlying protocols
+AI minimizes risk but doesn't eliminate it completely. Remaining risks include:
+- Smart contract bugs in underlying protocols
 - Black swan events
 - Extreme market conditions
 
-### "Siapa yang kontrol AI?"
+### "Who controls the AI?"
 
-- AI berjalan autonomous berdasarkan pre-defined rules
-- Emergency shutdown oleh multisig (team + community)
-- Rules update melalui governance (future)
+- AI runs autonomously based on pre-defined rules
+- Emergency shutdown by multisig (team + community)
+- Rules update through governance (future)
 
-### "Berapa fee AI?"
+### "What's the AI fee?"
 
-- Saat ini: 0% (hackathon phase)
-- Future: TBD melalui governance
+- Currently: 0% (hackathon phase)
+- Future: TBD through governance
 
-### "Apakah bisa opt-out dari AI?"
+### "Can I opt-out from AI?"
 
-Saat ini tidak. Semua pool menggunakan AI Yield Optimizer. Future versions mungkin allow manual management.
+Currently no. All pools use the AI Yield Optimizer. Future versions may allow manual management.

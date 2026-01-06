@@ -1,36 +1,36 @@
-# 🏆 Klaim Kemenangan
+# 🏆 Claim Winnings
 
-Panduan lengkap tentang proses penerimaan pot arisan di Archa.
+Complete guide to receiving the arisan pot in Archa.
 
-## Bagaimana Pemenang Ditentukan?
+## How is the Winner Determined?
 
-Setiap cycle, satu pemenang dipilih secara random menggunakan VRF (Verifiable Random Function).
+Each cycle, one winner is randomly selected using VRF (Verifiable Random Function).
 
 ```
 Selection Process:
-├─ Cycle berakhir
-├─ Smart contract identify eligible participants
-├─ VRF generate random number
+├─ Cycle ends
+├─ Smart contract identifies eligible participants
+├─ VRF generates random number
 ├─ Random number → winner index
-├─ Winner menerima pot
+├─ Winner receives pot
 └─ Winner marked as "hasReceivedPot"
 ```
 
-### Siapa yang Eligible?
+### Who is Eligible?
 
 ```
 Eligible Requirements:
-├─ ✅ Participant aktif
-├─ ✅ Belum pernah menerima pot
-├─ ✅ Tidak default (deposit terpenuhi)
-└─ ✅ Deposit cycle ini sudah masuk
+├─ ✅ Active participant
+├─ ✅ Hasn't received pot yet
+├─ ✅ Not defaulted (deposit fulfilled)
+└─ ✅ This cycle's deposit is in
 ```
 
-## Menerima Kemenangan
+## Receiving Winnings
 
 ### Automatic Distribution
 
-Kabar baik! Di Archa, kemenangan **otomatis ditransfer** ke wallet Anda.
+Good news! In Archa, winnings are **automatically transferred** to your wallet.
 
 ```
 Winner Notification:
@@ -41,20 +41,20 @@ Winner Notification:
 └─ Funds sent to: 0xYourWallet...
 ```
 
-### Apa yang Anda Terima?
+### What Do You Receive?
 
 ```
 Pot Breakdown:
 ├─ Base Deposits: 500 USDC (10 × 50)
-├─ Cycle Yield: +42 USDC (dari AI optimizer)
+├─ Cycle Yield: +42 USDC (from AI optimizer)
 └─ TOTAL POT: 542 USDC
 
-✅ Langsung masuk ke wallet Anda!
+✅ Directly sent to your wallet!
 ```
 
-## Lifecycle Setelah Menang
+## Lifecycle After Winning
 
-### Status Berubah
+### Status Changes
 
 ```
 Before Winning:
@@ -65,40 +65,40 @@ Before Winning:
 After Winning:
 ├─ hasReceivedPot: true
 ├─ Eligible for selection: NO (excluded)
-└─ Must deposit: YES (sampai pool selesai)
+└─ Must deposit: YES (until pool completes)
 ```
 
-### Kewajiban Setelah Menang
+### Obligations After Winning
 
-⚠️ **Penting:** Menang TIDAK berarti selesai!
+⚠️ **Important:** Winning does NOT mean you're done!
 
 ```
 Post-Win Obligations:
 ├─ Continue depositing every cycle
-├─ Collateral masih terkunci
-├─ Sampai pool COMPLETED
+├─ Collateral still locked
+├─ Until pool COMPLETED
 └─ Failure = slashing from collateral
 ```
 
-### Contoh Timeline
+### Example Timeline
 
 ```
 Pool 10 Participants (10 Cycles):
 
-Anda menang Cycle 3:
+You win Cycle 3:
 ├─ Cycle 1: Deposit ✅
 ├─ Cycle 2: Deposit ✅
-├─ Cycle 3: Deposit ✅ → MENANG! 🎉 (+542 USDC)
-├─ Cycle 4: Deposit ✅ (wajib)
-├─ Cycle 5: Deposit ✅ (wajib)
+├─ Cycle 3: Deposit ✅ → WON! 🎉 (+542 USDC)
+├─ Cycle 4: Deposit ✅ (required)
+├─ Cycle 5: Deposit ✅ (required)
 ├─ ...
-├─ Cycle 10: Deposit ✅ (wajib)
+├─ Cycle 10: Deposit ✅ (required)
 └─ Pool Completed → Collateral returned!
 ```
 
 ## Collateral Return
 
-### Kapan Collateral Dikembalikan?
+### When is Collateral Returned?
 
 ```
 Collateral Return Conditions:
@@ -110,30 +110,30 @@ Collateral Return Conditions:
 
 ### Final Settlement
 
-Di akhir pool:
+At pool end:
 
 ```
 Final Settlement:
-├─ Original Collateral: 450 USDC
+├─ Original Collateral: 562.5 USDC
 ├─ Collateral Yield: +38 USDC
 ├─ Slashing (if any): -0 USDC
-└─ YOU RECEIVE: 488 USDC
+└─ YOU RECEIVE: 600.5 USDC
 
 Total Earnings Summary:
 ├─ Pot Won (Cycle 3): 542 USDC
-├─ Collateral Returned: 488 USDC
+├─ Collateral Returned: 600.5 USDC
 ├─ Total Deposits Made: -500 USDC
-└─ NET PROFIT: +530 USDC
+└─ NET PROFIT: +642.5 USDC
 ```
 
-## Verifikasi Kemenangan
+## Verifying Winnings
 
 ### On-Chain Proof
 
-Semua hasil bisa diverifikasi:
+All results can be verified:
 
 1. **VRF Transaction**
-   - Hash VRF request
+   - VRF request hash
    - Random number generated
    - Verifiable on block explorer
 
@@ -147,7 +147,7 @@ Semua hasil bisa diverifikasi:
    - Amount
    - Recipient
 
-### Cara Verifikasi
+### How to Verify
 
 ```
 Steps to Verify:
@@ -161,7 +161,7 @@ Steps to Verify:
 
 ## Edge Cases
 
-### Menang di Cycle Terakhir
+### Winning in Last Cycle
 
 ```
 Last Cycle Scenario:
@@ -172,7 +172,7 @@ Last Cycle Scenario:
 └─ All collateral returned
 ```
 
-### Menang Tapi Collateral Habis
+### Winning but Collateral Depleted
 
 ```
 Scenario: Won Cycle 3, defaulted Cycle 6
@@ -194,9 +194,9 @@ If VRF takes longer than expected:
 └─ Distribution happens when VRF completes
 ```
 
-## Probabilitas Menang
+## Winning Probability
 
-### Setiap Orang Pasti Menang Sekali
+### Everyone Wins Exactly Once
 
 ```
 Guarantee:
@@ -218,14 +218,14 @@ Cycle Probabilities:
 └─ Cycle 10 (1 eligible): 100% chance
 ```
 
-### Menang Awal vs Akhir
+### Early vs Late Win
 
 | Timing | Pros | Cons |
 |--------|------|------|
-| **Menang Awal** | Dapat pot lebih cepat, bisa re-invest | Harus tetap deposit sampai akhir |
-| **Menang Akhir** | Pot mungkin lebih besar (more yield) | Tunggu lebih lama |
+| **Win Early** | Get pot sooner, can reinvest | Must keep depositing until end |
+| **Win Late** | Pot may be larger (more yield) | Wait longer |
 
-**Expected value sama** - tidak ada yang lebih untung.
+**Expected value is the same** - no one is better off.
 
 ## Notifications
 
@@ -241,7 +241,7 @@ Notification Types:
 
 ### Check Your Status
 
-Di dashboard:
+On dashboard:
 ```
 My Pool Status:
 ├─ Pool #42
@@ -253,26 +253,26 @@ My Pool Status:
 
 ## FAQ
 
-### "Apakah kemenangan bisa dibatalkan?"
+### "Can winnings be revoked?"
 
-Tidak. Setelah pot ditransfer, tidak bisa diambil kembali. Bahkan jika Anda default setelahnya.
+No. Once the pot is transferred, it cannot be taken back. Even if you default afterwards.
 
-### "Kenapa saya belum menang padahal sudah lama?"
+### "Why haven't I won yet even though it's been a while?"
 
-Pemilihan 100% random. Jika Anda eligible, Anda PASTI akan menang di suatu cycle sebelum pool selesai.
+Selection is 100% random. If you're eligible, you WILL win in some cycle before the pool completes.
 
-### "Bisa pilih kapan mau menang?"
+### "Can I choose when to win?"
 
-Tidak. Randomness menjamin fairness - tidak ada yang bisa memilih atau memprediksi.
+No. Randomness guarantees fairness - no one can choose or predict.
 
-### "Bagaimana jika ada tie?"
+### "What if there's a tie?"
 
-Tidak mungkin tie. Random number selalu menghasilkan 1 pemenang.
+Ties are impossible. The random number always produces 1 winner.
 
-### "Apakah pot sudah include tax?"
+### "Is the pot pre-tax?"
 
-Pot adalah gross amount. Tax compliance adalah tanggung jawab masing-masing participant sesuai jurisdiksi masing-masing.
+The pot is a gross amount. Tax compliance is each participant's responsibility according to their jurisdiction.
 
-### "Kalau wallet saya di-hack setelah menang?"
+### "What if my wallet is hacked after winning?"
 
-Dana yang sudah diterima adalah tanggung jawab Anda. Archa tidak bisa recover funds yang sudah ditransfer. Selalu jaga keamanan wallet Anda.
+Funds that have been received are your responsibility. Archa cannot recover funds that have been transferred. Always keep your wallet secure.

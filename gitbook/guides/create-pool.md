@@ -1,86 +1,86 @@
-# 🎯 Membuat Pool Baru
+# 🎯 Create a Pool
 
-Panduan lengkap untuk membuat pool arisan baru di Archa.
+Complete guide to creating a new arisan pool in Archa.
 
-## Siapa yang Bisa Membuat Pool?
+## Who Can Create a Pool?
 
-Siapa saja! Tidak perlu izin khusus untuk membuat pool. Yang Anda butuhkan:
-- Wallet yang terkoneksi
-- MNT untuk gas fees
-- USDC untuk deposit pertama + collateral (jika langsung join)
+Anyone! No special permission needed to create a pool. You just need:
+- A connected wallet
+- MNT for gas fees
+- USDC for first deposit + collateral (if joining immediately)
 
-## Parameter Pool
+## Pool Parameters
 
-Saat membuat pool, Anda perlu menentukan parameter berikut:
+When creating a pool, you need to set the following parameters:
 
 ### 1. Deposit Amount
 
-Jumlah USDC yang harus disetor setiap cycle.
+The amount of USDC to be deposited each cycle.
 
 ```
-Rekomendasi:
-├─ Pemula: 10-50 USDC
-├─ Menengah: 50-200 USDC
+Recommendations:
+├─ Beginners: 10-50 USDC
+├─ Intermediate: 50-200 USDC
 └─ Advanced: 200-1000 USDC
 ```
 
-**Tips:** Sesuaikan dengan target audience. Pool deposit kecil lebih mudah terisi.
+**Tip:** Match your target audience. Smaller deposit pools fill faster.
 
 ### 2. Total Participants
 
-Jumlah maksimum peserta dalam pool.
+Maximum number of participants in the pool.
 
 ```
-Pertimbangan:
-├─ 5 peserta: Pool cepat selesai, pot kecil
-├─ 10 peserta: Balance antara durasi dan pot
-├─ 20 peserta: Pot besar, tapi komitmen panjang
-└─ Max: 50 peserta
+Considerations:
+├─ 5 participants: Pool finishes quickly, smaller pot
+├─ 10 participants: Balance between duration and pot
+├─ 20 participants: Large pot, but longer commitment
+└─ Max: 50 participants
 ```
 
-**Formula Pot:**
+**Pot Formula:**
 ```
 Pot Size = Deposit × Participants + Yield
-Contoh: 50 USDC × 10 orang = 500 USDC + yield
+Example: 50 USDC × 10 people = 500 USDC + yield
 ```
 
 ### 3. Cycle Duration
 
-Durasi setiap cycle (berapa lama antara rotasi).
+Duration of each cycle (time between rotations).
 
 ```
-Opsi standar:
-├─ 7 hari (mingguan)
-├─ 14 hari (bi-weekly)
-├─ 30 hari (bulanan) ← Paling umum
-└─ 60 hari (bi-monthly)
+Standard options:
+├─ 7 days (weekly)
+├─ 14 days (bi-weekly)
+├─ 30 days (monthly) ← Most common
+└─ 60 days (bi-monthly)
 ```
 
-### 4. Pool Name (Opsional)
+### 4. Pool Name (Optional)
 
-Nama pool untuk identifikasi mudah.
+Name for easy identification.
 
 ```
-Contoh nama:
-├─ "Arisan Keluarga"
+Example names:
+├─ "Family Savings Pool"
 ├─ "Crypto Enthusiasts Pool"
 ├─ "Mantle Builders"
 └─ "Diamond Hands Club"
 ```
 
-## Langkah-langkah Membuat Pool
+## Steps to Create a Pool
 
-### Step 1: Buka Create Pool
+### Step 1: Open Create Pool
 
-1. Navigasi ke halaman **Pools**
-2. Klik tombol **"Create Pool"**
-3. Form pembuatan pool akan muncul
+1. Navigate to the **Pools** page
+2. Click the **"Create Pool"** button
+3. The pool creation form will appear
 
-### Step 2: Isi Parameter
+### Step 2: Fill in Parameters
 
 ```
 Create New Pool Form:
-├─ Pool Name: [opsional]
+├─ Pool Name: [optional]
 ├─ Deposit Amount: [input USDC]
 ├─ Number of Participants: [dropdown 5-50]
 ├─ Cycle Duration: [dropdown]
@@ -95,15 +95,15 @@ Pool Summary:
 ├─ Total Participants: 10
 ├─ Total Duration: 10 months
 ├─ Max Pot Size: 500+ USDC
-├─ Collateral Required: 450 USDC (per participant)
+├─ Collateral Required: 562.5 USDC (per participant)
 └─ Estimated Creation Gas: ~0.05 MNT
 ```
 
 ### Step 4: Create Pool
 
-1. Klik **"Create Pool"**
-2. Approve transaction di wallet
-3. Tunggu confirmation
+1. Click **"Create Pool"**
+2. Approve transaction in wallet
+3. Wait for confirmation
 
 ### Step 5: Pool Created!
 
@@ -115,33 +115,33 @@ Pool Created Successfully:
 └─ Share Link: https://archa.xyz/pool/142
 ```
 
-## Join Sebagai Creator
+## Join as Creator
 
-### Opsi 1: Create Only
+### Option 1: Create Only
 
-- Anda hanya membuat pool
-- Tidak otomatis menjadi participant
-- Tidak perlu deposit/collateral saat create
+- You only create the pool
+- Not automatically a participant
+- No deposit/collateral needed at creation
 
-### Opsi 2: Create & Join
+### Option 2: Create & Join
 
-- Anda membuat dan langsung join
-- Perlu deposit + collateral
-- Anda adalah participant pertama
+- You create and join immediately
+- Need deposit + collateral
+- You are the first participant
 
 ```
 Create & Join:
 ├─ Creation Gas: ~0.05 MNT
 ├─ First Deposit: 50 USDC
-├─ Collateral: 450 USDC
-└─ Total: 500 USDC + gas
+├─ Collateral: 562.5 USDC
+└─ Total: 612.5 USDC + gas
 ```
 
-## Mengundang Peserta
+## Inviting Participants
 
 ### Share Pool Link
 
-Setelah pool dibuat, bagikan link ke calon peserta:
+After pool is created, share the link with potential participants:
 
 ```
 https://arisanonchain.vercel.app/pool/[POOL_ID]
@@ -149,7 +149,7 @@ https://arisanonchain.vercel.app/pool/[POOL_ID]
 
 ### Social Sharing
 
-Gunakan media sosial:
+Use social media:
 - Twitter/X
 - Telegram group
 - Discord
@@ -157,19 +157,19 @@ Gunakan media sosial:
 
 ### Pool Discovery
 
-Pool Anda juga akan muncul di:
-- Halaman Explore Pools
-- Pencarian berdasarkan parameter
+Your pool will also appear in:
+- Explore Pools page
+- Search by parameters
 
 ## Pool Lifecycle
 
 ```
 CREATED ──► WAITING ──► ACTIVE ──► COMPLETED
     │           │          │           │
-    │           │          │           └─ Semua sudah dapat pot
-    │           │          └─ Pool full, cycles berjalan
-    │           └─ Menunggu participants
-    └─ Pool baru dibuat
+    │           │          │           └─ Everyone has received pot
+    │           │          └─ Pool full, cycles running
+    │           └─ Waiting for participants
+    └─ Pool just created
 ```
 
 ### Status Transitions
@@ -182,66 +182,66 @@ CREATED ──► WAITING ──► ACTIVE ──► COMPLETED
 
 ## Best Practices
 
-### Untuk Pool yang Sukses
+### For a Successful Pool
 
 ✅ **DO:**
-- Pilih deposit amount yang reasonable
-- Set participant count yang realistis
-- Punya komunitas/grup yang siap join
-- Jelaskan aturan arisan ke calon peserta
+- Choose a reasonable deposit amount
+- Set a realistic participant count
+- Have a community/group ready to join
+- Explain arisan rules to potential participants
 
 ❌ **DON'T:**
-- Jangan set deposit terlalu tinggi
-- Jangan set participants terlalu banyak
-- Jangan buat pool tanpa rencana distribusi link
+- Don't set deposit too high
+- Don't set too many participants
+- Don't create a pool without a link distribution plan
 
-### Strategi Filling Pool
+### Pool Filling Strategy
 
 ```
-Tips mengisi pool:
-├─ Mulai dari inner circle (teman/keluarga)
-├─ Share di komunitas crypto
-├─ Jelaskan benefit Archa vs arisan tradisional
-├─ Berikan edukasi tentang collateral
-└─ Jadilah participant pertama (build trust)
+Tips to fill your pool:
+├─ Start with inner circle (friends/family)
+├─ Share in crypto communities
+├─ Explain Archa benefits vs traditional arisan
+├─ Educate about collateral
+└─ Be the first participant (builds trust)
 ```
 
 ## Cancel Pool
 
-### Bisa Cancel?
+### Can You Cancel?
 
 ```
 Cancel Rules:
-├─ Status WAITING: Bisa cancel jika belum ada participant
-├─ Status ACTIVE: TIDAK bisa cancel
-└─ Refund: Semua deposits dikembalikan
+├─ Status WAITING: Can cancel if no participants yet
+├─ Status ACTIVE: CANNOT cancel
+└─ Refund: All deposits returned
 ```
 
-### Cara Cancel
+### How to Cancel
 
-1. Buka pool yang Anda buat
-2. Klik **"Cancel Pool"** (jika eligible)
+1. Open the pool you created
+2. Click **"Cancel Pool"** (if eligible)
 3. Confirm transaction
-4. Semua participant di-refund
+4. All participants refunded
 
 ## FAQ
 
-### "Apakah creator dapat keuntungan khusus?"
+### "Does the creator get special benefits?"
 
-Tidak. Creator diperlakukan sama dengan participant lain. Tidak ada fee atau privilege khusus.
+No. Creator is treated the same as other participants. No special fee or privilege.
 
-### "Bagaimana jika pool tidak terisi?"
+### "What if the pool doesn't fill?"
 
-Pool akan tetap dalam status WAITING. Participant yang sudah join bisa withdraw. Tidak ada batas waktu untuk filling pool.
+Pool remains in WAITING status. Participants who joined can withdraw. No time limit for filling.
 
-### "Bisa ubah parameter setelah create?"
+### "Can parameters be changed after creation?"
 
-Tidak. Parameter pool tidak bisa diubah setelah creation. Jika perlu perubahan, cancel dan buat pool baru.
+No. Pool parameters cannot be changed after creation. If changes are needed, cancel and create a new pool.
 
-### "Berapa gas fee untuk create pool?"
+### "What's the gas fee for creating a pool?"
 
-Sekitar 0.05-0.1 MNT di Mantle Network (sangat murah).
+Around 0.05-0.1 MNT on Mantle Network (very cheap).
 
-### "Pool saya tidak muncul di Explore?"
+### "My pool doesn't appear in Explore?"
 
-Pastikan pool sudah ter-confirm di blockchain. Refresh halaman setelah beberapa detik.
+Make sure the pool is confirmed on blockchain. Refresh the page after a few seconds.

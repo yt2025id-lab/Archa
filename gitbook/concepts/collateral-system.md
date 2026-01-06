@@ -1,134 +1,134 @@
 # 🔒 Collateral System
 
-Panduan lengkap tentang sistem collateral di Archa.
+Complete guide to the collateral system in Archa.
 
-## Apa itu Collateral?
+## What is Collateral?
 
-Collateral adalah deposit jaminan yang wajib dibayar oleh setiap peserta sebelum bergabung dengan pool arisan. Collateral berfungsi sebagai:
+Collateral is a security deposit that every participant must pay before joining an arisan pool. Collateral serves as:
 
-1. **Jaminan Komitmen:** Memastikan peserta akan konsisten membayar setoran
-2. **Perlindungan Pool:** Jika ada yang default, pool tetap berjalan
-3. **Sumber Yield Tambahan:** Collateral juga diinvestasikan ke DeFi
+1. **Commitment Guarantee:** Ensures participants will consistently make deposits
+2. **Pool Protection:** If someone defaults, the pool continues running
+3. **Additional Yield Source:** Collateral is also invested in DeFi
 
-## Mengapa Perlu Collateral?
+## Why is Collateral Needed?
 
-### Masalah Arisan Tradisional
-
-```
-Tanpa Collateral:
-├─ Peserta A dapat giliran bulan ke-2
-├─ Peserta A menerima 500 USDC
-├─ Bulan ke-3: Peserta A kabur
-├─ Bulan ke-4 dst: Peserta A tidak bayar
-└─ Peserta lain RUGI karena pot tidak penuh
-```
-
-### Dengan Collateral System
+### Traditional Arisan Problem
 
 ```
-Dengan Collateral:
-├─ Peserta A deposit collateral 450 USDC
-├─ Peserta A dapat giliran bulan ke-2
-├─ Peserta A menerima 500 USDC
-├─ Bulan ke-3: Peserta A tidak bayar
-├─ Smart contract potong collateral 50 USDC
-├─ Pot tetap penuh untuk pemenang bulan itu
-└─ Peserta lain TIDAK RUGI
+Without Collateral:
+├─ Participant A gets their turn in month 2
+├─ Participant A receives 500 USDC
+├─ Month 3: Participant A runs away
+├─ Month 4 onwards: Participant A doesn't pay
+└─ Other participants LOSE because pot is incomplete
 ```
 
-## Formula Collateral
+### With Collateral System
+
+```
+With Collateral:
+├─ Participant A deposits collateral 562.5 USDC
+├─ Participant A gets their turn in month 2
+├─ Participant A receives 500 USDC
+├─ Month 3: Participant A doesn't pay
+├─ Smart contract slashes collateral 50 USDC
+├─ Pot remains full for that month's winner
+└─ Other participants NOT AFFECTED
+```
+
+## Collateral Formula
 
 ```
 Collateral = 125% × Deposit Amount × (Number of Participants - 1)
 ```
 
-### Penjelasan Formula
+### Formula Explanation
 
-**Kenapa dikurangi 1?**
+**Why subtract 1?**
 
-Karena setiap peserta akan menerima pot tepat 1 kali. Saat menerima pot, mereka tidak perlu deposit bulan itu (pot sudah menutupi). Jadi kewajiban maksimal adalah `(N-1)` deposits.
+Because each participant will receive the pot exactly once. When receiving the pot, they don't need to deposit that month (the pot already covers it). So maximum obligation is `(N-1)` deposits.
 
-**Kenapa 125%?**
+**Why 125%?**
 
-Multiplier 125% memastikan tidak ada keuntungan ekonomi dari kabur setelah menang. Jika seseorang menang di giliran pertama dan kabur, mereka akan kehilangan lebih banyak collateral daripada yang mereka terima dari pot.
+The 125% multiplier ensures there's no economic benefit from running away after winning. If someone wins first turn and runs away, they will lose more collateral than they received from the pot.
 
-### Contoh Perhitungan
+### Calculation Examples
 
-**Pool 5 orang × 10 USDC:**
+**Pool 5 people × 10 USDC:**
 ```
 Collateral = 1.25 × 10 × (5-1) = 1.25 × 10 × 4 = 50 USDC
 ```
 
-**Pool 10 orang × 50 USDC:**
+**Pool 10 people × 50 USDC:**
 ```
 Collateral = 1.25 × 50 × (10-1) = 1.25 × 50 × 9 = 562.5 USDC
 ```
 
-**Pool 20 orang × 100 USDC:**
+**Pool 20 people × 100 USDC:**
 ```
 Collateral = 1.25 × 100 × (20-1) = 1.25 × 100 × 19 = 2,375 USDC
 ```
 
-## Skenario Collateral
+## Collateral Scenarios
 
-### Skenario 1: Peserta Konsisten
-
-```
-Timeline Peserta yang Konsisten:
-├─ Bulan 0: Deposit collateral 562.5 USDC + setoran 50 USDC
-├─ Bulan 1-9: Deposit 50 USDC setiap bulan
-├─ Bulan X: Dapat giliran, terima pot + yield
-├─ Bulan 10: Arisan selesai
-└─ Terima: Collateral 562.5 USDC + yield collateral ~34 USDC
-```
-
-**Hasil:** Peserta mendapat semua uang kembali plus yield bonus.
-
-### Skenario 2: Peserta Default Sebelum Dapat Giliran
+### Scenario 1: Consistent Participant
 
 ```
-Peserta B default di bulan ke-4 (belum dapat giliran):
-├─ Bulan 0-3: Deposit normal
-├─ Bulan 4: TIDAK deposit
-├─ Grace period 3 hari: Tidak bayar
-├─ Collateral dipotong: 562.5 - 50 = 512.5 USDC
-├─ Bulan 5: TIDAK deposit
-├─ Collateral dipotong: 512.5 - 50 = 462.5 USDC
-├─ ... (berlanjut sampai collateral habis)
-└─ Peserta B di-remove dari pool
+Timeline of Consistent Participant:
+├─ Month 0: Deposit collateral 562.5 USDC + deposit 50 USDC
+├─ Month 1-9: Deposit 50 USDC each month
+├─ Month X: Get turn, receive pot + yield
+├─ Month 10: Arisan complete
+└─ Receive: Collateral 562.5 USDC + collateral yield ~34 USDC
 ```
 
-**Hasil:** Peserta B kehilangan collateral, tidak dapat giliran.
+**Result:** Participant gets all money back plus bonus yield.
 
-### Skenario 3: Peserta Default Setelah Dapat Giliran (Dengan 125%)
+### Scenario 2: Participant Defaults Before Getting Turn
 
 ```
-Peserta C dapat giliran bulan ke-1 (pertama), lalu default:
-├─ Bulan 1: DAPAT GILIRAN, terima pot 500 USDC
-├─ Bulan 2-10: Tidak deposit (9 bulan)
-├─ Collateral awal: 562.5 USDC
-├─ Collateral dipotong: 9 × 50 = 450 USDC
-├─ Sisa collateral: 562.5 - 450 = 112.5 USDC (hangus)
-└─ Net position: 500 - 562.5 = -62.5 USDC (RUGI!)
+Participant B defaults in month 4 (hasn't received turn yet):
+├─ Month 0-3: Normal deposits
+├─ Month 4: DOESN'T deposit
+├─ 3-day grace period: No payment
+├─ Collateral slashed: 562.5 - 50 = 512.5 USDC
+├─ Month 5: DOESN'T deposit
+├─ Collateral slashed: 512.5 - 50 = 462.5 USDC
+├─ ... (continues until collateral depleted)
+└─ Participant B removed from pool
 ```
 
-**Hasil:** Dengan multiplier 125%, peserta yang kabur setelah menang tetap RUGI!
+**Result:** Participant B loses collateral, doesn't get their turn.
+
+### Scenario 3: Participant Defaults After Getting Turn (With 125%)
+
+```
+Participant C gets turn month 1 (first), then defaults:
+├─ Month 1: GETS TURN, receives pot 500 USDC
+├─ Month 2-10: Doesn't deposit (9 months)
+├─ Initial collateral: 562.5 USDC
+├─ Collateral slashed: 9 × 50 = 450 USDC
+├─ Remaining collateral: 562.5 - 450 = 112.5 USDC (forfeited)
+└─ Net position: 500 - 562.5 = -62.5 USDC (LOSS!)
+```
+
+**Result:** With 125% multiplier, participants who run away after winning still LOSE!
 
 {% hint style="success" %}
-Sistem 125% collateral memastikan tidak ada keuntungan ekonomi dari kabur:
-- Pot pertama = N × deposit = 500 USDC
+The 125% collateral system ensures no economic benefit from running away:
+- First pot = N × deposit = 500 USDC
 - Collateral = 1.25 × deposit × (N-1) = 562.5 USDC
-- Kabur setelah menang pertama = RUGI 62.5 USDC
+- Running away after first win = LOSS of 62.5 USDC
 {% endhint %}
 
-## Mekanisme Slashing
+## Slashing Mechanism
 
-### Trigger Slashing
+### Slashing Triggers
 
-Collateral di-slash jika:
-1. Peserta tidak deposit dalam deadline
-2. Grace period (3 hari) terlewati
-3. Tidak ada action dari peserta
+Collateral is slashed if:
+1. Participant doesn't deposit within deadline
+2. Grace period (3 days) passes
+3. No action from participant
 
 ### Slashing Process
 
@@ -151,15 +151,15 @@ function checkAndSlash(participant) {
 
 ### Auto-Slash vs Manual Trigger
 
-- **Auto-slash:** Smart contract otomatis cek di setiap block
-- **Keeper trigger:** External service trigger slash function
-- **User trigger:** Siapapun bisa trigger slash untuk gas reward
+- **Auto-slash:** Smart contract automatically checks every block
+- **Keeper trigger:** External service triggers slash function
+- **User trigger:** Anyone can trigger slash for gas reward
 
-## Collateral dan Yield
+## Collateral and Yield
 
-### Collateral Juga Menghasilkan
+### Collateral Also Generates Yield
 
-Collateral tidak hanya didiamkan - AI Yield Optimizer juga menginvestasikan collateral ke DeFi protocols.
+Collateral doesn't just sit idle - AI Yield Optimizer also invests collateral into DeFi protocols.
 
 ```
 Total investable funds:
@@ -185,64 +185,64 @@ Example:
 
 ## Collateral vs Trust
 
-### Perbandingan
+### Comparison
 
-| Aspek | Trust-based (Traditional) | Collateral-based (Archa) |
-|-------|--------------------------|--------------------------|
-| **Siapa bisa ikut** | Kenal baik saja | Siapapun |
-| **Risiko kabur** | Tinggi | Minimal |
-| **Perlindungan** | Tidak ada | Automatic |
-| **Scale** | Terbatas | Unlimited |
-| **Enforcement** | Sosial | Smart contract |
+| Aspect | Trust-based (Traditional) | Collateral-based (Archa) |
+|--------|--------------------------|--------------------------|
+| **Who can join** | Close acquaintances only | Anyone |
+| **Run-away risk** | High | Minimal |
+| **Protection** | None | Automatic |
+| **Scale** | Limited | Unlimited |
+| **Enforcement** | Social | Smart contract |
 
-### Kenapa Collateral Lebih Baik?
+### Why Collateral is Better
 
-1. **Objective:** Tidak ada judgment subjektif
-2. **Automatic:** Tidak perlu negosiasi atau minta maaf
-3. **Fair:** Semua peserta diperlakukan sama
-4. **Scalable:** Bisa arisan dengan stranger
+1. **Objective:** No subjective judgment
+2. **Automatic:** No negotiation or apologies needed
+3. **Fair:** All participants treated equally
+4. **Scalable:** Can arisan with strangers
 
-## FAQ Collateral
+## Collateral FAQ
 
-### "Collateral terlalu besar, gimana dong?"
+### "Collateral is too big, what should I do?"
 
-**Opsi 1:** Join pool dengan deposit amount lebih kecil
+**Option 1:** Join a pool with smaller deposit amount
 ```
-Pool 10 USDC/bulan → Collateral hanya 50-238 USDC (tergantung jumlah peserta)
-```
-
-**Opsi 2:** Join pool dengan peserta lebih sedikit
-```
-Pool 5 orang → Collateral = 1.25 × 4 × deposit = 5× deposit
-Pool 20 orang → Collateral = 1.25 × 19 × deposit = 23.75× deposit
+Pool 10 USDC/month → Collateral only 50-238 USDC (depends on participants)
 ```
 
-### "Kapan collateral dikembalikan?"
+**Option 2:** Join a pool with fewer participants
+```
+Pool 5 people → Collateral = 1.25 × 4 × deposit = 5× deposit
+Pool 20 people → Collateral = 1.25 × 19 × deposit = 23.75× deposit
+```
 
-Collateral dikembalikan saat:
-- Pool selesai (semua dapat giliran)
-- Pool di-cancel (sebelum start)
+### "When is collateral returned?"
 
-Tidak dikembalikan jika:
-- Anda default selama pool berlangsung
+Collateral is returned when:
+- Pool completes (everyone has received their turn)
+- Pool is cancelled (before start)
+
+Not returned if:
+- You default during the pool
 - Pool emergency shutdown (case-by-case)
 
-### "Apa yang terjadi jika saya butuh uang mendadak?"
+### "What if I need money urgently?"
 
 {% hint style="danger" %}
-Collateral TIDAK bisa ditarik di tengah pool. Ini by design untuk menjamin pool integrity.
+Collateral CANNOT be withdrawn mid-pool. This is by design to guarantee pool integrity.
 {% endhint %}
 
-Jika butuh uang mendadak, opsi:
-1. Tetap deposit sampai dapat giliran
-2. Biarkan collateral cover sisa kewajiban (akan rugi)
-3. Cari external funding untuk deposit
+If you need money urgently, options:
+1. Keep depositing until you get your turn
+2. Let collateral cover remaining obligations (will lose money)
+3. Find external funding for deposits
 
-### "Bagaimana jika semua orang default?"
+### "What if everyone defaults?"
 
-Extremely unlikely karena:
-- Semua punya collateral at stake
-- Slashing otomatis cover pot
-- Insentif ekonomi untuk konsisten
+Extremely unlikely because:
+- Everyone has collateral at stake
+- Auto-slashing covers the pot
+- Economic incentive to be consistent
 
 Worst case: Pool ends early, remaining collateral distributed proportionally.

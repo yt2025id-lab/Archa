@@ -1,37 +1,37 @@
 # 🎲 Winner Selection
 
-Panduan tentang bagaimana pemenang arisan ditentukan di Archa.
+Guide on how arisan winners are determined in Archa.
 
 ## Overview
 
-Setiap bulan, satu peserta akan menerima pot arisan. Di Archa, pemenang ditentukan secara fair dan transparan menggunakan Verifiable Random Function (VRF).
+Every month, one participant receives the arisan pot. In Archa, winners are determined fairly and transparently using Verifiable Random Function (VRF).
 
-## Kenapa Random?
+## Why Random?
 
-### Masalah Arisan Tradisional
+### Problems with Traditional Arisan
 
-Di arisan tradisional, penentuan giliran bisa bermasalah:
+In traditional arisan, determining turns can be problematic:
 
-| Metode | Problem |
+| Method | Problem |
 |--------|---------|
-| Undian manual | Bisa dicurangi |
-| Urutan join | Unfair, yang join duluan selalu menang duluan |
-| Negosiasi | Drama, tidak objektif |
-| Ketua tentukan | Conflict of interest |
+| Manual draw | Can be cheated |
+| Join order | Unfair, early joiners always win first |
+| Negotiation | Drama, not objective |
+| Organizer decides | Conflict of interest |
 
-### Solusi Archa
+### Archa's Solution
 
-VRF menjamin:
-- **Unpredictable:** Tidak ada yang bisa prediksi pemenang
-- **Verifiable:** Hasil bisa diverifikasi on-chain
-- **Tamper-proof:** Tidak bisa dimanipulasi siapapun
-- **Fair:** Setiap eligible participant punya chance sama
+VRF guarantees:
+- **Unpredictable:** No one can predict the winner
+- **Verifiable:** Results can be verified on-chain
+- **Tamper-proof:** Cannot be manipulated by anyone
+- **Fair:** Every eligible participant has equal chance
 
-## Cara Kerja VRF
+## How VRF Works
 
 ### 1. Eligible Participants
 
-Setiap akhir cycle, smart contract mengidentifikasi eligible participants:
+At the end of each cycle, the smart contract identifies eligible participants:
 
 ```solidity
 Eligible if:
@@ -106,7 +106,7 @@ CYCLE 3:
 
 ### Equal Probability
 
-Setiap eligible participant punya probabilitas sama:
+Every eligible participant has equal probability:
 
 ```
 Cycle 1 (5 people): Each has 20% chance
@@ -130,7 +130,7 @@ Guarantee:
 
 ### On-Chain Proof
 
-Semua data tersimpan on-chain:
+All data is stored on-chain:
 
 ```
 Verifiable data:
@@ -226,9 +226,9 @@ Trigger options:
 
 ### Automatic Distribution
 
-Ketika Anda menang:
-1. Smart contract otomatis transfer pot ke wallet Anda
-2. Anda menerima notification (if enabled)
+When you win:
+1. Smart contract automatically transfers pot to your wallet
+2. You receive notification (if enabled)
 3. Funds immediately available
 4. Status updated to "hasReceivedPot = true"
 
@@ -248,24 +248,24 @@ Example (10 people × 50 USDC):
 
 ## FAQ
 
-### "Bisa tidak milih kapan mau menang?"
+### "Can I choose when to win?"
 
-Tidak. Randomness menjamin fairness - tidak ada yang bisa memilih atau memprediksi.
+No. Randomness guarantees fairness - no one can choose or predict.
 
-### "Kalau menang awal vs akhir, mana yang lebih untung?"
+### "Is it better to win early or late?"
 
-Secara matematis:
-- **Menang awal:** Dapat pot lebih cepat, bisa diinvestasikan
-- **Menang akhir:** Pot mungkin lebih besar (more yield accrued)
-- **Overall:** Expected value sama untuk semua position
+Mathematically:
+- **Win early:** Get pot sooner, can reinvest
+- **Win late:** Pot may be larger (more yield accrued)
+- **Overall:** Expected value is the same for all positions
 
-### "Bagaimana jika VRF service down?"
+### "What if VRF service is down?"
 
 Fallback mechanisms:
-- Retry dengan delay
+- Retry with delay
 - Alternative randomness source
-- Manual trigger dengan community oversight
+- Manual trigger with community oversight
 
-### "Bisa tidak lihat siapa eligible sebelum selection?"
+### "Can I see who's eligible before selection?"
 
-Ya, eligible list visible on-chain. Tapi random number tidak bisa diprediksi, jadi tidak bisa dimanfaatkan.
+Yes, the eligible list is visible on-chain. But the random number cannot be predicted, so it cannot be exploited.
