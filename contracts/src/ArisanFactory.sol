@@ -174,7 +174,7 @@ contract ArisanFactory {
             depositAmount,
             maxParticipants,
             cycleDuration,
-            100 // 100% collateral multiplier
+            125 // 125% collateral multiplier - ensures no profit from running away
         );
 
         // Set AI optimizer

@@ -37,14 +37,16 @@ If you miss payments or leave early:
 
 ## Collateral Amounts
 
-| Pool Type | Monthly Deposit | Collateral Required |
-|-----------|-----------------|---------------------|
-| Starter | 10 USDC | 20 USDC |
-| Standard | 50 USDC | 100 USDC |
-| Premium | 100 USDC | 200 USDC |
+Collateral = 125% × Monthly Deposit × (Participants - 1)
+
+| Pool Type | Monthly Deposit | Participants | Collateral Required |
+|-----------|-----------------|--------------|---------------------|
+| Starter | 10 USDC | 5 | 50 USDC |
+| Standard | 50 USDC | 10 | 562.5 USDC |
+| Premium | 100 USDC | 20 | 2,375 USDC |
 
 {% hint style="info" %}
-Collateral is always 2x the monthly deposit to ensure sufficient coverage for potential defaults.
+The 125% multiplier ensures there's no economic incentive to "run away" after receiving your pot early. Even if you win the first round and disappear, you'll lose more in collateral than you gained.
 {% endhint %}
 
 ## Economic Incentives

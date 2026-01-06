@@ -438,9 +438,9 @@ export default function PoolsPage() {
                 <p className="text-2xl font-bold text-blue-700">
                   {requiredCollateral
                     ? `${requiredCollateral} USDC`
-                    : `${selectedPool.depositAmount * (selectedPool.maxParticipants - 1)} USDC`}
+                    : `${Math.ceil(selectedPool.depositAmount * (selectedPool.maxParticipants - 1) * 1.25)} USDC`}
                 </p>
-                <p className="text-xs text-blue-500 mt-1">Returned at end of arisan + yield bonus</p>
+                <p className="text-xs text-blue-500 mt-1">125% of remaining deposits - returned at end + yield bonus</p>
               </div>
 
               <div className="p-4 bg-purple-50 rounded-xl">
@@ -620,9 +620,9 @@ export default function PoolsPage() {
                   </span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">Required Collateral</span>
+                  <span className="text-gray-500">Required Collateral (125%)</span>
                   <span className="font-semibold">
-                    {createForm.depositAmount * (createForm.maxParticipants - 1)} USDC
+                    {Math.ceil(createForm.depositAmount * (createForm.maxParticipants - 1) * 1.25)} USDC
                   </span>
                 </div>
               </div>
