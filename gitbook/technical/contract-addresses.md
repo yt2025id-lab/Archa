@@ -10,8 +10,9 @@ Network for development and testing.
 
 | Contract | Address | Status |
 |----------|---------|--------|
-| ArisanFactory | `0x...` | ⏳ Coming Soon |
-| Mock USDC | `0x...` | ⏳ Coming Soon |
+| ArisanFactory | `0x15078CaEC56D393F8966999E12e1C03d34D27C16` | ✅ Deployed |
+| AIYieldStrategy | `0x09beBF7c34b05234c0c2462DCCC9A828B595de12` | ✅ Deployed |
+| Mock USDC | `0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D` | ✅ Deployed |
 
 ### Verified Contracts
 
@@ -64,7 +65,7 @@ Explorer: https://explorer.mantle.xyz
 
 | Token | Address | Notes |
 |-------|---------|-------|
-| Mock USDC | TBD | Test token for hackathon |
+| Mock USDC | `0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D` | Test token for hackathon |
 | MNT | Native | Gas token |
 
 ## DeFi Protocol Addresses (Mantle)
@@ -144,8 +145,9 @@ Protocols integrated with AI Yield Optimizer:
 
 | Network | Contract | Verified |
 |---------|----------|----------|
-| Mantle Sepolia | ArisanFactory | ⏳ Pending |
-| Mantle Sepolia | ArisanPool | ⏳ Pending |
+| Mantle Sepolia | ArisanFactory | ✅ Deployed |
+| Mantle Sepolia | AIYieldStrategy | ✅ Deployed |
+| Mantle Sepolia | MockUSDC | ✅ Deployed |
 | Mantle Mainnet | All | ⏳ Post-Hackathon |
 
 ### How to Verify
