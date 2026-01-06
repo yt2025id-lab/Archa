@@ -1,10 +1,10 @@
 # 🔒 Security
 
-Dokumentasi keamanan dan audit platform Archa.
+Security and audit documentation for the Archa platform.
 
 ## Security Overview
 
-Archa dibangun dengan keamanan sebagai prioritas utama. Dokumen ini menjelaskan berbagai lapisan keamanan yang diterapkan.
+Archa is built with security as the top priority. This document explains the various layers of security implemented.
 
 ## Smart Contract Security
 
@@ -112,10 +112,10 @@ Collateral Safety Measures:
 
 ### Slashing Rules
 
-Collateral hanya dapat di-slash dalam kondisi:
+Collateral can only be slashed under these conditions:
 
-1. **Missed Deposit:** Tidak deposit dalam deadline
-2. **Insufficient Collateral:** Collateral tidak cukup untuk auto-deposit
+1. **Missed Deposit:** Did not deposit within deadline
+2. **Insufficient Collateral:** Collateral not enough for auto-deposit
 
 ```solidity
 // Slashing only happens through contract logic
@@ -147,7 +147,7 @@ Emergency Conditions:
 
 ### Strategy Constraints
 
-AI Yield Optimizer memiliki batasan ketat:
+AI Yield Optimizer has strict limitations:
 
 ```
 AI Constraints:
@@ -160,7 +160,7 @@ AI Constraints:
 
 ### Protocol Whitelist
 
-Hanya protokol yang sudah diverifikasi:
+Only verified protocols are allowed:
 
 | Protocol | Status | TVL Requirement | Audit Status |
 |----------|--------|-----------------|--------------|

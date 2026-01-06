@@ -1,6 +1,6 @@
 # 🏗️ Architecture
 
-Arsitektur teknis platform Archa.
+Technical architecture of the Archa platform.
 
 ## System Overview
 

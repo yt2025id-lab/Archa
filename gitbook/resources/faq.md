@@ -1,261 +1,261 @@
 # ❓ FAQ
 
-Pertanyaan yang sering diajukan tentang Archa.
+Frequently asked questions about Archa.
 
-## Umum
+## General
 
-### Apa itu Archa?
+### What is Archa?
 
-Archa adalah platform arisan terdesentralisasi di blockchain Mantle. Kami membawa tradisi keuangan komunal Indonesia (arisan) ke era modern dengan:
-- Smart contracts untuk keamanan dan transparansi
-- Collateral system untuk mencegah peserta kabur
-- AI Yield Optimizer untuk menghasilkan yield tambahan
-- VRF untuk pemilihan pemenang yang fair
+Archa is a decentralized arisan platform on the Mantle blockchain. We bring Indonesia's traditional communal finance (arisan) into the modern era with:
+- Smart contracts for security and transparency
+- Collateral system to prevent participants from running away
+- AI Yield Optimizer to generate additional yield
+- VRF for fair winner selection
 
-### Apa bedanya dengan arisan tradisional?
+### How is it different from traditional arisan?
 
-| Aspek | Arisan Tradisional | Archa |
-|-------|-------------------|-------|
-| Kepercayaan | Bergantung pada ketua | Trustless (smart contract) |
-| Transparansi | Tertutup | Fully on-chain |
-| Risiko kabur | Tinggi | Minimal (collateral) |
-| Yield | Tidak ada | Ada (AI optimized) |
-| Pemilihan pemenang | Manual/bias | Random (VRF) |
+| Aspect | Traditional Arisan | Archa |
+|--------|-------------------|-------|
+| Trust | Depends on organizer | Trustless (smart contract) |
+| Transparency | Closed | Fully on-chain |
+| Run-away risk | High | Minimal (collateral) |
+| Yield | None | Yes (AI optimized) |
+| Winner selection | Manual/biased | Random (VRF) |
 
-### Apakah Archa aman?
+### Is Archa safe?
 
-Ya, Archa didesain dengan keamanan sebagai prioritas:
-- Smart contract open source
-- Collateral melindungi dari peserta kabur
-- Non-custodial (Anda kontrol wallet sendiri)
-- VRF menjamin fairness
-- Audit direncanakan sebelum mainnet
+Yes, Archa is designed with security as a priority:
+- Open source smart contracts
+- Collateral protects against run-away participants
+- Non-custodial (you control your own wallet)
+- VRF guarantees fairness
+- Audit planned before mainnet
 
-## Bergabung & Pool
+## Joining & Pools
 
-### Bagaimana cara mulai menggunakan Archa?
+### How do I start using Archa?
 
-1. Siapkan wallet (MetaMask, Rainbow, dll)
-2. Tambahkan Mantle network ke wallet
-3. Dapatkan USDC di Mantle
-4. Connect wallet ke Archa
-5. Pilih pool dan klik "Join"
+1. Prepare a wallet (MetaMask, Rainbow, etc.)
+2. Add Mantle network to your wallet
+3. Get USDC on Mantle
+4. Connect wallet to Archa
+5. Choose a pool and click "Join"
 
-### Berapa minimum untuk join?
+### What's the minimum to join?
 
-Tergantung pool yang Anda pilih. Setiap pool memiliki deposit amount berbeda:
-- Pool kecil: 10-50 USDC
-- Pool menengah: 50-200 USDC
-- Pool besar: 200-1000 USDC
+Depends on the pool you choose. Each pool has different deposit amounts:
+- Small pools: 10-50 USDC
+- Medium pools: 50-200 USDC
+- Large pools: 200-1000 USDC
 
-Yang perlu disiapkan: **Deposit pertama + Collateral**
+What you need to prepare: **First deposit + Collateral**
 
-### Apa itu collateral?
+### What is collateral?
 
-Collateral adalah jaminan yang dikunci saat Anda join pool. Ini mencegah peserta kabur setelah menang.
+Collateral is a security deposit locked when you join a pool. It prevents participants from running away after winning.
 
 **Formula:**
 ```
-Collateral = Deposit × (Total Cycles - 1)
+Collateral = 125% × Deposit × (Total Cycles - 1)
 
-Contoh: Pool 50 USDC × 10 orang
-Collateral = 50 × 9 = 450 USDC
+Example: Pool 50 USDC × 10 people
+Collateral = 1.25 × 50 × 9 = 562.5 USDC
 ```
 
-Collateral dikembalikan penuh + yield saat pool selesai.
+Collateral is returned in full + yield when pool completes.
 
-### Bisa join lebih dari satu pool?
+### Can I join multiple pools?
 
-Ya! Anda bisa join sebanyak mungkin pool selama punya USDC yang cukup.
+Yes! You can join as many pools as you have USDC for.
 
-## Deposit & Pembayaran
+## Deposits & Payments
 
-### Kapan harus deposit?
+### When do I need to deposit?
 
-Setiap cycle (biasanya bulanan), Anda wajib deposit. Ada deposit window selama ~25 hari.
+Every cycle (usually monthly), you must deposit. There's a deposit window of ~25 days.
 
-### Bagaimana jika lupa deposit?
+### What if I forget to deposit?
 
-Jika lupa deposit:
-1. Grace period 3 hari
-2. Jika tetap tidak deposit, collateral auto-deduct
-3. Jika collateral habis, Anda di-slash
+If you forget to deposit:
+1. 3-day grace period
+2. If still no deposit, collateral auto-deducts
+3. If collateral depletes, you get slashed
 
-**Tips:** Aktifkan notifikasi agar tidak lupa!
+**Tip:** Enable notifications so you don't forget!
 
-### Bisa deposit lebih dari yang diminta?
+### Can I deposit more than required?
 
-Tidak. Deposit harus sesuai jumlah yang ditentukan pool, tidak kurang tidak lebih.
+No. Deposit must match the pool's required amount exactly, no more, no less.
 
-## Pemenang & Klaim
+## Winners & Claims
 
-### Bagaimana pemenang dipilih?
+### How are winners selected?
 
-Pemenang dipilih menggunakan VRF (Verifiable Random Function):
-1. Semua eligible participant diidentifikasi
-2. Random number di-generate on-chain
-3. Random number digunakan untuk memilih pemenang
-4. Hasil bisa diverifikasi siapapun
+Winners are selected using VRF (Verifiable Random Function):
+1. All eligible participants are identified
+2. Random number generated on-chain
+3. Random number used to select winner
+4. Results can be verified by anyone
 
-### Apakah semua orang pasti menang?
+### Does everyone get to win?
 
-Ya! Setiap participant pasti menang tepat 1 kali selama pool berlangsung.
+Yes! Every participant wins exactly once during the pool's lifetime.
 
 ```
-10 peserta = 10 cycle = Semua dapat giliran menang
+10 participants = 10 cycles = Everyone gets a turn to win
 ```
 
-### Kapan menerima pot?
+### When do I receive the pot?
 
-Pot otomatis ditransfer ke wallet Anda saat menang. Tidak perlu claim manual.
+The pot is automatically transferred to your wallet when you win. No manual claim needed.
 
-### Berapa yang saya terima saat menang?
+### How much do I receive when I win?
 
 ```
 Pot = (Deposit × Participants) + Yield
 
-Contoh: 50 USDC × 10 orang + 40 USDC yield = 540 USDC
+Example: 50 USDC × 10 people + 40 USDC yield = 540 USDC
 ```
 
-### Setelah menang, apakah selesai?
+### After winning, am I done?
 
-Tidak! Setelah menang, Anda tetap wajib deposit sampai pool selesai. Ini untuk menjaga fairness bagi peserta lain.
+No! After winning, you must continue depositing until the pool completes. This ensures fairness for other participants.
 
 ## Collateral & Yield
 
-### Apakah collateral menghasilkan yield?
+### Does collateral generate yield?
 
-Ya! Collateral yang dikunci juga di-deploy ke DeFi protocols oleh AI Yield Optimizer. Anda mendapat yield dari collateral ini.
+Yes! Locked collateral is also deployed to DeFi protocols by the AI Yield Optimizer. You earn yield from this collateral.
 
-### Kapan collateral dikembalikan?
+### When is collateral returned?
 
-Collateral dikembalikan saat pool COMPLETED (semua cycle selesai) + semua deposit Anda terpenuhi.
+Collateral is returned when the pool is COMPLETED (all cycles finished) + all your deposits are fulfilled.
 
-### Bagaimana jika saya tidak bisa deposit?
+### What if I can't deposit?
 
-Jika tidak deposit:
-1. Collateral akan digunakan untuk cover deposit
-2. Jika collateral habis, sisa di-slash
-3. Anda mungkin excluded dari pool
+If you don't deposit:
+1. Collateral will cover your deposit
+2. If collateral depletes, remainder is slashed
+3. You may be excluded from the pool
 
-**Solusi:** Pastikan selalu punya buffer USDC atau collateral yang cukup.
+**Solution:** Always keep a USDC buffer or sufficient collateral.
 
 ## AI Yield Optimizer
 
-### Bagaimana AI menghasilkan yield?
+### How does AI generate yield?
 
 AI Yield Optimizer:
-1. Menganalisis 500+ DeFi protocols
-2. Memprediksi APY 7 hari ke depan
-3. Mengalokasikan dana ke protocols terbaik
-4. Auto-rebalance saat kondisi berubah
+1. Analyzes 500+ DeFi protocols
+2. Predicts APY for the next 7 days
+3. Allocates funds to the best protocols
+4. Auto-rebalances when conditions change
 
-### Protocol apa yang digunakan?
+### Which protocols are used?
 
-Saat ini di Mantle:
+Currently on Mantle:
 - Lendle (lending)
 - Merchant Moe (DEX)
 - Agni Finance (DEX)
 
-Akan bertambah seiring development.
+More will be added as development continues.
 
-### Apakah yield dijamin?
+### Is yield guaranteed?
 
-Yield tidak dijamin karena tergantung kondisi market. Namun, AI berusaha mengoptimalkan dengan:
-- Diversifikasi ke multiple protocols
-- Risk scoring untuk setiap protocol
-- Auto-rebalance saat ada anomali
+Yield is not guaranteed as it depends on market conditions. However, AI optimizes by:
+- Diversifying across multiple protocols
+- Risk scoring for each protocol
+- Auto-rebalancing when anomalies occur
 
-## Keamanan
+## Security
 
-### Apakah uang saya aman?
+### Is my money safe?
 
-Dana Anda diamankan oleh:
-- Smart contract yang audited (planned)
-- Non-custodial (Anda kontrol wallet)
-- Collateral system mencegah peserta kabur
+Your funds are secured by:
+- Audited smart contracts (planned)
+- Non-custodial (you control wallet)
+- Collateral system prevents runaways
 - Open source code
 
-### Bagaimana jika ada bug?
+### What if there's a bug?
 
-Archa memiliki:
-- Pausable mechanism untuk emergency
+Archa has:
+- Pausable mechanism for emergencies
 - Bug bounty program (planned)
 - Security response team
 
-### Apakah saya bisa kehilangan uang?
+### Can I lose money?
 
-Risiko potensial:
-- Smart contract bug (mitigated by audits)
+Potential risks:
+- Smart contract bugs (mitigated by audits)
 - DeFi protocol risk (mitigated by diversification)
-- Anda tidak deposit → collateral di-slash
+- You don't deposit → collateral slashed
 
-Archa TIDAK memiliki risiko:
-- Admin kabur (non-custodial)
-- Peserta kabur (collateral system)
-- Pemenang tidak fair (VRF)
+Archa does NOT have risks of:
+- Admin running away (non-custodial)
+- Participants running away (collateral system)
+- Unfair winners (VRF)
 
-## Teknis
+## Technical
 
-### Network apa yang digunakan?
+### Which network is used?
 
-Archa berjalan di **Mantle Network**, sebuah L2 Ethereum dengan:
-- Gas fees sangat rendah
-- Transaksi cepat
+Archa runs on **Mantle Network**, an Ethereum L2 with:
+- Very low gas fees
+- Fast transactions
 - EVM compatible
 
-### Token apa yang digunakan?
+### Which tokens are used?
 
-- **USDC** untuk deposit dan pot
-- **MNT** untuk gas fees
+- **USDC** for deposits and pot
+- **MNT** for gas fees
 
-### Bagaimana cara dapat MNT?
+### How do I get MNT?
 
-1. Bridge dari Ethereum
-2. Beli di exchange (Bybit, KuCoin)
+1. Bridge from Ethereum
+2. Buy on exchanges (Bybit, KuCoin)
 3. Faucet (testnet only)
 
-### Wallet apa yang didukung?
+### Which wallets are supported?
 
 - MetaMask
 - Rainbow
 - WalletConnect compatible wallets
 - Coinbase Wallet
-- Dan lainnya
+- And others
 
-## Lainnya
+## Other
 
-### Apakah ada biaya platform?
+### Are there platform fees?
 
-Saat ini (hackathon phase): **Gratis**
+Currently (hackathon phase): **Free**
 
-Kedepannya mungkin ada small fee untuk:
+In the future, there may be a small fee for:
 - Sustainability
 - AI infrastructure
 - Development
 
-### Bagaimana jika pool tidak terisi penuh?
+### What if a pool doesn't fill up?
 
-Pool akan tetap dalam status WAITING. Participant yang sudah join bisa withdraw jika pool belum mulai.
+Pool remains in WAITING status. Participants who joined can withdraw if pool hasn't started.
 
-### Bisa keluar dari pool yang sudah aktif?
+### Can I leave an active pool?
 
-Tidak. Setelah pool aktif, Anda tidak bisa keluar. Ini untuk melindungi peserta lain.
+No. After pool is active, you cannot leave. This protects other participants.
 
-### Apakah ada mobile app?
+### Is there a mobile app?
 
-Belum. Saat ini Archa bisa diakses via mobile browser. Mobile app direncanakan untuk masa depan.
+Not yet. Currently Archa can be accessed via mobile browser. Mobile app is planned for the future.
 
-### Bagaimana cara memberi feedback?
+### How do I give feedback?
 
 - Twitter: @archaonchain
 - Discord: discord.gg/archa
 - Telegram: t.me/archaonchain
 - GitHub Issues
 
-### Dimana saya bisa belajar lebih lanjut?
+### Where can I learn more?
 
-- Dokumentasi ini (GitBook)
+- This documentation (GitBook)
 - Blog (coming soon)
 - YouTube tutorials (coming soon)
 - Community channels

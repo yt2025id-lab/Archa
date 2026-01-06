@@ -1,10 +1,10 @@
 # 📜 Smart Contracts
 
-Dokumentasi teknis smart contracts Archa.
+Technical documentation for Archa smart contracts.
 
 ## Overview
 
-Archa dibangun dengan arsitektur modular menggunakan dua smart contract utama:
+Archa is built with a modular architecture using two main smart contracts:
 
 ```
 Contract Architecture:
@@ -16,15 +16,15 @@ Contract Architecture:
 
 ## ArisanFactory
 
-### Deskripsi
+### Description
 
-Factory contract untuk membuat dan mengelola pool arisan.
+Factory contract for creating and managing arisan pools.
 
 ### Functions
 
 #### createPool
 
-Membuat pool arisan baru.
+Creates a new arisan pool.
 
 ```solidity
 function createPool(
@@ -37,11 +37,11 @@ function createPool(
 **Parameters:**
 | Param | Type | Description |
 |-------|------|-------------|
-| `_depositAmount` | uint256 | Jumlah USDC per cycle |
-| `_totalParticipants` | uint256 | Jumlah maksimum peserta |
-| `_cycleDuration` | uint256 | Durasi cycle dalam detik |
+| `_depositAmount` | uint256 | USDC amount per cycle |
+| `_totalParticipants` | uint256 | Maximum number of participants |
+| `_cycleDuration` | uint256 | Cycle duration in seconds |
 
-**Returns:** Address pool yang baru dibuat
+**Returns:** Address of the newly created pool
 
 **Events:**
 ```solidity
@@ -55,7 +55,7 @@ event PoolCreated(
 
 #### getPools
 
-Mendapatkan daftar semua pool.
+Gets the list of all pools.
 
 ```solidity
 function getPools() external view returns (address[] memory)
@@ -63,7 +63,7 @@ function getPools() external view returns (address[] memory)
 
 #### getPoolCount
 
-Mendapatkan jumlah total pool.
+Gets the total number of pools.
 
 ```solidity
 function getPoolCount() external view returns (uint256)
@@ -72,16 +72,16 @@ function getPoolCount() external view returns (uint256)
 ### State Variables
 
 ```solidity
-address[] public pools;           // Array semua pool addresses
+address[] public pools;           // Array of all pool addresses
 address public usdcToken;         // USDC token address
 address public yieldOptimizer;    // AI Yield Optimizer address
 ```
 
 ## ArisanPool
 
-### Deskripsi
+### Description
 
-Contract untuk individual pool arisan dengan fitur collateral dan yield optimization.
+Contract for individual arisan pool with collateral and yield optimization features.
 
 ### Structs
 
@@ -90,9 +90,9 @@ Contract untuk individual pool arisan dengan fitur collateral dan yield optimiza
 ```solidity
 struct Participant {
     address addr;           // Wallet address
-    bool hasReceivedPot;    // Sudah menerima pot?
+    bool hasReceivedPot;    // Has received pot?
     uint256 collateral;     // Collateral amount
-    uint256 depositsCount;  // Jumlah deposit yang sudah dilakukan
+    uint256 depositsCount;  // Number of deposits made
 }
 ```
 
@@ -100,9 +100,9 @@ struct Participant {
 
 ```solidity
 enum PoolState {
-    WAITING,    // Menunggu participants
-    ACTIVE,     // Pool sedang berjalan
-    COMPLETED   // Semua cycle selesai
+    WAITING,    // Waiting for participants
+    ACTIVE,     // Pool is running
+    COMPLETED   // All cycles complete
 }
 ```
 
@@ -110,23 +110,23 @@ enum PoolState {
 
 #### joinPool
 
-Bergabung ke pool dengan deposit + collateral.
+Join pool with deposit + collateral.
 
 ```solidity
 function joinPool() external
 ```
 
 **Requirements:**
-- Pool dalam state WAITING
-- Masih ada slot kosong
-- User belum bergabung
+- Pool is in WAITING state
+- Slots still available
+- User hasn't joined yet
 - USDC allowance sufficient
 
 **Process:**
-1. Transfer deposit pertama
+1. Transfer first deposit
 2. Transfer collateral
-3. Register sebagai participant
-4. Jika pool penuh, ubah state ke ACTIVE
+3. Register as participant
+4. If pool is full, change state to ACTIVE
 
 **Events:**
 ```solidity
@@ -139,17 +139,17 @@ event ParticipantJoined(
 
 #### deposit
 
-Melakukan deposit untuk cycle yang sedang berjalan.
+Make deposit for the current cycle.
 
 ```solidity
 function deposit() external
 ```
 
 **Requirements:**
-- Pool dalam state ACTIVE
-- Caller adalah participant
-- Belum deposit cycle ini
-- Dalam deposit window
+- Pool is in ACTIVE state
+- Caller is a participant
+- Haven't deposited this cycle
+- Within deposit window
 
 **Events:**
 ```solidity
@@ -162,16 +162,16 @@ event DepositMade(
 
 #### selectWinner
 
-Memilih pemenang untuk cycle yang sedang berjalan.
+Select winner for the current cycle.
 
 ```solidity
 function selectWinner() external
 ```
 
 **Requirements:**
-- Pool dalam state ACTIVE
-- Deposit window sudah tutup
-- Winner belum dipilih untuk cycle ini
+- Pool is in ACTIVE state
+- Deposit window has closed
+- Winner hasn't been selected for this cycle
 
 **Process:**
 1. Identify eligible participants
@@ -192,16 +192,16 @@ event WinnerSelected(
 
 #### claimCollateral
 
-Klaim collateral setelah pool selesai.
+Claim collateral after pool completes.
 
 ```solidity
 function claimCollateral() external
 ```
 
 **Requirements:**
-- Pool dalam state COMPLETED
-- Caller adalah participant
-- Collateral belum diklaim
+- Pool is in COMPLETED state
+- Caller is a participant
+- Collateral hasn't been claimed
 
 ### View Functions
 
@@ -290,7 +290,7 @@ address public yieldOptimizer;
 
 ```solidity
 function calculateCollateral() public view returns (uint256) {
-    return depositAmount * (totalParticipants - 1);
+    return (depositAmount * (totalParticipants - 1) * 125) / 100;
 }
 ```
 

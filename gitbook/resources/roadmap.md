@@ -1,6 +1,6 @@
 # 🗺️ Roadmap
 
-Rencana pengembangan Archa dari hackathon hingga produksi.
+Archa development plan from hackathon to production.
 
 ## Phase 1: Foundation (Q1 2025)
 

@@ -1,6 +1,6 @@
 # 🔗 Useful Links
 
-Kumpulan link penting untuk pengguna Archa.
+Collection of important links for Archa users.
 
 ## Archa Official
 

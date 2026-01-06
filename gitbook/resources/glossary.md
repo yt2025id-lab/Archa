@@ -1,203 +1,203 @@
 # 📚 Glossary
 
-Daftar istilah yang digunakan di Archa dan ekosistem DeFi.
+List of terms used in Archa and the DeFi ecosystem.
 
 ## A
 
 ### APY (Annual Percentage Yield)
-Tingkat pengembalian tahunan yang sudah memperhitungkan compound interest. Contoh: APY 10% artinya 100 USDC menjadi 110 USDC dalam setahun.
+Annual rate of return that accounts for compound interest. Example: 10% APY means 100 USDC becomes 110 USDC in one year.
 
 ### Arisan
-Sistem keuangan komunal tradisional Indonesia dimana sekelompok orang mengumpulkan uang secara berkala dan diberikan bergiliran kepada anggota.
+Traditional Indonesian communal finance system where a group of people pool money periodically and give it to members on a rotating basis.
 
 ### Auto-Deposit
-Fitur dimana sistem otomatis menggunakan collateral untuk membayar deposit jika peserta lupa atau tidak deposit.
+Feature where the system automatically uses collateral to pay deposit if a participant forgets or fails to deposit.
 
 ## B
 
 ### Block Explorer
-Website untuk melihat transaksi, wallet, dan smart contract di blockchain. Contoh: Mantle Explorer.
+Website to view transactions, wallets, and smart contracts on a blockchain. Example: Mantle Explorer.
 
 ### Bridge
-Infrastruktur untuk memindahkan aset dari satu blockchain ke blockchain lain. Contoh: Ethereum ke Mantle.
+Infrastructure to move assets from one blockchain to another. Example: Ethereum to Mantle.
 
 ## C
 
 ### Collateral
-Jaminan yang dikunci saat bergabung ke pool. Berfungsi untuk mencegah peserta kabur dan sebagai backup deposit.
+Security deposit locked when joining a pool. Functions to prevent participants from running away and as backup for deposits.
 
 ### Cycle
-Satu periode dalam pool arisan. Setiap cycle, semua participant deposit dan satu pemenang dipilih.
+One period in an arisan pool. Each cycle, all participants deposit and one winner is selected.
 
 ## D
 
 ### DeFi (Decentralized Finance)
-Sistem keuangan yang berjalan di blockchain tanpa perantara tradisional seperti bank.
+Financial system running on blockchain without traditional intermediaries like banks.
 
 ### Deposit
-Setoran rutin yang dilakukan setiap cycle oleh semua participant.
+Regular payment made every cycle by all participants.
 
 ### Deposit Window
-Periode waktu dimana participant bisa melakukan deposit. Biasanya 25 hari dari total 30 hari cycle.
+Time period during which participants can make deposits. Usually 25 days out of a 30-day cycle.
 
 ## E
 
 ### ERC-20
-Standar token di Ethereum dan EVM-compatible chains. USDC adalah contoh token ERC-20.
+Token standard on Ethereum and EVM-compatible chains. USDC is an example of an ERC-20 token.
 
 ### Eligible Participant
-Peserta yang memenuhi syarat untuk dipilih sebagai pemenang: sudah deposit, belum pernah menang, tidak default.
+Participant who meets requirements to be selected as winner: has deposited, hasn't won before, not defaulted.
 
 ## F
 
 ### Factory Contract
-Smart contract yang bertugas membuat pool-pool baru. Seperti "pabrik" yang memproduksi pool.
+Smart contract responsible for creating new pools. Like a "factory" that produces pools.
 
 ## G
 
 ### Gas
-Biaya yang dibayar untuk menjalankan transaksi di blockchain. Di Mantle, gas dibayar menggunakan MNT.
+Fee paid to execute transactions on a blockchain. On Mantle, gas is paid using MNT.
 
 ### Grace Period
-Periode tambahan setelah deposit window tutup. Biasanya 3-5 hari untuk memberi kesempatan terakhir deposit.
+Additional period after deposit window closes. Usually 3-5 days to give a final chance to deposit.
 
 ## H
 
 ### Hardware Wallet
-Perangkat fisik untuk menyimpan private key secara offline. Contoh: Ledger, Trezor.
+Physical device for storing private keys offline. Examples: Ledger, Trezor.
 
 ### Harvest
-Mengumpulkan yield yang sudah dihasilkan dari DeFi protocols.
+Collecting yield that has been generated from DeFi protocols.
 
 ## I
 
 ### Impermanent Loss
-Kerugian sementara yang terjadi saat menyediakan likuiditas di DEX karena perubahan harga token.
+Temporary loss that occurs when providing liquidity on a DEX due to token price changes.
 
 ## L
 
 ### L2 (Layer 2)
-Solusi scaling di atas Ethereum untuk transaksi lebih cepat dan murah. Mantle adalah L2.
+Scaling solution on top of Ethereum for faster and cheaper transactions. Mantle is an L2.
 
 ### Lending Protocol
-Protokol DeFi untuk meminjam dan meminjamkan aset. Contoh: Lendle di Mantle.
+DeFi protocol for borrowing and lending assets. Example: Lendle on Mantle.
 
 ### Liquidity
-Ketersediaan aset untuk diperdagangkan. High liquidity = mudah beli/jual tanpa slippage besar.
+Availability of assets for trading. High liquidity = easy to buy/sell without major slippage.
 
 ## M
 
 ### Mainnet
-Network blockchain utama untuk transaksi nyata dengan nilai nyata.
+Main blockchain network for real transactions with real value.
 
 ### Mantle
-Layer 2 Ethereum yang menjadi home network untuk Archa. Dikenal dengan gas fees rendah.
+Ethereum Layer 2 that is the home network for Archa. Known for low gas fees.
 
 ### MetaMask
-Wallet browser paling populer untuk berinteraksi dengan DeFi dan blockchain.
+Most popular browser wallet for interacting with DeFi and blockchain.
 
 ### MNT
-Token native Mantle Network, digunakan untuk gas fees.
+Native token of Mantle Network, used for gas fees.
 
 ## N
 
 ### Non-Custodial
-Sistem dimana pengguna memiliki kontrol penuh atas aset mereka. Private key tidak disimpan oleh platform.
+System where users have full control over their assets. Private key not stored by the platform.
 
 ## O
 
 ### On-Chain
-Aktivitas yang tercatat langsung di blockchain, bisa diverifikasi siapapun.
+Activity recorded directly on the blockchain, verifiable by anyone.
 
 ## P
 
 ### Participant
-Peserta yang sudah bergabung ke pool arisan.
+User who has joined an arisan pool.
 
 ### Pot
-Total dana yang diterima pemenang setiap cycle. Pot = (Deposit × Participants) + Yield.
+Total funds received by the winner each cycle. Pot = (Deposit × Participants) + Yield.
 
 ### Pool
-Satu instance arisan dengan parameter tertentu (jumlah deposit, peserta, durasi).
+One instance of arisan with specific parameters (deposit amount, participants, duration).
 
 ## R
 
 ### Rebalance
-Proses memindahkan dana dari satu protocol ke protocol lain untuk mengoptimalkan yield.
+Process of moving funds from one protocol to another to optimize yield.
 
 ### RPC (Remote Procedure Call)
-Endpoint untuk berkomunikasi dengan blockchain node.
+Endpoint for communicating with a blockchain node.
 
 ### Rug Pull
-Scam dimana developer mengambil semua dana dan kabur. Archa mencegah ini dengan collateral.
+Scam where developers take all funds and run away. Archa prevents this with collateral.
 
 ## S
 
 ### Slashing
-Pemotongan collateral sebagai penalti karena tidak memenuhi kewajiban deposit.
+Cutting collateral as penalty for not fulfilling deposit obligations.
 
 ### Smart Contract
-Program yang berjalan di blockchain secara otomatis dan trustless.
+Program that runs on blockchain automatically and trustlessly.
 
 ### Stablecoin
-Cryptocurrency yang nilainya dipatok ke mata uang fiat. USDC dipatok 1:1 ke USD.
+Cryptocurrency with value pegged to fiat currency. USDC is pegged 1:1 to USD.
 
 ## T
 
 ### Testnet
-Network blockchain untuk testing dengan token tanpa nilai nyata.
+Blockchain network for testing with tokens that have no real value.
 
 ### TVL (Total Value Locked)
-Total nilai aset yang terkunci di suatu protocol DeFi.
+Total value of assets locked in a DeFi protocol.
 
 ### Transaction Hash (Tx Hash)
-Identifier unik untuk setiap transaksi di blockchain.
+Unique identifier for each transaction on blockchain.
 
 ## U
 
 ### USDC
-USD Coin, stablecoin populer yang dipatok 1:1 ke US Dollar. Token yang digunakan di Archa.
+USD Coin, popular stablecoin pegged 1:1 to US Dollar. The token used in Archa.
 
 ## V
 
 ### Vault
-Smart contract yang mengelola deposit pengguna untuk yield generation.
+Smart contract that manages user deposits for yield generation.
 
 ### VRF (Verifiable Random Function)
-Sistem untuk menghasilkan angka random yang bisa diverifikasi on-chain. Digunakan untuk pemilihan pemenang.
+System for generating random numbers that can be verified on-chain. Used for winner selection.
 
 ## W
 
 ### Wallet
-Aplikasi atau perangkat untuk menyimpan dan mengelola cryptocurrency.
+Application or device for storing and managing cryptocurrency.
 
 ### Wallet Address
-Alamat unik untuk menerima cryptocurrency. Contoh: 0x742d35Cc...
+Unique address for receiving cryptocurrency. Example: 0x742d35Cc...
 
 ### Whale
-Holder cryptocurrency dengan jumlah sangat besar. Pergerakan whale bisa mempengaruhi market.
+Cryptocurrency holder with very large amounts. Whale movements can affect the market.
 
 ### Whitelist
-Daftar protocol atau address yang diizinkan. AI Yield Optimizer hanya menggunakan protocols dalam whitelist.
+List of allowed protocols or addresses. AI Yield Optimizer only uses protocols in the whitelist.
 
 ### Withdraw
-Menarik dana dari smart contract ke wallet pribadi.
+Taking funds from smart contract to personal wallet.
 
 ## Y
 
 ### Yield
-Pengembalian atau profit dari investasi di DeFi. Bisa berupa interest, fees, atau rewards.
+Return or profit from investing in DeFi. Can be interest, fees, or rewards.
 
 ### Yield Farming
-Strategi memaksimalkan yield dengan memindahkan aset antar protocols.
+Strategy to maximize yield by moving assets between protocols.
 
 ### Yield Optimizer
-Sistem (seperti AI di Archa) yang otomatis mencari dan mengalokasikan dana ke yield terbaik.
+System (like AI in Archa) that automatically finds and allocates funds to the best yield.
 
-## Numerik
+## Numeric
 
 ### 51% Attack
-Serangan dimana entitas mengontrol mayoritas network untuk memanipulasi blockchain.
+Attack where an entity controls the majority of the network to manipulate the blockchain.
 
 ### 24/7
-Blockchain beroperasi non-stop, tidak seperti pasar tradisional yang tutup di weekend.
+Blockchain operates non-stop, unlike traditional markets that close on weekends.

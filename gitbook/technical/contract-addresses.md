@@ -1,10 +1,10 @@
 # 📍 Contract Addresses
 
-Daftar alamat smart contract Archa di berbagai network.
+List of Archa smart contract addresses on various networks.
 
 ## Mantle Sepolia Testnet
 
-Network untuk pengembangan dan testing.
+Network for development and testing.
 
 ### Core Contracts
 
@@ -15,7 +15,7 @@ Network untuk pengembangan dan testing.
 
 ### Verified Contracts
 
-Semua contract akan diverifikasi di Mantle Block Explorer:
+All contracts will be verified on Mantle Block Explorer:
 - https://explorer.sepolia.mantle.xyz
 
 ### Network Details
@@ -30,7 +30,7 @@ Explorer: https://explorer.sepolia.mantle.xyz
 
 ## Mantle Mainnet (Coming Soon)
 
-Network produksi untuk pengguna nyata.
+Production network for real users.
 
 ### Core Contracts
 
@@ -69,7 +69,7 @@ Explorer: https://explorer.mantle.xyz
 
 ## DeFi Protocol Addresses (Mantle)
 
-Protokol yang diintegrasikan dengan AI Yield Optimizer:
+Protocols integrated with AI Yield Optimizer:
 
 ### Lendle
 
@@ -150,7 +150,7 @@ Protokol yang diintegrasikan dengan AI Yield Optimizer:
 
 ### How to Verify
 
-Menggunakan Hardhat:
+Using Hardhat:
 
 ```bash
 npx hardhat verify --network mantleSepolia DEPLOYED_CONTRACT_ADDRESS "Constructor Arg 1" "Constructor Arg 2"
@@ -243,9 +243,9 @@ npx hardhat verify --network mantleSepolia DEPLOYED_CONTRACT_ADDRESS "Constructo
 
 ## Updates
 
-Halaman ini akan diupdate ketika:
-- Contract baru di-deploy
-- Migration ke mainnet
-- Protocol integrations ditambahkan
+This page will be updated when:
+- New contracts are deployed
+- Migration to mainnet
+- Protocol integrations are added
 
 **Last Updated:** January 2025
