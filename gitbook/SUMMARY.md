@@ -35,6 +35,7 @@
 
 ## Resources
 
+* [🎯 Pitch Deck](resources/pitch-deck.md)
 * [❓ FAQ](resources/faq.md)
 * [📚 Glossary](resources/glossary.md)
 * [🗺️ Roadmap](resources/roadmap.md)
