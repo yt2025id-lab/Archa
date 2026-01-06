@@ -147,18 +147,17 @@ forge script script/Deploy.s.sol:DeployScript --rpc-url mantle-sepolia --broadca
 
 ## Contract Addresses
 
-### Ethereum Sepolia Testnet (Deployed ✅)
+### Mantle Sepolia Testnet (Live ✅)
 | Contract | Address |
 |----------|---------|
-| ArisanFactory | `0x604D39A66D11C631af65e6dCc8BaeDea3c78BcAA` |
-| AIYieldStrategy | `0x61F48F7a192a0b48D32e4A3e8BaB4EF56b210A39` |
-| YieldVaultAdapter | `0x1c51a10aD3fE18F2567b2e3bdf54E5A09C12F5C6` |
-| MockUSDC | `0x5b65c1f9C55F5312bc55b52E607b2aC8E8eDa4e0` |
-| MockAavePool | `0x4E26f1A1FD5Bfb2ef51E3C7e7E28e3E06e4C4Fae` |
-| MockLendingPool | `0xB4a3F2eC46D0C8e0e7Af3E1cE59E8A8C5B7D9F01` |
-| Small Pool (10 USDC) | `0x7ab2c51ea3b2a5ed7d5e6ae2b4f3c8d9e0f1a2b3` |
-| Medium Pool (50 USDC) | `0x8bc3d62fb4c3b6fe8e6f7a9b0c1d2e3f4a5b6c7d` |
-| Large Pool (100 USDC) | `0x9cd4e73gc5d4c7gf9f7g8b0d2e3f4g5a6b7c8d9e` |
+| ArisanFactory | `0x15078CaEC56D393F8966999E12e1C03d34D27C16` |
+| AIYieldStrategy | `0x09beBF7c34b05234c0c2462DCCC9A828B595de12` |
+| MockUSDC | `0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D` |
+| Small Pool (10 USDC) | `0xa5fe7e4db7cc25a6aeb67f787be0c3da6a4e1b05` |
+| Medium Pool (50 USDC) | `0x71560fc237b64a7625a6056c7d02e303652ef1b7` |
+| Large Pool (100 USDC) | `0x98e5733617b661aa7bb5dd71185174ee8d519d76` |
+
+**Explorer:** [explorer.sepolia.mantle.xyz](https://explorer.sepolia.mantle.xyz)
 
 ### Mantle Mainnet (Coming Soon)
 | Contract | Address |
@@ -224,14 +223,15 @@ archa/
 - [x] Frontend landing page
 - [x] Wallet connection integration
 - [x] Pool explorer UI
-- [x] Testnet deployment (Ethereum Sepolia)
+- [x] Testnet deployment (Mantle Sepolia)
 
 ### Phase 2: Core Features ✅
 - [x] Pool creation flow
 - [x] Join pool mechanism
+- [x] Pool detail page with participants
 - [x] Pool templates (Small/Medium/Large)
 - [ ] Monthly deposit automation
-- [ ] Winner selection system
+- [ ] Winner selection system (VRF)
 
 ### Phase 3: AI Integration ✅
 - [x] Yield strategy contract
