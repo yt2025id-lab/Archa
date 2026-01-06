@@ -6,6 +6,9 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SharePool from "@/components/SharePool";
+import MantleGasSavings from "@/components/MantleGasSavings";
+import PoolAnalyticsChart from "@/components/PoolAnalyticsChart";
+import { SuccessCelebration } from "@/components/Confetti";
 import { useAccount } from "wagmi";
 import ConnectWallet from "@/components/ConnectWallet";
 import {
@@ -31,6 +34,8 @@ export default function PoolDetailPage() {
 
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [showDepositModal, setShowDepositModal] = useState(false);
+  const [showSuccessCelebration, setShowSuccessCelebration] = useState(false);
+  const [successMessage, setSuccessMessage] = useState({ title: "", message: "" });
 
   // Fetch pool data
   const { poolInfo, isLoading: poolLoading, refetch: refetchPool } = usePoolInfo(poolAddress);
@@ -87,6 +92,8 @@ export default function PoolDetailPage() {
   useEffect(() => {
     if (joinSuccess) {
       setShowJoinModal(false);
+      setSuccessMessage({ title: "Successfully Joined!", message: "Welcome to the arisan pool. Your collateral is now earning yield." });
+      setShowSuccessCelebration(true);
       refetchPool();
       refetchParticipant();
       refetchBalance();
@@ -96,6 +103,8 @@ export default function PoolDetailPage() {
   useEffect(() => {
     if (depositSuccess) {
       setShowDepositModal(false);
+      setSuccessMessage({ title: "Deposit Complete!", message: "Your monthly deposit has been made successfully." });
+      setShowSuccessCelebration(true);
       refetchPool();
       refetchParticipant();
       refetchBalance();
@@ -227,7 +236,10 @@ export default function PoolDetailPage() {
 
               {/* Yield Info */}
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">AI Yield Optimizer</h2>
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-gray-900">AI Yield Optimizer</h2>
+                  <MantleGasSavings transactionType="join" />
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="p-4 bg-purple-50 rounded-xl">
                     <p className="text-sm text-purple-600 mb-1">Current Yield</p>
@@ -243,6 +255,9 @@ export default function PoolDetailPage() {
                   </div>
                 </div>
               </div>
+
+              {/* Pool Analytics Chart */}
+              <PoolAnalyticsChart title={`${poolName} Performance`} poolAddress={poolAddress} />
 
               {/* Participants List */}
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
@@ -575,6 +590,14 @@ export default function PoolDetailPage() {
           </div>
         </div>
       )}
+
+      {/* Success Celebration */}
+      <SuccessCelebration
+        show={showSuccessCelebration}
+        title={successMessage.title}
+        message={successMessage.message}
+        onClose={() => setShowSuccessCelebration(false)}
+      />
 
       <Footer />
     </main>

@@ -50,6 +50,7 @@ export default function Footer() {
     { label: t("nav.howItWorks"), href: "/#cara-kerja" },
     { label: t("nav.advantages"), href: "/#keunggulan" },
     { label: "AI Optimizer", href: "/ai" },
+    { label: "Leaderboard", href: "/leaderboard" },
   ];
 
   return (

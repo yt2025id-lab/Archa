@@ -24,6 +24,7 @@ export default function Header() {
     { label: t("nav.advantages"), href: "/#keunggulan" },
     { label: t("nav.pools"), href: "/pools" },
     { label: "AI Optimizer", href: "/ai" },
+    { label: "Leaderboard", href: "/leaderboard" },
   ];
 
   const toggleLanguage = () => {

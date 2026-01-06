@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Web3Provider } from "@/providers/Web3Provider";
+import { ToastProvider } from "@/components/Toast";
 import OnboardingTutorial from "@/components/OnboardingTutorial";
 import "./globals.css";
 
@@ -39,8 +40,10 @@ export default function RootLayout({
       >
         <Web3Provider>
           <LanguageProvider>
-            {children}
-            <OnboardingTutorial />
+            <ToastProvider>
+              {children}
+              <OnboardingTutorial />
+            </ToastProvider>
           </LanguageProvider>
         </Web3Provider>
       </body>
