@@ -9,7 +9,7 @@ import { ReactNode, useState } from "react";
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "";
 
 const config = createConfig({
-  chains: [sepolia, mantle, mantleSepoliaTestnet],
+  chains: [mantleSepoliaTestnet, mantle, sepolia],
   connectors: [
     injected(),
     walletConnect({
@@ -23,9 +23,9 @@ const config = createConfig({
     }),
   ],
   transports: {
-    [sepolia.id]: http("https://gateway.tenderly.co/public/sepolia"),
-    [mantle.id]: http("https://rpc.mantle.xyz"),
     [mantleSepoliaTestnet.id]: http("https://rpc.sepolia.mantle.xyz"),
+    [mantle.id]: http("https://rpc.mantle.xyz"),
+    [sepolia.id]: http("https://gateway.tenderly.co/public/sepolia"),
   },
 });
 

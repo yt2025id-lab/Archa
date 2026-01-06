@@ -25,9 +25,9 @@ export const CONTRACTS = {
   // Mantle Sepolia Testnet
   mantleSepolia: {
     chainId: 5003,
-    usdc: "" as `0x${string}`, // MockUSDC address - update after deploy
-    factory: "" as `0x${string}`, // ArisanFactory address - update after deploy
-    yieldStrategy: "" as `0x${string}`, // AIYieldStrategy address - update after deploy
+    usdc: "0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D" as `0x${string}`, // MockUSDC
+    factory: "0x15078CaEC56D393F8966999E12e1C03d34D27C16" as `0x${string}`, // ArisanFactory
+    yieldStrategy: "0x09beBF7c34b05234c0c2462DCCC9A828B595de12" as `0x${string}`, // AIYieldStrategy
   },
   // Mantle Mainnet
   mainnet: {
@@ -38,6 +38,6 @@ export const CONTRACTS = {
   },
 } as const;
 
-// Use Ethereum Sepolia for hackathon demo
-export const ACTIVE_CHAIN = "ethereumSepolia" as keyof typeof CONTRACTS;
+// Use Mantle Sepolia for hackathon demo
+export const ACTIVE_CHAIN = "mantleSepolia" as keyof typeof CONTRACTS;
 export const activeContracts = CONTRACTS[ACTIVE_CHAIN];

@@ -1,13 +1,13 @@
 "use client";
 
 import { useReadContract, useReadContracts, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
-import { sepolia } from "wagmi/chains";
+import { mantleSepoliaTestnet } from "wagmi/chains";
 import { activeContracts } from "@/config/contracts";
 import { ARISAN_FACTORY_ABI, ARISAN_POOL_ABI, ERC20_ABI } from "@/config/abis";
 import { formatUnits, parseUnits } from "viem";
 
-// Use Sepolia chain for all contract reads
-const CHAIN_ID = sepolia.id;
+// Use Mantle Sepolia chain for all contract reads
+const CHAIN_ID = mantleSepoliaTestnet.id;
 
 // Types
 export interface PoolInfo {
