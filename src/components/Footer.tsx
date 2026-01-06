@@ -49,6 +49,7 @@ export default function Footer() {
     { label: t("nav.about"), href: "/#tentang" },
     { label: t("nav.howItWorks"), href: "/#cara-kerja" },
     { label: t("nav.advantages"), href: "/#keunggulan" },
+    { label: "AI Optimizer", href: "/ai" },
   ];
 
   return (
