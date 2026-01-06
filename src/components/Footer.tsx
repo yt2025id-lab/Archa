@@ -73,8 +73,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 max-w-md mb-6 leading-relaxed">
-              Platform arisan terdesentralisasi dengan AI Yield Optimizer di Mantle Network.
-              Tradisi keuangan komunal Indonesia, dibawa ke era blockchain dengan teknologi modern.
+              {t("footer.description")}
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-4">
@@ -95,7 +94,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6">{t("footer.quickLinks")}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -112,7 +111,7 @@ export default function Footer() {
                   href="/pools"
                   className="text-gray-400 hover:text-white transition-colors duration-300"
                 >
-                  Explore Pools
+                  {t("footer.explorePools")}
                 </a>
               </li>
             </ul>
@@ -120,7 +119,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Resources</h4>
+            <h4 className="text-lg font-semibold mb-6">{t("footer.resources")}</h4>
             <ul className="space-y-3">
               <li>
                 <a

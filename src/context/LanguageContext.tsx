@@ -223,6 +223,12 @@ const translations: Record<Language, Record<string, string>> = {
     "faq.a8": "Jika peserta tidak membayar setoran bulanan, mereka akan kehilangan jaminan (collateral) yang sudah disetor. Jaminan ini akan didistribusikan ke peserta lain sebagai kompensasi.",
     "faq.contactTitle": "Masih Punya Pertanyaan?",
     "faq.contactDesc": "Tim kami siap membantu! Hubungi kami melalui channel komunitas berikut.",
+
+    // Footer
+    "footer.description": "Platform arisan terdesentralisasi dengan AI Yield Optimizer di Mantle Network. Tradisi keuangan komunal Indonesia, dibawa ke era blockchain dengan teknologi modern.",
+    "footer.quickLinks": "Link Cepat",
+    "footer.resources": "Sumber Daya",
+    "footer.explorePools": "Jelajahi Pool",
   },
   en: {
     // Header
@@ -433,6 +439,12 @@ const translations: Record<Language, Record<string, string>> = {
     "faq.a8": "If a participant doesn't make their monthly deposit, they will lose the collateral they deposited. This collateral will be distributed to other participants as compensation.",
     "faq.contactTitle": "Still Have Questions?",
     "faq.contactDesc": "Our team is ready to help! Contact us through the following community channels.",
+
+    // Footer
+    "footer.description": "Decentralized arisan platform with AI Yield Optimizer on Mantle Network. Indonesian communal finance tradition, brought to blockchain era with modern technology.",
+    "footer.quickLinks": "Quick Links",
+    "footer.resources": "Resources",
+    "footer.explorePools": "Explore Pools",
   },
 };
 
