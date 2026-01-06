@@ -369,3 +369,175 @@ export function useMakeDeposit() {
     error,
   };
 }
+
+// Hook to get participant info
+export function useParticipantInfo(poolAddress: `0x${string}` | undefined, participantAddress: `0x${string}` | undefined) {
+  const { data, isLoading, error, refetch } = useReadContract({
+    address: poolAddress,
+    abi: ARISAN_POOL_ABI,
+    functionName: "participants",
+    args: participantAddress ? [participantAddress] : undefined,
+    chainId: CHAIN_ID,
+    query: {
+      enabled: !!poolAddress && !!participantAddress,
+    },
+  });
+
+  const participantInfo = data ? {
+    addr: data[0] as `0x${string}`,
+    collateralAmount: Number(formatUnits(data[1] as bigint, 6)),
+    totalDeposited: Number(formatUnits(data[2] as bigint, 6)),
+    missedPayments: Number(data[3] as bigint),
+    hasReceivedPayout: data[4] as boolean,
+    isActive: data[5] as boolean,
+    joinedAt: Number(data[6] as bigint),
+  } : undefined;
+
+  return {
+    participantInfo,
+    isLoading,
+    error,
+    refetch,
+  };
+}
+
+// Hook to get participant list
+export function useParticipantList(poolAddress: `0x${string}` | undefined) {
+  const { data: count, isLoading: countLoading } = useReadContract({
+    address: poolAddress,
+    abi: ARISAN_POOL_ABI,
+    functionName: "getParticipantCount",
+    chainId: CHAIN_ID,
+    query: {
+      enabled: !!poolAddress,
+    },
+  });
+
+  // Get each participant address
+  const participantCount = count ? Number(count) : 0;
+  const contracts = Array.from({ length: participantCount }, (_, i) => ({
+    address: poolAddress!,
+    abi: ARISAN_POOL_ABI,
+    functionName: "participantList" as const,
+    args: [BigInt(i)],
+    chainId: CHAIN_ID,
+  }));
+
+  const { data: addresses, isLoading: addressesLoading, refetch } = useReadContracts({
+    contracts,
+    query: {
+      enabled: !!poolAddress && participantCount > 0,
+    },
+  });
+
+  const participantAddresses = addresses
+    ?.filter((r) => r.status === "success")
+    .map((r) => r.result as `0x${string}`) || [];
+
+  return {
+    participantAddresses,
+    participantCount,
+    isLoading: countLoading || addressesLoading,
+    refetch,
+  };
+}
+
+// Hook to check if user has deposited this cycle
+export function useHasDepositedThisCycle(poolAddress: `0x${string}` | undefined, userAddress: `0x${string}` | undefined) {
+  const { data, isLoading, error, refetch } = useReadContract({
+    address: poolAddress,
+    abi: ARISAN_POOL_ABI,
+    functionName: "hasDepositedThisCycle",
+    args: userAddress ? [userAddress] : undefined,
+    chainId: CHAIN_ID,
+    query: {
+      enabled: !!poolAddress && !!userAddress,
+    },
+  });
+
+  return {
+    hasDeposited: data as boolean | undefined,
+    isLoading,
+    error,
+    refetch,
+  };
+}
+
+// Hook to get cycle winner
+export function useCycleWinner(poolAddress: `0x${string}` | undefined, cycle: number) {
+  const { data, isLoading, error } = useReadContract({
+    address: poolAddress,
+    abi: ARISAN_POOL_ABI,
+    functionName: "cycleWinners",
+    args: [BigInt(cycle)],
+    chainId: CHAIN_ID,
+    query: {
+      enabled: !!poolAddress && cycle > 0,
+    },
+  });
+
+  return {
+    winner: data as `0x${string}` | undefined,
+    isLoading,
+    error,
+  };
+}
+
+// Hook to get last winner
+export function useLastWinner(poolAddress: `0x${string}` | undefined) {
+  const { data, isLoading, error } = useReadContract({
+    address: poolAddress,
+    abi: ARISAN_POOL_ABI,
+    functionName: "lastWinner",
+    chainId: CHAIN_ID,
+    query: {
+      enabled: !!poolAddress,
+    },
+  });
+
+  return {
+    lastWinner: data as `0x${string}` | undefined,
+    isLoading,
+    error,
+  };
+}
+
+// Hook to get current yield
+export function useCurrentYield(poolAddress: `0x${string}` | undefined) {
+  const { data, isLoading, error, refetch } = useReadContract({
+    address: poolAddress,
+    abi: ARISAN_POOL_ABI,
+    functionName: "getCurrentYield",
+    chainId: CHAIN_ID,
+    query: {
+      enabled: !!poolAddress,
+    },
+  });
+
+  return {
+    currentYield: data ? Number(formatUnits(data, 6)) : 0,
+    isLoading,
+    error,
+    refetch,
+  };
+}
+
+// Hook to check if cycle is complete
+export function useIsCycleComplete(poolAddress: `0x${string}` | undefined) {
+  const { data, isLoading, error, refetch } = useReadContract({
+    address: poolAddress,
+    abi: ARISAN_POOL_ABI,
+    functionName: "isCycleComplete",
+    chainId: CHAIN_ID,
+    query: {
+      enabled: !!poolAddress,
+    },
+  });
+
+  return {
+    isCycleComplete: data as boolean | undefined,
+    isLoading,
+    error,
+    refetch,
+  };
+}

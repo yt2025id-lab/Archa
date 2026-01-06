@@ -31,7 +31,7 @@ export default function PoolsPage() {
   const { balance: usdcBalance, refetch: refetchBalance } = useUSDCBalance(address);
 
   // Get required collateral for selected pool
-  const { collateral: requiredCollateral, collateralRaw } = useRequiredCollateral(
+  const { collateral: requiredCollateral } = useRequiredCollateral(
     selectedPool?.address
   );
 
@@ -333,27 +333,33 @@ export default function PoolsPage() {
                     </div>
 
                     {/* Action Button */}
-                    {pool.status === "open" ? (
-                      <button
-                        onClick={() => setSelectedPool(pool)}
-                        disabled={!isConnected}
-                        className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
-                          isConnected
-                            ? "bg-gradient-to-r from-green-500 to-blue-500 text-white hover:shadow-lg hover:shadow-green-500/25"
-                            : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                    <div className="space-y-2">
+                      {pool.status === "open" && (
+                        <button
+                          onClick={() => setSelectedPool(pool)}
+                          disabled={!isConnected}
+                          className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
+                            isConnected
+                              ? "bg-gradient-to-r from-green-500 to-blue-500 text-white hover:shadow-lg hover:shadow-green-500/25"
+                              : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                          }`}
+                        >
+                          {isConnected ? "Join Pool" : "Connect Wallet to Join"}
+                        </button>
+                      )}
+                      <a
+                        href={`/pools/${pool.address}`}
+                        className={`block w-full py-3 text-center rounded-xl font-semibold transition-all duration-300 ${
+                          pool.status === "open"
+                            ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                            : pool.status === "active"
+                            ? "bg-blue-50 text-blue-700 hover:bg-blue-100"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                         }`}
                       >
-                        {isConnected ? "Join Pool" : "Connect Wallet to Join"}
-                      </button>
-                    ) : pool.status === "active" ? (
-                      <button className="w-full py-3 bg-blue-50 text-blue-700 rounded-xl font-semibold">
                         View Details
-                      </button>
-                    ) : (
-                      <button className="w-full py-3 bg-gray-100 text-gray-600 rounded-xl font-semibold">
-                        View History
-                      </button>
-                    )}
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
