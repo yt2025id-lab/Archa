@@ -317,6 +317,20 @@ html {
   }
 }
 
+@keyframes swipeCircle {
+  0% {
+    stroke-dashoffset: 565;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
 .animate-expandCircle {
   animation: expandCircle 2s ease-out forwards;
 }
@@ -343,6 +357,10 @@ html {
 
 .animate-floatParticle {
   animation: floatParticle 4s ease-out infinite;
+}
+
+.animate-swipeCircle {
+  animation: swipeCircle 2s ease-in-out forwards;
 }
 
 /* Hide scrollbar for overflow containers */
