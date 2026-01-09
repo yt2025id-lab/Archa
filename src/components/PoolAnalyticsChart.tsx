@@ -59,16 +59,34 @@ export default function PoolAnalyticsChart({
   const getPath = () => {
     const width = 100;
     const height = 60;
-    const padding = 5;
+    const paddingLeft = 10;
+    const paddingRight = 3;
+    const paddingTop = 3;
+    const paddingBottom = 8;
 
     const points = data.map((d, i) => {
-      const x = padding + (i / (data.length - 1)) * (width - 2 * padding);
+      const x = paddingLeft + (i / (data.length - 1)) * (width - paddingLeft - paddingRight);
       const value = metric === "apy" ? d.apy : d.tvl;
-      const y = height - padding - ((value - minValue) / range) * (height - 2 * padding);
+      const y = paddingTop + (1 - (value - minValue) / range) * (height - paddingTop - paddingBottom);
       return `${x},${y}`;
     });
 
     return `M ${points.join(" L ")}`;
+  };
+
+  // Generate Y-axis labels
+  const getYAxisLabels = () => {
+    const steps = 5;
+    const labels = [];
+    for (let i = 0; i < steps; i++) {
+      const value = minValue + (range * (steps - 1 - i)) / (steps - 1);
+      if (metric === "apy") {
+        labels.push(`${value.toFixed(1)}%`);
+      } else {
+        labels.push(`$${(value / 1000).toFixed(0)}K`);
+      }
+    }
+    return labels;
   };
 
   const isPositive = metric === "apy" ? apyChange >= 0 : tvlChange >= 0;
@@ -205,6 +223,13 @@ export default function PoolAnalyticsChart({
         {/* Chart Container */}
         <div className="relative p-6 bg-gradient-to-br from-gray-50/50 to-white rounded-2xl border border-gray-200/50 shadow-inner">
           <div className="relative h-80 md:h-96 w-full">
+            {/* Y-axis labels */}
+            <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between py-2 pr-2 text-xs text-gray-500 font-medium">
+              {getYAxisLabels().map((label, i) => (
+                <span key={i} className="text-right">{label}</span>
+              ))}
+            </div>
+
             <svg
               viewBox="0 0 100 60"
               className="w-full h-full transition-all duration-300"
@@ -213,31 +238,31 @@ export default function PoolAnalyticsChart({
             >
               {/* Vertical grid lines (columns) */}
               {Array.from({ length: data.length }).map((_, i) => {
-                const x = 5 + (i / (data.length - 1)) * 90;
+                const x = 10 + (i / (data.length - 1)) * 87;
                 return (
                   <line
                     key={`v-${i}`}
                     x1={x}
-                    y1="5"
+                    y1="3"
                     x2={x}
-                    y2="55"
-                    stroke="#d1d5db"
-                    strokeWidth="0.4"
+                    y2="52"
+                    stroke="#e5e7eb"
+                    strokeWidth="0.3"
                     opacity="0.5"
                   />
                 );
               })}
 
               {/* Horizontal grid lines */}
-              {[12, 24, 36, 48].map((y) => (
+              {[3, 15.25, 27.5, 39.75, 52].map((y, i) => (
                 <line
-                  key={`h-${y}`}
-                  x1="5"
+                  key={`h-${i}`}
+                  x1="10"
                   y1={y}
-                  x2="95"
+                  x2="97"
                   y2={y}
-                  stroke="#d1d5db"
-                  strokeWidth="0.4"
+                  stroke="#e5e7eb"
+                  strokeWidth="0.3"
                   opacity="0.6"
                 />
               ))}
@@ -247,7 +272,7 @@ export default function PoolAnalyticsChart({
                 d={getPath()}
                 fill="none"
                 stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
-                strokeWidth="1.5"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="transition-all duration-300"
@@ -255,9 +280,13 @@ export default function PoolAnalyticsChart({
 
               {/* Data points - simple bullets */}
               {data.map((d, i) => {
-                const x = 5 + (i / (data.length - 1)) * 90;
+                const paddingLeft = 10;
+                const paddingRight = 3;
+                const paddingTop = 3;
+                const paddingBottom = 8;
+                const x = paddingLeft + (i / (data.length - 1)) * (100 - paddingLeft - paddingRight);
                 const value = metric === "apy" ? d.apy : d.tvl;
-                const y = 55 - ((value - minValue) / range) * 50;
+                const y = paddingTop + (1 - (value - minValue) / range) * (60 - paddingTop - paddingBottom);
                 const isHovered = hoveredIndex === i;
 
                 return (
@@ -277,7 +306,7 @@ export default function PoolAnalyticsChart({
                     <circle
                       cx={x}
                       cy={y}
-                      r={isHovered ? "1.8" : "1"}
+                      r={isHovered ? "1.5" : "1"}
                       fill={metric === "apy" ? "#22c55e" : "#3b82f6"}
                       className="transition-all duration-200"
                     />
@@ -311,11 +340,11 @@ export default function PoolAnalyticsChart({
               })}
             </svg>
 
-            {/* X-axis labels with enhanced styling */}
-            <div className="absolute -bottom-6 left-0 right-0 flex justify-between text-xs font-medium text-gray-500 px-2">
-              <span className="px-2 py-1 bg-gray-100/50 rounded-md">{data[0].date}</span>
-              <span className="px-2 py-1 bg-gray-100/50 rounded-md">{data[Math.floor(data.length / 2)].date}</span>
-              <span className="px-2 py-1 bg-gray-100/50 rounded-md">{data[data.length - 1].date}</span>
+            {/* X-axis labels */}
+            <div className="absolute -bottom-6 left-0 right-0 flex justify-between text-xs text-gray-500 font-medium px-8">
+              <span>{data[0].date}</span>
+              <span>{data[Math.floor(data.length / 2)].date}</span>
+              <span>{data[data.length - 1].date}</span>
             </div>
           </div>
         </div>
