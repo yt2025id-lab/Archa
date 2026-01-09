@@ -221,10 +221,9 @@ export default function PoolAnalyticsChart({
                     y1="5"
                     x2={x}
                     y2="55"
-                    stroke="#e5e7eb"
-                    strokeWidth="0.15"
-                    strokeDasharray="1,2"
-                    opacity="0.3"
+                    stroke="#d1d5db"
+                    strokeWidth="0.4"
+                    opacity="0.5"
                   />
                 );
               })}
@@ -237,10 +236,9 @@ export default function PoolAnalyticsChart({
                   y1={y}
                   x2="95"
                   y2={y}
-                  stroke="#e5e7eb"
-                  strokeWidth="0.15"
-                  strokeDasharray="1,2"
-                  opacity="0.4"
+                  stroke="#d1d5db"
+                  strokeWidth="0.4"
+                  opacity="0.6"
                 />
               ))}
 
