@@ -5,6 +5,7 @@ import { Web3Provider } from "@/providers/Web3Provider";
 import { ToastProvider } from "@/components/Toast";
 import OnboardingTutorial from "@/components/OnboardingTutorial";
 import PageTransition from "@/components/PageTransition";
+import AppInitializer from "@/components/AppInitializer";
 import "./globals.css";
 
 // Primary font - Inter (clean, modern, highly readable)
@@ -59,10 +60,12 @@ export default function RootLayout({
         <Web3Provider>
           <LanguageProvider>
             <ToastProvider>
-              <PageTransition>
-                {children}
-              </PageTransition>
-              <OnboardingTutorial />
+              <AppInitializer>
+                <PageTransition>
+                  {children}
+                </PageTransition>
+                <OnboardingTutorial />
+              </AppInitializer>
             </ToastProvider>
           </LanguageProvider>
         </Web3Provider>

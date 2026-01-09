@@ -44,72 +44,74 @@ export default function LeaderboardPage() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-yellow-600 via-orange-600 to-red-600">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full mb-6">
-              <span className="text-2xl">🏆</span>
-              <span className="text-white text-sm font-medium">Community Rankings</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 rounded-full mb-4 sm:mb-6">
+              <span className="text-xl sm:text-2xl">🏆</span>
+              <span className="text-white text-xs sm:text-sm font-medium">Community Rankings</span>
             </div>
             <h1
-              className="text-4xl md:text-5xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
               style={{ fontFamily: "var(--font-space), sans-serif" }}
             >
               Leaderboard
             </h1>
-            <p className="text-lg text-orange-100 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-orange-100 max-w-2xl mx-auto px-4">
               Top earners in the Archa community. Join pools and climb the ranks!
             </p>
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <p className="text-orange-200 text-sm mb-1">Total Users</p>
-              <p className="text-3xl font-bold text-white">{STATS.totalUsers}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center">
+              <p className="text-orange-200 text-xs sm:text-sm mb-1">Total Users</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">{STATS.totalUsers}</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <p className="text-orange-200 text-sm mb-1">Active Pools</p>
-              <p className="text-3xl font-bold text-white">{STATS.totalPools}</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center">
+              <p className="text-orange-200 text-xs sm:text-sm mb-1">Active Pools</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">{STATS.totalPools}</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <p className="text-orange-200 text-sm mb-1">Total Earnings</p>
-              <p className="text-3xl font-bold text-white">${(STATS.totalEarnings / 1000).toFixed(1)}K</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center">
+              <p className="text-orange-200 text-xs sm:text-sm mb-1">Total Earnings</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">${(STATS.totalEarnings / 1000).toFixed(1)}K</p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
-              <p className="text-orange-200 text-sm mb-1">Avg APY</p>
-              <p className="text-3xl font-bold text-white">{STATS.avgApy}%</p>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 text-center">
+              <p className="text-orange-200 text-xs sm:text-sm mb-1">Avg APY</p>
+              <p className="text-2xl sm:text-3xl font-bold text-white">{STATS.avgApy}%</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Leaderboard Content */}
-      <section className="py-12">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <section className="py-8 sm:py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-            <div className="flex items-center gap-2 bg-white rounded-xl p-1 shadow-sm border border-gray-100">
-              {(["all", "month", "week"] as const).map((range) => (
-                <button
-                  key={range}
-                  onClick={() => setTimeRange(range)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    timeRange === range
-                      ? "bg-orange-500 text-white"
-                      : "text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  {range === "all" ? "All Time" : range === "month" ? "This Month" : "This Week"}
-                </button>
-              ))}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6 sm:mb-8">
+            <div className="w-full sm:w-auto overflow-x-auto scrollbar-hide">
+              <div className="flex items-center gap-2 bg-white rounded-xl p-1 shadow-sm border border-gray-100 min-w-max">
+                {(["all", "month", "week"] as const).map((range) => (
+                  <button
+                    key={range}
+                    onClick={() => setTimeRange(range)}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap min-h-[44px] ${
+                      timeRange === range
+                        ? "bg-orange-500 text-white"
+                        : "text-gray-600 hover:text-gray-900"
+                    }`}
+                  >
+                    {range === "all" ? "All Time" : range === "month" ? "This Month" : "This Week"}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-gray-500">Sort by:</span>
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <span className="text-sm text-gray-500 whitespace-nowrap">Sort by:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortKey)}
-                className="px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="flex-1 sm:flex-none px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm font-medium text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-500 min-h-[44px]"
               >
                 <option value="totalEarned">Total Earned</option>
                 <option value="poolsJoined">Pools Joined</option>
@@ -120,34 +122,34 @@ export default function LeaderboardPage() {
 
           {/* User's Rank Card (if connected) */}
           {isConnected && userRank && (
-            <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-6 mb-8 text-white">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl">
+            <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 text-white">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-full flex items-center justify-center text-xl sm:text-2xl">
                     🎯
                   </div>
                   <div>
-                    <p className="text-orange-100 text-sm">Your Rank</p>
-                    <p className="text-3xl font-bold">#{userRank}</p>
+                    <p className="text-orange-100 text-xs sm:text-sm">Your Rank</p>
+                    <p className="text-2xl sm:text-3xl font-bold">#{userRank}</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-orange-100 text-sm">Address</p>
-                  <p className="font-mono">{address?.slice(0, 6)}...{address?.slice(-4)}</p>
+                <div className="text-center sm:text-right">
+                  <p className="text-orange-100 text-xs sm:text-sm">Address</p>
+                  <p className="font-mono text-sm sm:text-base">{address?.slice(0, 6)}...{address?.slice(-4)}</p>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-white/20 grid grid-cols-3 gap-4 text-center">
+              <div className="mt-4 pt-4 border-t border-white/20 grid grid-cols-3 gap-3 sm:gap-4 text-center">
                 <div>
                   <p className="text-orange-100 text-xs">Total Earned</p>
-                  <p className="font-bold">$40.00</p>
+                  <p className="font-bold text-sm sm:text-base">$40.00</p>
                 </div>
                 <div>
                   <p className="text-orange-100 text-xs">Pools Joined</p>
-                  <p className="font-bold">1</p>
+                  <p className="font-bold text-sm sm:text-base">1</p>
                 </div>
                 <div>
                   <p className="text-orange-100 text-xs">Win Rate</p>
-                  <p className="font-bold">0%</p>
+                  <p className="font-bold text-sm sm:text-base">0%</p>
                 </div>
               </div>
             </div>
@@ -159,19 +161,19 @@ export default function LeaderboardPage() {
               <table className="w-full">
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-100">
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Rank
                     </th>
-                    <th className="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       User
                     </th>
-                    <th className="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                      Total Earned
+                    <th className="px-3 sm:px-6 py-3 sm:py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                      Earned
                     </th>
-                    <th className="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    <th className="hidden md:table-cell px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Pools
                     </th>
-                    <th className="px-6 py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    <th className="hidden sm:table-cell px-3 sm:px-6 py-3 sm:py-4 text-right text-xs font-semibold text-gray-500 uppercase tracking-wider">
                       Win Rate
                     </th>
                   </tr>
@@ -184,11 +186,11 @@ export default function LeaderboardPage() {
                         idx < 3 ? "bg-gradient-to-r from-yellow-50/50 to-transparent" : ""
                       }`}
                     >
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center gap-2">
-                          <span className="text-2xl">{user.avatar}</span>
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                        <div className="flex items-center gap-1.5 sm:gap-2">
+                          <span className="text-lg sm:text-2xl">{user.avatar}</span>
                           <span
-                            className={`font-bold ${
+                            className={`font-bold text-sm sm:text-base ${
                               idx === 0
                                 ? "text-yellow-600"
                                 : idx === 1
@@ -202,18 +204,18 @@ export default function LeaderboardPage() {
                           </span>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <span className="font-mono text-gray-900">{user.address}</span>
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap">
+                        <span className="font-mono text-xs sm:text-sm text-gray-900">{user.address}</span>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-right">
-                        <span className="font-semibold text-green-600">
+                      <td className="px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-right">
+                        <span className="font-semibold text-green-600 text-xs sm:text-sm">
                           ${user.totalEarned.toFixed(2)}
                         </span>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-right">
+                      <td className="hidden md:table-cell px-6 py-4 whitespace-nowrap text-right">
                         <span className="text-gray-700">{user.poolsJoined}</span>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-right">
+                      <td className="hidden sm:table-cell px-3 sm:px-6 py-3 sm:py-4 whitespace-nowrap text-right">
                         <span
                           className={`px-2 py-1 rounded-full text-xs font-semibold ${
                             user.winRate >= 75
@@ -234,17 +236,17 @@ export default function LeaderboardPage() {
           </div>
 
           {/* Call to Action */}
-          <div className="mt-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-8 text-white text-center">
-            <h3 className="text-2xl font-bold mb-2">Ready to Climb the Ranks?</h3>
-            <p className="text-green-100 mb-6">
+          <div className="mt-6 sm:mt-8 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl p-6 sm:p-8 text-white text-center">
+            <h3 className="text-xl sm:text-2xl font-bold mb-2">Ready to Climb the Ranks?</h3>
+            <p className="text-green-100 mb-4 sm:mb-6 text-sm sm:text-base">
               Join an arisan pool and start earning yield with AI optimization
             </p>
             <a
               href="/pools"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white text-green-600 rounded-xl font-semibold hover:shadow-lg transition-all"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-white text-green-600 rounded-xl font-semibold hover:shadow-lg transition-all min-h-[44px] text-sm sm:text-base"
             >
               Explore Pools
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </a>
