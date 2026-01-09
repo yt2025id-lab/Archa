@@ -122,7 +122,7 @@ export default function HowItWorksSection() {
             <span className="text-sm font-medium text-white/90">{t("howItWorks.badge")}</span>
           </div>
 
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'var(--font-space), sans-serif' }}>
             {t("howItWorks.title")}{" "}
             <span className="bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               {t("howItWorks.titleHighlight")}

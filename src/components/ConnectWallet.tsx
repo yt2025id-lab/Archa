@@ -2,6 +2,7 @@
 
 import { useAccount, useConnect, useDisconnect, useBalance } from "wagmi";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface ConnectWalletProps {
@@ -9,7 +10,7 @@ interface ConnectWalletProps {
   scrolled?: boolean;
 }
 
-export default function ConnectWallet({ variant = "header", scrolled = false }: ConnectWalletProps) {
+export default function ConnectWallet({ variant = "header" }: ConnectWalletProps) {
   const { address, isConnected } = useAccount();
   const { connect, connectors, isPending } = useConnect();
   const { disconnect } = useDisconnect();
@@ -17,6 +18,9 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
   const { t } = useLanguage();
   const [showModal, setShowModal] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  // Check if we're on client side for portal
+  const canUsePortal = typeof document !== 'undefined';
 
   const formatAddress = (addr: string) => {
     return `${addr.slice(0, 6)}...${addr.slice(-4)}`;
@@ -34,17 +38,11 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
       <div className="relative">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-            variant === "mobile"
-              ? scrolled
-                ? "bg-gradient-to-r from-green-500 to-blue-500 text-white w-full justify-center"
-                : "bg-white text-gray-900 w-full justify-center"
-              : scrolled
-                ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
-                : "bg-white text-gray-900 hover:bg-white/90"
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-green-500 via-blue-500 to-orange-500 text-white hover:shadow-lg hover:shadow-green-500/25 shadow-md ${
+            variant === "mobile" ? "w-full justify-center" : ""
           }`}
         >
-          <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
           <span>{formatAddress(address)}</span>
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -55,10 +53,10 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
         {showDropdown && (
           <>
             <div
-              className="fixed inset-0 z-40"
+              className="fixed inset-0 z-[195]"
               onClick={() => setShowDropdown(false)}
             />
-            <div className={`absolute ${variant === "mobile" ? "left-0 right-0" : "right-0"} mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50`}>
+            <div className={`absolute ${variant === "mobile" ? "left-0 right-0" : "right-0"} mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-[210]`}>
               <div className="mb-4">
                 <p className="text-xs text-gray-500 mb-1">Connected Wallet</p>
                 <p className="text-sm font-mono text-gray-900 break-all">{address}</p>
@@ -92,16 +90,8 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
         onClick={() => setShowModal(true)}
         className={`flex items-center gap-2 text-sm font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 ${
           variant === "mobile"
-            ? `py-3 rounded-full justify-center ${
-                scrolled
-                  ? "bg-gradient-to-r from-green-500 to-blue-500 text-white"
-                  : "bg-white text-gray-900"
-              }`
-            : `px-5 py-2.5 rounded-full ${
-                scrolled
-                  ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
-                  : "bg-white text-gray-900 hover:bg-white/90"
-              }`
+            ? "w-full py-3 px-5 rounded-full justify-center bg-gradient-to-r from-green-500 via-blue-500 to-orange-500 text-white hover:shadow-lg hover:shadow-green-500/25"
+            : "px-5 py-2.5 rounded-full bg-gradient-to-r from-green-500 via-blue-500 to-orange-500 text-white shadow-md hover:shadow-lg hover:shadow-green-500/25"
         }`}
       >
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -115,14 +105,25 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
         {t("nav.connectWallet")}
       </button>
 
-      {/* Connect Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+      {/* Connect Modal - Using Portal to render outside parent container */}
+      {showModal && canUsePortal && createPortal(
+        <div className="fixed inset-0 z-[300]">
+          {/* Backdrop - full screen dark overlay */}
+          <div 
+            className="fixed inset-0 bg-black/40"
             onClick={() => setShowModal(false)}
           />
-          <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md p-6 animate-in fade-in zoom-in duration-200">
+          
+          {/* Modal container - centered with slight offset to top */}
+          <div 
+            className="fixed inset-0 flex items-start md:items-center justify-center p-4 pt-[15vh] md:pt-4"
+            onClick={() => setShowModal(false)}
+          >
+            <div 
+              className="relative bg-white rounded-3xl w-full max-w-md p-6 md:mb-20"
+              style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)' }}
+              onClick={(e) => e.stopPropagation()}
+            >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-bold text-gray-900">Connect Wallet</h3>
@@ -138,16 +139,22 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
 
             {/* Connectors */}
             <div className="space-y-3">
-              {connectors.map((connector) => (
-                <button
-                  key={connector.uid}
-                  onClick={() => {
-                    connect({ connector });
-                    setShowModal(false);
-                  }}
-                  disabled={isPending}
-                  className="w-full flex items-center gap-4 p-4 bg-gray-50 hover:bg-gray-100 rounded-2xl transition-all duration-200 group disabled:opacity-50"
-                >
+              {connectors.length === 0 ? (
+                <div className="text-center py-8">
+                  <p className="text-gray-500 mb-2">No wallet connectors available</p>
+                  <p className="text-sm text-gray-400">Please check your configuration</p>
+                </div>
+              ) : (
+                connectors.map((connector) => (
+                  <button
+                    key={connector.uid}
+                    onClick={() => {
+                      connect({ connector });
+                      setShowModal(false);
+                    }}
+                    disabled={isPending}
+                    className="w-full flex items-center gap-4 p-4 bg-gray-50 hover:bg-gray-100 rounded-2xl transition-all duration-200 group disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
                   <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-shadow">
                     {connector.name === "MetaMask" && (
                       <svg className="w-8 h-8" viewBox="0 0 40 40" fill="none">
@@ -191,7 +198,7 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
-              ))}
+              )))}
             </div>
 
             {/* Footer */}
@@ -200,6 +207,8 @@ export default function ConnectWallet({ variant = "header", scrolled = false }: 
             </p>
           </div>
         </div>
+        </div>,
+        document.body
       )}
     </>
   );

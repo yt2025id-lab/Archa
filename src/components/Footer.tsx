@@ -61,15 +61,15 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <ArchaLogo size={48} className="w-12 h-12" />
+              <ArchaLogo size={48} className="w-12 h-12 rounded-2xl" />
               <div>
                 <h3
-                  className="text-2xl font-semibold tracking-widest"
-                  style={{ fontFamily: 'var(--font-playfair), serif' }}
+                  className="text-2xl font-bold tracking-wider"
+                  style={{ fontFamily: 'var(--font-space), sans-serif' }}
                 >
                   ARCHA
                 </h3>
-                <p className="text-sm text-green-400">Arisan Onchain</p>
+                <p className="text-sm text-green-400" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>Arisan Onchain</p>
               </div>
             </div>
             <p className="text-gray-400 max-w-md mb-6 leading-relaxed">
@@ -107,12 +107,12 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <a
+                {/* <a
                   href="/pools"
                   className="text-gray-400 hover:text-white transition-colors duration-300"
                 >
                   {t("footer.explorePools")}
-                </a>
+                </a> */}
               </li>
             </ul>
           </div>

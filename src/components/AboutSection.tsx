@@ -119,7 +119,7 @@ export default function AboutSection() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight" style={{ fontFamily: 'var(--font-space), sans-serif' }}>
             {t("about.title")}{" "}
             <span className="bg-gradient-to-r from-green-500 via-blue-500 to-orange-500 bg-clip-text text-transparent">
               {t("about.titleHighlight")}

@@ -89,29 +89,41 @@ export default function PoolDetailPage() {
     if (approveSuccess) refetchAllowance();
   }, [approveSuccess, refetchAllowance]);
 
+  // Handle join success
+  const handleJoinSuccess = () => {
+    setShowJoinModal(false);
+    setSuccessMessage({ title: "Successfully Joined!", message: "Welcome to the arisan pool. Your collateral is now earning yield." });
+    setShowSuccessCelebration(true);
+    refetchPool();
+    refetchParticipant();
+    refetchBalance();
+  };
+
   useEffect(() => {
     if (joinSuccess) {
-      setShowJoinModal(false);
-      setSuccessMessage({ title: "Successfully Joined!", message: "Welcome to the arisan pool. Your collateral is now earning yield." });
-      setShowSuccessCelebration(true);
-      refetchPool();
-      refetchParticipant();
-      refetchBalance();
+      handleJoinSuccess();
     }
-  }, [joinSuccess, refetchPool, refetchParticipant, refetchBalance]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [joinSuccess]);
+
+  // Handle deposit success
+  const handleDepositSuccess = () => {
+    setShowDepositModal(false);
+    setSuccessMessage({ title: "Deposit Complete!", message: "Your monthly deposit has been made successfully." });
+    setShowSuccessCelebration(true);
+    refetchPool();
+    refetchParticipant();
+    refetchBalance();
+    refetchHasDeposited();
+    refetchYield();
+  };
 
   useEffect(() => {
     if (depositSuccess) {
-      setShowDepositModal(false);
-      setSuccessMessage({ title: "Deposit Complete!", message: "Your monthly deposit has been made successfully." });
-      setShowSuccessCelebration(true);
-      refetchPool();
-      refetchParticipant();
-      refetchBalance();
-      refetchHasDeposited();
-      refetchYield();
+      handleDepositSuccess();
     }
-  }, [depositSuccess, refetchPool, refetchParticipant, refetchBalance, refetchHasDeposited, refetchYield]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [depositSuccess]);
 
   const handleApprove = (amount: number) => {
     approve(poolAddress, amount);
@@ -164,7 +176,7 @@ export default function PoolDetailPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
-                <h1 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-playfair), serif" }}>
+                <h1 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: "var(--font-space), sans-serif" }}>
                   {poolName}
                 </h1>
                 <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(status)}`}>

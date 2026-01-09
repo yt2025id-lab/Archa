@@ -79,22 +79,32 @@ export default function PoolsPage() {
     }
   }, [approveSuccess, refetchAllowance]);
 
-  // Close modal and refetch after join success
+  // Handle join success
+  const handleJoinSuccess = () => {
+    setSelectedPool(null);
+    refetchPools();
+    refetchBalance();
+  };
+
   useEffect(() => {
     if (joinSuccess) {
-      setSelectedPool(null);
-      refetchPools();
-      refetchBalance();
+      handleJoinSuccess();
     }
-  }, [joinSuccess, refetchPools, refetchBalance]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [joinSuccess]);
 
-  // Close modal and refetch after create success
+  // Handle create success
+  const handleCreateSuccess = () => {
+    setShowCreateModal(false);
+    refetchPools();
+  };
+
   useEffect(() => {
     if (createSuccess) {
-      setShowCreateModal(false);
-      refetchPools();
+      handleCreateSuccess();
     }
-  }, [createSuccess, refetchPools]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [createSuccess]);
 
   const filteredPools = pools
     ? filter === "all"
@@ -157,7 +167,7 @@ export default function PoolsPage() {
           <div className="text-center">
             <h1
               className="text-4xl md:text-5xl font-bold text-white mb-4"
-              style={{ fontFamily: "var(--font-playfair), serif" }}
+              style={{ fontFamily: "var(--font-space), sans-serif" }}
             >
               Explore{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">

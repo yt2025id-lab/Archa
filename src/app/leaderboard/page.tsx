@@ -52,7 +52,7 @@ export default function LeaderboardPage() {
             </div>
             <h1
               className="text-4xl md:text-5xl font-bold text-white mb-4"
-              style={{ fontFamily: "var(--font-playfair), serif" }}
+              style={{ fontFamily: "var(--font-space), sans-serif" }}
             >
               Leaderboard
             </h1>

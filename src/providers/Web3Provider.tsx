@@ -6,27 +6,47 @@ import { mantle, mantleSepoliaTestnet, sepolia } from "wagmi/chains";
 import { injected, walletConnect } from "wagmi/connectors";
 import { ReactNode, useState } from "react";
 
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "";
+// WalletConnect Project ID - Get free Project ID from https://cloud.reown.com
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "demo-project-id";
+
+const connectors = [
+  injected({
+    shimDisconnect: true,
+    target() {
+      return {
+        id: "injected",
+        name: "MetaMask",
+        provider: typeof window !== "undefined" ? window.ethereum : undefined,
+      };
+    },
+  }),
+];
+
+// Only add WalletConnect if we have a valid project ID
+if (projectId && projectId !== "demo-project-id") {
+  connectors.push(
+    walletConnect({
+      projectId,
+      showQrModal: true,
+      metadata: {
+        name: "Archa - Arisan On-Chain",
+        description: "Decentralized Arisan Platform on Mantle Network",
+        url: "https://archa.app",
+        icons: ["https://archa.app/logo.png"],
+      },
+    })
+  );
+}
 
 const config = createConfig({
   chains: [mantleSepoliaTestnet, mantle, sepolia],
-  connectors: [
-    injected(),
-    walletConnect({
-      projectId,
-      metadata: {
-        name: "Archa - Arisan On-Chain",
-        description: "Platform arisan terdesentralisasi di Mantle Network",
-        url: "https://arisanonchain.vercel.app",
-        icons: ["https://arisanonchain.vercel.app/logo Archa.png"],
-      },
-    }),
-  ],
+  connectors,
   transports: {
     [mantleSepoliaTestnet.id]: http("https://rpc.sepolia.mantle.xyz"),
     [mantle.id]: http("https://rpc.mantle.xyz"),
     [sepolia.id]: http("https://gateway.tenderly.co/public/sepolia"),
   },
+  ssr: true,
 });
 
 export function Web3Provider({ children }: { children: ReactNode }) {

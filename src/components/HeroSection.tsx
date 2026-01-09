@@ -1,16 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import HeroSlideshow from "./HeroSlideshow";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroSection() {
-  const [mounted, setMounted] = useState(false);
+  const [mounted] = useState(true);
   const { t } = useLanguage();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -26,20 +22,20 @@ export default function HeroSection() {
           }`}
         >
           <span
-            className="block text-2xl md:text-3xl lg:text-4xl font-light text-white/50 mb-4 tracking-wide"
-            style={{ fontFamily: 'var(--font-playfair), serif' }}
+            className="block text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 tracking-wide"
+            style={{ fontFamily: 'var(--font-inter), sans-serif' }}
           >
             {t("hero.preTitle1")}
           </span>
           <span
-            className="block text-2xl md:text-3xl lg:text-4xl font-light text-white/50 mb-2 tracking-wide"
-            style={{ fontFamily: 'var(--font-playfair), serif' }}
+            className="block text-2xl md:text-3xl lg:text-4xl font-light text-white font-semibold mb-2 tracking-wide"
+            style={{ fontFamily: 'var(--font-inter), sans-serif' }}
           >
             {t("hero.preTitle2")}
           </span>
           <span
-            className="block text-6xl md:text-8xl lg:text-9xl bg-gradient-to-r from-green-400 via-blue-400 to-orange-400 bg-clip-text text-transparent italic font-bold mt-4"
-            style={{ fontFamily: 'var(--font-playfair), serif' }}
+            className="block text-6xl md:text-8xl lg:text-9xl text-white bg-clip-text font-bold mt-4"
+            style={{ fontFamily: 'var(--font-space), sans-serif' }}
           >
             {t("hero.title")}
           </span>
@@ -47,10 +43,10 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p
-          className={`text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed tracking-wide transition-all duration-1000 delay-400 ${
+          className={`text-lg md:text-xl text-white max-w-3xl mx-auto mb-10 leading-relaxed tracking-wide transition-all duration-1000 delay-400 ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
-          style={{ fontFamily: 'var(--font-playfair), serif' }}
+          style={{ fontFamily: 'var(--font-inter), sans-serif' }}
         >
           {t("hero.description")}
         </p>

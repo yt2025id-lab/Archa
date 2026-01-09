@@ -13,35 +13,35 @@ export default function HowItWorksSlideshow({ activeStep }: HowItWorksSlideshowP
   // Background configurations for each step
   const backgrounds = [
     {
-      src: "/how-it-works/step1-join.jpg",
+      src: "", // Placeholder - image not available
       alt: "Join Arisan Group",
       gradient: "from-green-950 via-green-900 to-emerald-950",
       glowColor: "bg-green-500",
       accentGlow: "bg-emerald-400",
     },
     {
-      src: "/how-it-works/step2-collateral.jpg",
+      src: "", // Placeholder - image not available
       alt: "Deposit Collateral",
       gradient: "from-blue-950 via-blue-900 to-indigo-950",
       glowColor: "bg-blue-500",
       accentGlow: "bg-cyan-400",
     },
     {
-      src: "/how-it-works/step3-deposit.jpg",
+      src: "", // Placeholder - image not available
       alt: "Regular Deposit",
       gradient: "from-purple-950 via-purple-900 to-violet-950",
       glowColor: "bg-purple-500",
       accentGlow: "bg-violet-400",
     },
     {
-      src: "/how-it-works/step4-turn.jpg",
+      src: "", // Placeholder - image not available
       alt: "Automatic Turn",
       gradient: "from-orange-950 via-orange-900 to-amber-950",
       glowColor: "bg-orange-500",
       accentGlow: "bg-yellow-400",
     },
     {
-      src: "/how-it-works/step5-yield.jpg",
+      src: "", // Placeholder - image not available
       alt: "Yield Bonus",
       gradient: "from-pink-950 via-rose-900 to-red-950",
       glowColor: "bg-pink-500",
@@ -67,17 +67,19 @@ export default function HowItWorksSlideshow({ activeStep }: HowItWorksSlideshowP
           <div className={`absolute inset-0 bg-gradient-to-br ${bg.gradient}`} />
 
           {/* Image (if available) */}
-          <Image
-            src={bg.src}
-            alt={bg.alt}
-            fill
-            className={`object-cover transition-opacity duration-500 ${
-              loadedImages.has(index) ? "opacity-40" : "opacity-0"
-            }`}
-            onLoad={() => handleImageLoad(index)}
-            onError={() => {}}
-            priority={index === 0}
-          />
+          {bg.src && (
+            <Image
+              src={bg.src}
+              alt={bg.alt}
+              fill
+              className={`object-cover transition-opacity duration-500 ${
+                loadedImages.has(index) ? "opacity-40" : "opacity-0"
+              }`}
+              onLoad={() => handleImageLoad(index)}
+              onError={() => {}}
+              priority={index === 0}
+            />
+          )}
 
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/40" />
