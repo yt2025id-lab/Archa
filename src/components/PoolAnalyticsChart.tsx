@@ -234,20 +234,22 @@ export default function PoolAnalyticsChart({
 
         {/* Chart Container */}
         <div className="relative p-6 bg-gradient-to-br from-gray-50/50 to-white rounded-2xl border border-gray-200/50 shadow-inner">
-          <div className="relative h-80 md:h-96 w-full">
+          <div className="relative h-80 md:h-96 w-full flex gap-2">
             {/* Y-axis labels */}
-            <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between py-2 pr-2 text-xs text-gray-500 font-medium">
+            <div className="flex flex-col justify-between py-2 text-xs text-gray-500 font-medium">
               {getYAxisLabels().map((label, i) => (
-                <span key={i} className="text-right">{label}</span>
+                <span key={i} className="text-right whitespace-nowrap">{label}</span>
               ))}
             </div>
 
-            <svg
-              viewBox="0 0 100 60"
-              className="w-full h-full transition-all duration-300"
-              preserveAspectRatio="none"
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
+            {/* Chart SVG */}
+            <div className="flex-1 relative">
+              <svg
+                viewBox="0 0 100 60"
+                className="w-full h-full transition-all duration-300"
+                preserveAspectRatio="none"
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
               {/* Vertical grid lines - aligned with data points */}
               {Array.from({ length: data.length }).map((_, i) => {
                 const x = paddingLeft + (i / (data.length - 1)) * chartWidth;
@@ -347,13 +349,14 @@ export default function PoolAnalyticsChart({
                   </g>
                 );
               })}
-            </svg>
+              </svg>
 
-            {/* X-axis labels */}
-            <div className="absolute -bottom-6 left-0 right-0 flex justify-between text-xs text-gray-500 font-medium px-8">
-              <span>{data[0].date}</span>
-              <span>{data[Math.floor(data.length / 2)].date}</span>
-              <span>{data[data.length - 1].date}</span>
+              {/* X-axis labels */}
+              <div className="absolute -bottom-6 left-0 right-0 flex justify-between text-xs text-gray-500 font-medium px-2">
+                <span>{data[0].date}</span>
+                <span>{data[Math.floor(data.length / 2)].date}</span>
+                <span>{data[data.length - 1].date}</span>
+              </div>
             </div>
           </div>
         </div>
