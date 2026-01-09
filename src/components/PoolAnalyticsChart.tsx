@@ -38,6 +38,7 @@ export default function PoolAnalyticsChart({
 }: PoolAnalyticsChartProps) {
   const [timeRange, setTimeRange] = useState<7 | 14 | 30>(7);
   const [metric, setMetric] = useState<"apy" | "tvl">("apy");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const data = generateHistoricalData(timeRange);
 
@@ -51,12 +52,14 @@ export default function PoolAnalyticsChart({
   const avgTvl = data.reduce((sum, d) => sum + d.tvl, 0) / data.length;
   const currentApy = data[data.length - 1].apy;
   const currentTvl = data[data.length - 1].tvl;
+  const apyChange = currentApy - data[0].apy;
+  const tvlChange = currentTvl - data[0].tvl;
 
   // Generate SVG path
   const getPath = () => {
     const width = 100;
     const height = 100;
-    const padding = 5;
+    const padding = 8;
 
     const points = data.map((d, i) => {
       const x = padding + (i / (data.length - 1)) * (width - 2 * padding);
@@ -72,7 +75,7 @@ export default function PoolAnalyticsChart({
   const getAreaPath = () => {
     const width = 100;
     const height = 100;
-    const padding = 5;
+    const padding = 8;
 
     const points = data.map((d, i) => {
       const x = padding + (i / (data.length - 1)) * (width - 2 * padding);
@@ -84,148 +87,284 @@ export default function PoolAnalyticsChart({
     return `M ${padding},${height - padding} L ${points.join(" L ")} L ${100 - padding},${height - padding} Z`;
   };
 
-  return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-        <h3 className="text-lg font-bold text-gray-900">{title}</h3>
+  const isPositive = metric === "apy" ? apyChange >= 0 : tvlChange >= 0;
 
-        <div className="flex items-center gap-2">
-          {/* Metric Toggle */}
-          <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
-            <button
-              onClick={() => setMetric("apy")}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                metric === "apy" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"
-              }`}
-            >
-              APY
-            </button>
-            <button
-              onClick={() => setMetric("tvl")}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                metric === "tvl" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"
-              }`}
-            >
-              TVL
-            </button>
+  return (
+    <div className="relative bg-gradient-to-br from-white via-gray-50/50 to-white rounded-3xl shadow-xl border border-gray-200/50 p-8 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:shadow-2xl">
+      {/* Decorative gradient orbs */}
+      <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-green-400/20 via-blue-400/20 to-purple-400/20 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-br from-orange-400/20 via-pink-400/20 to-blue-400/20 rounded-full blur-3xl" />
+
+      {/* Content */}
+      <div className="relative">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500 via-blue-500 to-orange-500 flex items-center justify-center shadow-lg">
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-gray-900" style={{ fontFamily: "var(--font-space), sans-serif" }}>
+              {title}
+            </h3>
           </div>
 
-          {/* Time Range */}
-          <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
-            {([7, 14, 30] as const).map((days) => (
+          <div className="flex items-center gap-2">
+            {/* Metric Toggle */}
+            <div className="flex items-center gap-1 bg-gradient-to-r from-gray-100 to-gray-50 rounded-xl p-1 shadow-inner">
               <button
-                key={days}
-                onClick={() => setTimeRange(days)}
-                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
-                  timeRange === days ? "bg-white text-gray-900 shadow-sm" : "text-gray-500"
+                onClick={() => setMetric("apy")}
+                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 ${
+                  metric === "apy"
+                    ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md shadow-green-500/25"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
-                {days}D
+                APY
               </button>
-            ))}
+              <button
+                onClick={() => setMetric("tvl")}
+                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 ${
+                  metric === "tvl"
+                    ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-md shadow-blue-500/25"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                TVL
+              </button>
+            </div>
+
+            {/* Time Range */}
+            <div className="flex items-center gap-1 bg-gradient-to-r from-gray-100 to-gray-50 rounded-xl p-1 shadow-inner">
+              {([7, 14, 30] as const).map((days) => (
+                <button
+                  key={days}
+                  onClick={() => setTimeRange(days)}
+                  className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-300 ${
+                    timeRange === days
+                      ? "bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-md shadow-orange-500/25"
+                      : "text-gray-600 hover:text-gray-900"
+                  }`}
+                >
+                  {days}D
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl">
-          <p className="text-sm text-gray-500 mb-1">
-            {metric === "apy" ? "Current APY" : "Current TVL"}
-          </p>
-          <p className="text-2xl font-bold text-green-600">
-            {metric === "apy" ? `${currentApy.toFixed(2)}%` : `$${(currentTvl / 1000).toFixed(1)}K`}
-          </p>
-          <p className="text-xs text-gray-500 mt-1">
-            Avg: {metric === "apy" ? `${avgApy.toFixed(2)}%` : `$${(avgTvl / 1000).toFixed(1)}K`}
-          </p>
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+          {/* Current Value */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+            <div className="relative p-5 bg-gradient-to-br from-green-50 via-emerald-50/50 to-green-50 rounded-2xl border border-green-200/50 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-sm font-medium text-green-700/80">
+                  {metric === "apy" ? "Current APY" : "Current TVL"}
+                </p>
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              </div>
+              <p className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                {metric === "apy" ? `${currentApy.toFixed(2)}%` : `$${(currentTvl / 1000).toFixed(1)}K`}
+              </p>
+              <p className="text-xs text-green-600/70 mt-2 font-medium">
+                Avg: {metric === "apy" ? `${avgApy.toFixed(2)}%` : `$${(avgTvl / 1000).toFixed(1)}K`}
+              </p>
+            </div>
+          </div>
+
+          {/* Change Value */}
+          <div className="relative group">
+            <div className={`absolute inset-0 bg-gradient-to-br ${isPositive ? "from-blue-400 to-indigo-500" : "from-red-400 to-rose-500"} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+            <div className={`relative p-5 bg-gradient-to-br ${isPositive ? "from-blue-50 via-indigo-50/50 to-blue-50" : "from-red-50 via-rose-50/50 to-red-50"} rounded-2xl border ${isPositive ? "border-blue-200/50" : "border-red-200/50"} backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]`}>
+              <div className="flex items-center justify-between mb-2">
+                <p className={`text-sm font-medium ${isPositive ? "text-blue-700/80" : "text-red-700/80"}`}>
+                  {metric === "apy" ? "APY Change" : "TVL Change"}
+                </p>
+                <svg className={`w-4 h-4 ${isPositive ? "text-blue-500 rotate-0" : "text-red-500 rotate-180"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <p className={`text-3xl font-bold bg-gradient-to-r ${isPositive ? "from-blue-600 to-indigo-600" : "from-red-600 to-rose-600"} bg-clip-text text-transparent`}>
+                {metric === "apy"
+                  ? `${apyChange >= 0 ? "+" : ""}${apyChange.toFixed(2)}%`
+                  : `${tvlChange >= 0 ? "+" : ""}$${(tvlChange / 1000).toFixed(1)}K`}
+              </p>
+              <p className={`text-xs ${isPositive ? "text-blue-600/70" : "text-red-600/70"} mt-2 font-medium`}>
+                vs {timeRange} days ago
+              </p>
+            </div>
+          </div>
+
+          {/* Trend Indicator */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+            <div className="relative p-5 bg-gradient-to-br from-purple-50 via-pink-50/50 to-purple-50 rounded-2xl border border-purple-200/50 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-sm font-medium text-purple-700/80">Trend</p>
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                  <span className="text-lg">{isPositive ? "📈" : "📉"}</span>
+                </div>
+              </div>
+              <p className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                {isPositive ? "Bullish" : "Bearish"}
+              </p>
+              <p className="text-xs text-purple-600/70 mt-2 font-medium">
+                Market sentiment
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
-          <p className="text-sm text-gray-500 mb-1">
-            {metric === "apy" ? "APY Change" : "TVL Change"}
-          </p>
-          <p className="text-2xl font-bold text-blue-600">
-            {metric === "apy"
-              ? `${(currentApy - data[0].apy) >= 0 ? "+" : ""}${(currentApy - data[0].apy).toFixed(2)}%`
-              : `${(currentTvl - data[0].tvl) >= 0 ? "+" : ""}$${((currentTvl - data[0].tvl) / 1000).toFixed(1)}K`}
-          </p>
-          <p className="text-xs text-gray-500 mt-1">vs {timeRange} days ago</p>
-        </div>
-      </div>
 
-      {/* Chart */}
-      <div className="relative h-48 w-full">
-        <svg viewBox="0 0 100 100" className="w-full h-full" preserveAspectRatio="none">
-          {/* Grid lines */}
-          <defs>
-            <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor={metric === "apy" ? "#22c55e" : "#3b82f6"} stopOpacity="0.3" />
-              <stop offset="100%" stopColor={metric === "apy" ? "#22c55e" : "#3b82f6"} stopOpacity="0" />
-            </linearGradient>
-          </defs>
+        {/* Chart Container */}
+        <div className="relative p-6 bg-gradient-to-br from-gray-50/50 to-white rounded-2xl border border-gray-200/50 shadow-inner">
+          <div className="relative h-64 w-full">
+            <svg
+              viewBox="0 0 100 100"
+              className="w-full h-full transition-all duration-300"
+              preserveAspectRatio="none"
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <defs>
+                {/* Enhanced gradient for area fill */}
+                <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor={metric === "apy" ? "#22c55e" : "#3b82f6"} stopOpacity="0.4" />
+                  <stop offset="50%" stopColor={metric === "apy" ? "#10b981" : "#2563eb"} stopOpacity="0.2" />
+                  <stop offset="100%" stopColor={metric === "apy" ? "#059669" : "#1d4ed8"} stopOpacity="0" />
+                </linearGradient>
 
-          {/* Horizontal grid lines */}
-          {[0, 25, 50, 75, 100].map((y) => (
-            <line
-              key={y}
-              x1="5"
-              y1={y}
-              x2="95"
-              y2={y}
-              stroke="#e5e7eb"
-              strokeWidth="0.5"
-              strokeDasharray="2,2"
-            />
-          ))}
+                {/* Glow effect for line */}
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
 
-          {/* Area fill */}
-          <path d={getAreaPath()} fill="url(#areaGradient)" />
+              {/* Horizontal grid lines */}
+              {[20, 40, 60, 80].map((y) => (
+                <line
+                  key={y}
+                  x1="8"
+                  y1={y}
+                  x2="92"
+                  y2={y}
+                  stroke="#e5e7eb"
+                  strokeWidth="0.3"
+                  strokeDasharray="1,2"
+                  opacity="0.5"
+                />
+              ))}
 
-          {/* Line */}
-          <path
-            d={getPath()}
-            fill="none"
-            stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-
-          {/* Data points */}
-          {data.map((d, i) => {
-            const x = 5 + (i / (data.length - 1)) * 90;
-            const value = metric === "apy" ? d.apy : d.tvl;
-            const y = 95 - ((value - minValue) / range) * 90;
-            return (
-              <circle
-                key={i}
-                cx={x}
-                cy={y}
-                r="1.5"
-                fill="white"
-                stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
-                strokeWidth="1"
+              {/* Area fill */}
+              <path
+                d={getAreaPath()}
+                fill="url(#areaGradient)"
+                className="transition-all duration-300"
               />
-            );
-          })}
-        </svg>
 
-        {/* X-axis labels */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-gray-400 px-2">
-          <span>{data[0].date}</span>
-          <span>{data[Math.floor(data.length / 2)].date}</span>
-          <span>{data[data.length - 1].date}</span>
+              {/* Main line with glow */}
+              <path
+                d={getPath()}
+                fill="none"
+                stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                filter="url(#glow)"
+                className="transition-all duration-300"
+              />
+
+              {/* Data points with hover effect */}
+              {data.map((d, i) => {
+                const x = 8 + (i / (data.length - 1)) * 84;
+                const value = metric === "apy" ? d.apy : d.tvl;
+                const y = 92 - ((value - minValue) / range) * 84;
+                const isHovered = hoveredIndex === i;
+
+                return (
+                  <g key={i}>
+                    {/* Hover area */}
+                    <rect
+                      x={x - 2}
+                      y="0"
+                      width="4"
+                      height="100"
+                      fill="transparent"
+                      style={{ cursor: 'pointer' }}
+                      onMouseEnter={() => setHoveredIndex(i)}
+                    />
+
+                    {/* Data point */}
+                    <circle
+                      cx={x}
+                      cy={y}
+                      r={isHovered ? "2.5" : "1.5"}
+                      fill="white"
+                      stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
+                      strokeWidth={isHovered ? "2" : "1.5"}
+                      className="transition-all duration-200"
+                      style={{
+                        filter: isHovered ? 'drop-shadow(0 0 3px rgba(34, 197, 94, 0.5))' : 'none',
+                      }}
+                    />
+
+                    {/* Tooltip on hover */}
+                    {isHovered && (
+                      <g>
+                        <rect
+                          x={x - 15}
+                          y={y - 18}
+                          width="30"
+                          height="14"
+                          rx="3"
+                          fill={metric === "apy" ? "#22c55e" : "#3b82f6"}
+                          opacity="0.95"
+                        />
+                        <text
+                          x={x}
+                          y={y - 9}
+                          textAnchor="middle"
+                          fill="white"
+                          fontSize="4"
+                          fontWeight="bold"
+                        >
+                          {metric === "apy" ? `${value.toFixed(1)}%` : `$${(value / 1000).toFixed(0)}K`}
+                        </text>
+                      </g>
+                    )}
+                  </g>
+                );
+              })}
+            </svg>
+
+            {/* X-axis labels with enhanced styling */}
+            <div className="absolute -bottom-6 left-0 right-0 flex justify-between text-xs font-medium text-gray-500 px-2">
+              <span className="px-2 py-1 bg-gray-100/50 rounded-md">{data[0].date}</span>
+              <span className="px-2 py-1 bg-gray-100/50 rounded-md">{data[Math.floor(data.length / 2)].date}</span>
+              <span className="px-2 py-1 bg-gray-100/50 rounded-md">{data[data.length - 1].date}</span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* Legend */}
-      <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-center gap-6 text-sm">
-        <div className="flex items-center gap-2">
-          <div className={`w-3 h-3 rounded-full ${metric === "apy" ? "bg-green-500" : "bg-blue-500"}`} />
-          <span className="text-gray-600">
-            {metric === "apy" ? "Historical APY" : "Total Value Locked"}
-          </span>
+        {/* Legend with enhanced styling */}
+        <div className="mt-6 pt-5 border-t border-gray-200/50 flex items-center justify-center gap-8">
+          <div className="flex items-center gap-2">
+            <div className={`w-3 h-3 rounded-full ${metric === "apy" ? "bg-gradient-to-r from-green-500 to-emerald-500" : "bg-gradient-to-r from-blue-500 to-indigo-500"} shadow-md`} />
+            <span className="text-sm font-medium text-gray-700">
+              {metric === "apy" ? "Historical APY" : "Total Value Locked"}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="w-3 h-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-xs text-gray-500">Hover over chart for details</span>
+          </div>
         </div>
       </div>
     </div>
