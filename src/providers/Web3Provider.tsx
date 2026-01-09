@@ -20,23 +20,18 @@ const connectors = [
       };
     },
   }),
+  // WalletConnect - always included (uses demo ID if not configured)
+  walletConnect({
+    projectId: projectId || "demo-project-id",
+    showQrModal: true,
+    metadata: {
+      name: "Archa - Arisan On-Chain",
+      description: "Decentralized Arisan Platform on Mantle Network",
+      url: "https://archa.app",
+      icons: ["https://archa.app/logo.png"],
+    },
+  }),
 ];
-
-// Only add WalletConnect if we have a valid project ID
-if (projectId && projectId !== "demo-project-id") {
-  connectors.push(
-    walletConnect({
-      projectId,
-      showQrModal: true,
-      metadata: {
-        name: "Archa - Arisan On-Chain",
-        description: "Decentralized Arisan Platform on Mantle Network",
-        url: "https://archa.app",
-        icons: ["https://archa.app/logo.png"],
-      },
-    })
-  );
-}
 
 const config = createConfig({
   chains: [mantleSepoliaTestnet, mantle, sepolia],
