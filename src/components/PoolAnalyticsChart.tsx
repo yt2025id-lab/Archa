@@ -55,19 +55,22 @@ export default function PoolAnalyticsChart({
   const apyChange = currentApy - data[0].apy;
   const tvlChange = currentTvl - data[0].tvl;
 
-  // Generate SVG path
-  const getPath = () => {
-    const width = 100;
-    const height = 60;
-    const paddingLeft = 10;
-    const paddingRight = 3;
-    const paddingTop = 3;
-    const paddingBottom = 8;
+  // Chart dimensions
+  const paddingLeft = 10;
+  const paddingRight = 3;
+  const paddingTop = 3;
+  const paddingBottom = 8;
+  const chartWidth = 100 - paddingLeft - paddingRight;
+  const chartHeight = 60 - paddingTop - paddingBottom;
+  const gridSteps = 5;
 
+  // Generate SVG path - snap to grid
+  const getPath = () => {
     const points = data.map((d, i) => {
-      const x = paddingLeft + (i / (data.length - 1)) * (width - paddingLeft - paddingRight);
+      const x = paddingLeft + (i / (data.length - 1)) * chartWidth;
       const value = metric === "apy" ? d.apy : d.tvl;
-      const y = paddingTop + (1 - (value - minValue) / range) * (height - paddingTop - paddingBottom);
+      const normalizedValue = (value - minValue) / range;
+      const y = paddingTop + (1 - normalizedValue) * chartHeight;
       return `${x},${y}`;
     });
 
@@ -76,10 +79,9 @@ export default function PoolAnalyticsChart({
 
   // Generate Y-axis labels
   const getYAxisLabels = () => {
-    const steps = 5;
     const labels = [];
-    for (let i = 0; i < steps; i++) {
-      const value = minValue + (range * (steps - 1 - i)) / (steps - 1);
+    for (let i = 0; i < gridSteps; i++) {
+      const value = minValue + (range * (gridSteps - 1 - i)) / (gridSteps - 1);
       if (metric === "apy") {
         labels.push(`${value.toFixed(1)}%`);
       } else {
@@ -87,6 +89,16 @@ export default function PoolAnalyticsChart({
       }
     }
     return labels;
+  };
+
+  // Generate horizontal grid positions
+  const getHorizontalGridPositions = () => {
+    const positions = [];
+    for (let i = 0; i < gridSteps; i++) {
+      const y = paddingTop + (i / (gridSteps - 1)) * chartHeight;
+      positions.push(y);
+    }
+    return positions;
   };
 
   const isPositive = metric === "apy" ? apyChange >= 0 : tvlChange >= 0;
@@ -236,43 +248,43 @@ export default function PoolAnalyticsChart({
               preserveAspectRatio="none"
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              {/* Vertical grid lines (columns) */}
+              {/* Vertical grid lines - aligned with data points */}
               {Array.from({ length: data.length }).map((_, i) => {
-                const x = 10 + (i / (data.length - 1)) * 87;
+                const x = paddingLeft + (i / (data.length - 1)) * chartWidth;
                 return (
                   <line
                     key={`v-${i}`}
                     x1={x}
-                    y1="3"
+                    y1={paddingTop}
                     x2={x}
-                    y2="52"
+                    y2={paddingTop + chartHeight}
                     stroke="#e5e7eb"
-                    strokeWidth="0.3"
-                    opacity="0.5"
+                    strokeWidth="0.2"
+                    opacity="0.4"
                   />
                 );
               })}
 
-              {/* Horizontal grid lines */}
-              {[3, 15.25, 27.5, 39.75, 52].map((y, i) => (
+              {/* Horizontal grid lines - aligned with Y-axis labels */}
+              {getHorizontalGridPositions().map((y, i) => (
                 <line
                   key={`h-${i}`}
-                  x1="10"
+                  x1={paddingLeft}
                   y1={y}
-                  x2="97"
+                  x2={paddingLeft + chartWidth}
                   y2={y}
                   stroke="#e5e7eb"
-                  strokeWidth="0.3"
-                  opacity="0.6"
+                  strokeWidth="0.2"
+                  opacity="0.5"
                 />
               ))}
 
-              {/* Main line - simple and thin */}
+              {/* Main line - thin and clean */}
               <path
                 d={getPath()}
                 fill="none"
                 stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
-                strokeWidth="2"
+                strokeWidth="1.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className="transition-all duration-300"
@@ -280,13 +292,10 @@ export default function PoolAnalyticsChart({
 
               {/* Data points - simple bullets */}
               {data.map((d, i) => {
-                const paddingLeft = 10;
-                const paddingRight = 3;
-                const paddingTop = 3;
-                const paddingBottom = 8;
-                const x = paddingLeft + (i / (data.length - 1)) * (100 - paddingLeft - paddingRight);
+                const x = paddingLeft + (i / (data.length - 1)) * chartWidth;
                 const value = metric === "apy" ? d.apy : d.tvl;
-                const y = paddingTop + (1 - (value - minValue) / range) * (60 - paddingTop - paddingBottom);
+                const normalizedValue = (value - minValue) / range;
+                const y = paddingTop + (1 - normalizedValue) * chartHeight;
                 const isHovered = hoveredIndex === i;
 
                 return (
