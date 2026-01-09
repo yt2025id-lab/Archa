@@ -132,7 +132,7 @@ export default function Header() {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setLanguageDropdown(!languageDropdown)}
-                className="flex items-center justify-center w-20 h-10 rounded-full border-2 border-gray-600 text-gray-900 font-semibold text-sm hover:bg-gray-50 transition-all duration-300"
+                className="flex items-center justify-center w-20 h-11 rounded-full border-2 border-gray-600 text-gray-900 font-semibold text-sm hover:bg-gray-50 transition-all duration-300"
                 aria-label="Change language"
               >
                 <span className="uppercase">{language}</span>
@@ -182,7 +182,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative w-10 h-10 flex items-center justify-center"
+            className="md:hidden relative w-11 h-11 flex items-center justify-center"
             aria-label="Toggle menu"
           >
             <div className="flex flex-col gap-1.5">

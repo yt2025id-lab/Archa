@@ -45,27 +45,27 @@ export default function AIOptimizerPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-purple-900 via-gray-900 to-gray-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="pt-32 pb-12 sm:pb-16 bg-gradient-to-br from-purple-900 via-gray-900 to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 rounded-full">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-purple-500/20 rounded-full">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
                 </span>
-                <span className="text-purple-300 text-sm font-medium">AI-Powered</span>
+                <span className="text-purple-300 text-xs sm:text-sm font-medium">AI-Powered</span>
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-green-500/20 rounded-full">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span className="text-green-300 text-sm font-medium">DeFiLlama Live Data</span>
+                <span className="text-green-300 text-xs sm:text-sm font-medium">DeFiLlama Live Data</span>
               </div>
             </div>
             <h1
-              className="text-4xl md:text-5xl font-bold text-white mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 px-4"
               style={{ fontFamily: "var(--font-space), sans-serif" }}
             >
               AI Yield{" "}
@@ -73,7 +73,7 @@ export default function AIOptimizerPage() {
                 Optimizer
               </span>
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto px-4">
               Advanced AI analyzes 5+ DeFi protocols to maximize your yield while managing risk
             </p>
           </div>
@@ -81,40 +81,42 @@ export default function AIOptimizerPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Risk Tolerance Selector */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 mb-6 sm:mb-8">
+            <div className="flex flex-col gap-4">
               <div>
-                <h2 className="text-xl font-bold text-gray-900">Risk Tolerance</h2>
-                <p className="text-sm text-gray-500">Select your preferred risk level for AI recommendations</p>
+                <h2 className="text-lg sm:text-xl font-bold text-gray-900">Risk Tolerance</h2>
+                <p className="text-xs sm:text-sm text-gray-500">Select your preferred risk level for AI recommendations</p>
               </div>
-              <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1">
-                {(["conservative", "moderate", "aggressive"] as const).map((risk) => (
-                  <button
-                    key={risk}
-                    onClick={() => setRiskTolerance(risk)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                      riskTolerance === risk
-                        ? risk === "conservative"
-                          ? "bg-green-500 text-white"
-                          : risk === "moderate"
-                          ? "bg-yellow-500 text-white"
-                          : "bg-red-500 text-white"
-                        : "text-gray-600 hover:text-gray-900"
-                    }`}
-                  >
-                    {risk.charAt(0).toUpperCase() + risk.slice(1)}
-                  </button>
-                ))}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <div className="flex items-center gap-1.5 bg-gray-100 rounded-full p-1 w-full sm:w-auto">
+                  {(["conservative", "moderate", "aggressive"] as const).map((risk) => (
+                    <button
+                      key={risk}
+                      onClick={() => setRiskTolerance(risk)}
+                      className={`flex-1 sm:flex-none px-3 sm:px-4 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 min-h-[44px] ${
+                        riskTolerance === risk
+                          ? risk === "conservative"
+                            ? "bg-green-500 text-white"
+                            : risk === "moderate"
+                            ? "bg-yellow-500 text-white"
+                            : "bg-red-500 text-white"
+                          : "text-gray-600 hover:text-gray-900"
+                      }`}
+                    >
+                      {risk.charAt(0).toUpperCase() + risk.slice(1)}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={refetchAll}
+                  className="w-full sm:w-auto px-4 py-2.5 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm font-medium hover:bg-purple-200 transition-colors min-h-[44px]"
+                >
+                  Refresh Data
+                </button>
               </div>
-              <button
-                onClick={refetchAll}
-                className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors"
-              >
-                Refresh Data
-              </button>
             </div>
           </div>
 
@@ -128,34 +130,34 @@ export default function AIOptimizerPage() {
 
           {/* Main Dashboard */}
           {!isLoading && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* AI Recommendation Card */}
               <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                <div className="p-6 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-pink-50">
+                <div className="p-4 sm:p-6 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-pink-50">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">AI Recommendation</h3>
-                      <p className="text-sm text-gray-500">Optimal strategy for {riskTolerance} risk</p>
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-900">AI Recommendation</h3>
+                      <p className="text-xs sm:text-sm text-gray-500">Optimal strategy for {riskTolerance} risk</p>
                     </div>
                   </div>
                 </div>
 
                 {recommendation && (
-                  <div className="p-6 space-y-6">
+                  <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
                     {/* Top Protocol */}
-                    <div className="flex items-center justify-between p-4 bg-purple-50 rounded-xl">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 p-4 bg-purple-50 rounded-xl">
                       <div>
-                        <p className="text-sm text-purple-600 font-medium">Recommended Protocol</p>
-                        <p className="text-2xl font-bold text-purple-900">{recommendation.recommendedProtocol}</p>
+                        <p className="text-xs sm:text-sm text-purple-600 font-medium">Recommended Protocol</p>
+                        <p className="text-xl sm:text-2xl font-bold text-purple-900">{recommendation.recommendedProtocol}</p>
                       </div>
-                      <div className="text-right">
-                        <p className="text-sm text-purple-600">Expected APY</p>
-                        <p className="text-3xl font-bold text-purple-700">
+                      <div className="text-left sm:text-right">
+                        <p className="text-xs sm:text-sm text-purple-600">Expected APY</p>
+                        <p className="text-2xl sm:text-3xl font-bold text-purple-700">
                           {recommendation.expectedApy.toFixed(2)}%
                         </p>
                       </div>
@@ -235,11 +237,11 @@ export default function AIOptimizerPage() {
               </div>
 
               {/* Protocol List & Market Stats */}
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Market Conditions */}
                 {yields?.market && (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">Market Conditions</h3>
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Market Conditions</h3>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-500">Volatility Index</span>
@@ -285,26 +287,26 @@ export default function AIOptimizerPage() {
 
                 {/* Protocol Stats */}
                 {yields?.stats && (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">Protocol Stats</h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="p-3 bg-green-50 rounded-xl">
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Protocol Stats</h3>
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                      <div className="p-3 sm:p-4 bg-green-50 rounded-xl">
                         <p className="text-xs text-green-600">Max APY</p>
-                        <p className="text-xl font-bold text-green-700">{yields.stats.maxApy}%</p>
+                        <p className="text-lg sm:text-xl font-bold text-green-700">{yields.stats.maxApy}%</p>
                       </div>
-                      <div className="p-3 bg-blue-50 rounded-xl">
+                      <div className="p-3 sm:p-4 bg-blue-50 rounded-xl">
                         <p className="text-xs text-blue-600">Avg APY</p>
-                        <p className="text-xl font-bold text-blue-700">{yields.stats.avgApy}%</p>
+                        <p className="text-lg sm:text-xl font-bold text-blue-700">{yields.stats.avgApy}%</p>
                       </div>
-                      <div className="p-3 bg-purple-50 rounded-xl">
+                      <div className="p-3 sm:p-4 bg-purple-50 rounded-xl">
                         <p className="text-xs text-purple-600">Total TVL</p>
-                        <p className="text-xl font-bold text-purple-700">
+                        <p className="text-lg sm:text-xl font-bold text-purple-700">
                           ${(yields.stats.totalTvl / 1000000).toFixed(1)}M
                         </p>
                       </div>
-                      <div className="p-3 bg-gray-50 rounded-xl">
+                      <div className="p-3 sm:p-4 bg-gray-50 rounded-xl">
                         <p className="text-xs text-gray-600">Protocols</p>
-                        <p className="text-xl font-bold text-gray-700">{yields.stats.protocolCount}</p>
+                        <p className="text-lg sm:text-xl font-bold text-gray-700">{yields.stats.protocolCount}</p>
                       </div>
                     </div>
                   </div>
@@ -312,8 +314,8 @@ export default function AIOptimizerPage() {
 
                 {/* Protocol List */}
                 {yields?.protocols && (
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">All Protocols</h3>
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6">
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">All Protocols</h3>
                     <div className="space-y-3">
                       {yields.protocols
                         .sort((a, b) => b.apy - a.apy)
@@ -358,23 +360,23 @@ export default function AIOptimizerPage() {
 
           {/* AI Advantage Section */}
           {strategy?.aiAdvantage && (
-            <div className="mt-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">AI Optimization Advantage</h3>
-                  <p className="text-purple-100">
+            <div className="mt-6 sm:mt-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 sm:p-8 text-white">
+              <div className="flex flex-col items-start sm:items-center gap-6">
+                <div className="w-full text-center sm:text-left">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-2">AI Optimization Advantage</h3>
+                  <p className="text-sm sm:text-base text-purple-100">
                     {strategy.aiAdvantage.riskReduction}
                   </p>
                 </div>
-                <div className="flex items-center gap-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-4 sm:gap-8">
                   <div className="text-center">
-                    <p className="text-sm text-purple-200">Single Protocol</p>
-                    <p className="text-3xl font-bold">{strategy.aiAdvantage.singleProtocolApy}%</p>
+                    <p className="text-xs sm:text-sm text-purple-200">Single Protocol</p>
+                    <p className="text-2xl sm:text-3xl font-bold">{strategy.aiAdvantage.singleProtocolApy}%</p>
                   </div>
-                  <div className="text-4xl">→</div>
+                  <div className="text-3xl sm:text-4xl rotate-90 sm:rotate-0">→</div>
                   <div className="text-center">
-                    <p className="text-sm text-purple-200">AI Optimized</p>
-                    <p className="text-3xl font-bold text-green-300">
+                    <p className="text-xs sm:text-sm text-purple-200">AI Optimized</p>
+                    <p className="text-2xl sm:text-3xl font-bold text-green-300">
                       {strategy.aiAdvantage.diversifiedApy}%
                     </p>
                   </div>
