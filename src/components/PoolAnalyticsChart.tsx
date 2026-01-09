@@ -71,22 +71,6 @@ export default function PoolAnalyticsChart({
     return `M ${points.join(" L ")}`;
   };
 
-  // Generate area path (for gradient fill)
-  const getAreaPath = () => {
-    const width = 100;
-    const height = 60;
-    const padding = 5;
-
-    const points = data.map((d, i) => {
-      const x = padding + (i / (data.length - 1)) * (width - 2 * padding);
-      const value = metric === "apy" ? d.apy : d.tvl;
-      const y = height - padding - ((value - minValue) / range) * (height - 2 * padding);
-      return `${x},${y}`;
-    });
-
-    return `M ${padding},${height - padding} L ${points.join(" L ")} L ${width - padding},${height - padding} Z`;
-  };
-
   const isPositive = metric === "apy" ? apyChange >= 0 : tvlChange >= 0;
 
   return (
@@ -227,24 +211,6 @@ export default function PoolAnalyticsChart({
               preserveAspectRatio="none"
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <defs>
-                {/* Enhanced gradient for area fill */}
-                <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor={metric === "apy" ? "#22c55e" : "#3b82f6"} stopOpacity="0.4" />
-                  <stop offset="50%" stopColor={metric === "apy" ? "#10b981" : "#2563eb"} stopOpacity="0.2" />
-                  <stop offset="100%" stopColor={metric === "apy" ? "#059669" : "#1d4ed8"} stopOpacity="0" />
-                </linearGradient>
-
-                {/* Glow effect for line */}
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
-                  <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-
               {/* Horizontal grid lines */}
               {[12, 24, 36, 48].map((y) => (
                 <line
@@ -254,32 +220,24 @@ export default function PoolAnalyticsChart({
                   x2="95"
                   y2={y}
                   stroke="#e5e7eb"
-                  strokeWidth="0.2"
+                  strokeWidth="0.15"
                   strokeDasharray="1,2"
-                  opacity="0.5"
+                  opacity="0.4"
                 />
               ))}
 
-              {/* Area fill */}
-              <path
-                d={getAreaPath()}
-                fill="url(#areaGradient)"
-                className="transition-all duration-300"
-              />
-
-              {/* Main line with glow */}
+              {/* Main line - simple and thin */}
               <path
                 d={getPath()}
                 fill="none"
                 stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
-                strokeWidth="2.5"
+                strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                filter="url(#glow)"
                 className="transition-all duration-300"
               />
 
-              {/* Data points with hover effect */}
+              {/* Data points - simple bullets */}
               {data.map((d, i) => {
                 const x = 5 + (i / (data.length - 1)) * 90;
                 const value = metric === "apy" ? d.apy : d.tvl;
@@ -290,27 +248,22 @@ export default function PoolAnalyticsChart({
                   <g key={i}>
                     {/* Hover area */}
                     <rect
-                      x={x - 2}
+                      x={x - 3}
                       y="0"
-                      width="4"
+                      width="6"
                       height="60"
                       fill="transparent"
                       style={{ cursor: 'pointer' }}
                       onMouseEnter={() => setHoveredIndex(i)}
                     />
 
-                    {/* Data point */}
+                    {/* Data point - simple solid circle */}
                     <circle
                       cx={x}
                       cy={y}
-                      r={isHovered ? "2" : "1.2"}
-                      fill="white"
-                      stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
-                      strokeWidth={isHovered ? "1.5" : "1.2"}
+                      r={isHovered ? "1.8" : "1"}
+                      fill={metric === "apy" ? "#22c55e" : "#3b82f6"}
                       className="transition-all duration-200"
-                      style={{
-                        filter: isHovered ? 'drop-shadow(0 0 2px rgba(34, 197, 94, 0.6))' : 'none',
-                      }}
                     />
 
                     {/* Tooltip on hover */}
@@ -318,20 +271,20 @@ export default function PoolAnalyticsChart({
                       <g>
                         <rect
                           x={x - 12}
-                          y={y - 12}
+                          y={y - 11}
                           width="24"
-                          height="9"
-                          rx="2"
-                          fill={metric === "apy" ? "#22c55e" : "#3b82f6"}
+                          height="8"
+                          rx="1.5"
+                          fill="#1f2937"
                           opacity="0.95"
                         />
                         <text
                           x={x}
-                          y={y - 6}
+                          y={y - 5.5}
                           textAnchor="middle"
                           fill="white"
-                          fontSize="3.5"
-                          fontWeight="bold"
+                          fontSize="3.2"
+                          fontWeight="600"
                         >
                           {metric === "apy" ? `${value.toFixed(1)}%` : `$${(value / 1000).toFixed(0)}K`}
                         </text>
