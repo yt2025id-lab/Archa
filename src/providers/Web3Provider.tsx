@@ -42,13 +42,15 @@ const config = createConfig({
     [sepolia.id]: http("https://gateway.tenderly.co/public/sepolia"),
   },
   ssr: true,
+  // Disable automatic reconnection on page load
+  multiInjectedProviderDiscovery: false,
 });
 
 export function Web3Provider({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <WagmiProvider config={config}>
+    <WagmiProvider config={config} reconnectOnMount={false}>
       <QueryClientProvider client={queryClient}>
         {children}
       </QueryClientProvider>
