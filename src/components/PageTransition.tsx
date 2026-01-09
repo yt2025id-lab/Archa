@@ -108,8 +108,8 @@ export default function PageTransition({ children }: PageTransitionProps) {
             </div>
 
             {/* Percentage Text */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-2xl font-bold text-gray-700 mt-32">
+            <div className="absolute inset-0 flex items-end justify-center pb-8">
+              <span className="text-2xl font-bold text-gray-700">
                 {Math.round(progress)}%
               </span>
             </div>
