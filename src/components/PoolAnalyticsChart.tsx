@@ -58,8 +58,8 @@ export default function PoolAnalyticsChart({
   // Generate SVG path
   const getPath = () => {
     const width = 100;
-    const height = 100;
-    const padding = 8;
+    const height = 60;
+    const padding = 5;
 
     const points = data.map((d, i) => {
       const x = padding + (i / (data.length - 1)) * (width - 2 * padding);
@@ -74,8 +74,8 @@ export default function PoolAnalyticsChart({
   // Generate area path (for gradient fill)
   const getAreaPath = () => {
     const width = 100;
-    const height = 100;
-    const padding = 8;
+    const height = 60;
+    const padding = 5;
 
     const points = data.map((d, i) => {
       const x = padding + (i / (data.length - 1)) * (width - 2 * padding);
@@ -84,7 +84,7 @@ export default function PoolAnalyticsChart({
       return `${x},${y}`;
     });
 
-    return `M ${padding},${height - padding} L ${points.join(" L ")} L ${100 - padding},${height - padding} Z`;
+    return `M ${padding},${height - padding} L ${points.join(" L ")} L ${width - padding},${height - padding} Z`;
   };
 
   const isPositive = metric === "apy" ? apyChange >= 0 : tvlChange >= 0;
@@ -220,9 +220,9 @@ export default function PoolAnalyticsChart({
 
         {/* Chart Container */}
         <div className="relative p-6 bg-gradient-to-br from-gray-50/50 to-white rounded-2xl border border-gray-200/50 shadow-inner">
-          <div className="relative h-64 w-full">
+          <div className="relative h-80 md:h-96 w-full">
             <svg
-              viewBox="0 0 100 100"
+              viewBox="0 0 100 60"
               className="w-full h-full transition-all duration-300"
               preserveAspectRatio="none"
               onMouseLeave={() => setHoveredIndex(null)}
@@ -237,7 +237,7 @@ export default function PoolAnalyticsChart({
 
                 {/* Glow effect for line */}
                 <filter id="glow">
-                  <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="0.8" result="coloredBlur"/>
                   <feMerge>
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
@@ -246,15 +246,15 @@ export default function PoolAnalyticsChart({
               </defs>
 
               {/* Horizontal grid lines */}
-              {[20, 40, 60, 80].map((y) => (
+              {[12, 24, 36, 48].map((y) => (
                 <line
                   key={y}
-                  x1="8"
+                  x1="5"
                   y1={y}
-                  x2="92"
+                  x2="95"
                   y2={y}
                   stroke="#e5e7eb"
-                  strokeWidth="0.3"
+                  strokeWidth="0.2"
                   strokeDasharray="1,2"
                   opacity="0.5"
                 />
@@ -281,9 +281,9 @@ export default function PoolAnalyticsChart({
 
               {/* Data points with hover effect */}
               {data.map((d, i) => {
-                const x = 8 + (i / (data.length - 1)) * 84;
+                const x = 5 + (i / (data.length - 1)) * 90;
                 const value = metric === "apy" ? d.apy : d.tvl;
-                const y = 92 - ((value - minValue) / range) * 84;
+                const y = 55 - ((value - minValue) / range) * 50;
                 const isHovered = hoveredIndex === i;
 
                 return (
@@ -293,7 +293,7 @@ export default function PoolAnalyticsChart({
                       x={x - 2}
                       y="0"
                       width="4"
-                      height="100"
+                      height="60"
                       fill="transparent"
                       style={{ cursor: 'pointer' }}
                       onMouseEnter={() => setHoveredIndex(i)}
@@ -303,13 +303,13 @@ export default function PoolAnalyticsChart({
                     <circle
                       cx={x}
                       cy={y}
-                      r={isHovered ? "2.5" : "1.5"}
+                      r={isHovered ? "2" : "1.2"}
                       fill="white"
                       stroke={metric === "apy" ? "#22c55e" : "#3b82f6"}
-                      strokeWidth={isHovered ? "2" : "1.5"}
+                      strokeWidth={isHovered ? "1.5" : "1.2"}
                       className="transition-all duration-200"
                       style={{
-                        filter: isHovered ? 'drop-shadow(0 0 3px rgba(34, 197, 94, 0.5))' : 'none',
+                        filter: isHovered ? 'drop-shadow(0 0 2px rgba(34, 197, 94, 0.6))' : 'none',
                       }}
                     />
 
@@ -317,20 +317,20 @@ export default function PoolAnalyticsChart({
                     {isHovered && (
                       <g>
                         <rect
-                          x={x - 15}
-                          y={y - 18}
-                          width="30"
-                          height="14"
-                          rx="3"
+                          x={x - 12}
+                          y={y - 12}
+                          width="24"
+                          height="9"
+                          rx="2"
                           fill={metric === "apy" ? "#22c55e" : "#3b82f6"}
                           opacity="0.95"
                         />
                         <text
                           x={x}
-                          y={y - 9}
+                          y={y - 6}
                           textAnchor="middle"
                           fill="white"
-                          fontSize="4"
+                          fontSize="3.5"
                           fontWeight="bold"
                         >
                           {metric === "apy" ? `${value.toFixed(1)}%` : `$${(value / 1000).toFixed(0)}K`}
