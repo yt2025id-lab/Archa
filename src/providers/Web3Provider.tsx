@@ -11,7 +11,7 @@ const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "demo-proj
 
 const connectors = [
   injected({
-    shimDisconnect: true,
+    shimDisconnect: false, // Disable auto-reconnect on page load
     target() {
       return {
         id: "injected",
