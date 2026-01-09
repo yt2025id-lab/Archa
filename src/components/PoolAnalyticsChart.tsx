@@ -211,10 +211,28 @@ export default function PoolAnalyticsChart({
               preserveAspectRatio="none"
               onMouseLeave={() => setHoveredIndex(null)}
             >
+              {/* Vertical grid lines (columns) */}
+              {Array.from({ length: data.length }).map((_, i) => {
+                const x = 5 + (i / (data.length - 1)) * 90;
+                return (
+                  <line
+                    key={`v-${i}`}
+                    x1={x}
+                    y1="5"
+                    x2={x}
+                    y2="55"
+                    stroke="#e5e7eb"
+                    strokeWidth="0.15"
+                    strokeDasharray="1,2"
+                    opacity="0.3"
+                  />
+                );
+              })}
+
               {/* Horizontal grid lines */}
               {[12, 24, 36, 48].map((y) => (
                 <line
-                  key={y}
+                  key={`h-${y}`}
                   x1="5"
                   y1={y}
                   x2="95"
