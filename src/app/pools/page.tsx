@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useAccount } from "wagmi";
 import ConnectWallet from "@/components/ConnectWallet";
+import USDCFaucet from "@/components/USDCFaucet";
 import {
   useAllPoolsWithInfo,
   useRequiredCollateral,
@@ -184,6 +185,9 @@ export default function PoolsPage() {
       {/* Main Content */}
       <section className="py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* USDC Faucet Banner */}
+          <USDCFaucet />
+
           {/* Stats Bar */}
           {pools && pools.length > 0 && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">

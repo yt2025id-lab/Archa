@@ -11,6 +11,7 @@ import PoolAnalyticsChart from "@/components/PoolAnalyticsChart";
 import { SuccessCelebration } from "@/components/Confetti";
 import { useAccount } from "wagmi";
 import ConnectWallet from "@/components/ConnectWallet";
+import USDCFaucet from "@/components/USDCFaucet";
 import {
   usePoolInfo,
   useParticipantInfo,
@@ -204,6 +205,9 @@ export default function PoolDetailPage() {
       {/* Main Content */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* USDC Faucet Banner */}
+          <USDCFaucet />
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Left Column - Pool Info */}
             <div className="lg:col-span-2 space-y-6">

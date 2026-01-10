@@ -3,7 +3,7 @@ pragma solidity ^0.8.20;
 
 /**
  * @title MockUSDC
- * @notice Mock USDC token for testing purposes
+ * @notice Mock USDC token for testing purposes with faucet functionality
  * @dev 6 decimals like real USDC
  */
 contract MockUSDC {
@@ -15,8 +15,14 @@ contract MockUSDC {
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
 
+    // Faucet settings
+    uint256 public constant FAUCET_AMOUNT = 1000 * 10**6; // 1000 USDC
+    uint256 public constant COOLDOWN_TIME = 24 hours;
+    mapping(address => uint256) public lastClaim;
+
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Claimed(address indexed claimer, uint256 amount);
 
     constructor() {
         // Mint initial supply to deployer
@@ -70,5 +76,31 @@ contract MockUSDC {
         balanceOf[from] -= amount;
         totalSupply -= amount;
         emit Transfer(from, address(0), amount);
+    }
+
+    // Faucet function - claim free USDC for testing
+    function claimFaucet() external {
+        require(
+            block.timestamp >= lastClaim[msg.sender] + COOLDOWN_TIME,
+            "Faucet: cooldown period not passed"
+        );
+
+        lastClaim[msg.sender] = block.timestamp;
+        _mint(msg.sender, FAUCET_AMOUNT);
+        emit Claimed(msg.sender, FAUCET_AMOUNT);
+    }
+
+    // Check if address can claim
+    function canClaim(address account) external view returns (bool) {
+        return block.timestamp >= lastClaim[account] + COOLDOWN_TIME;
+    }
+
+    // Time until next claim is available
+    function timeUntilNextClaim(address account) external view returns (uint256) {
+        uint256 nextClaimTime = lastClaim[account] + COOLDOWN_TIME;
+        if (block.timestamp >= nextClaimTime) {
+            return 0;
+        }
+        return nextClaimTime - block.timestamp;
     }
 }
