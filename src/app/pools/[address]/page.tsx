@@ -12,6 +12,7 @@ import { SuccessCelebration } from "@/components/Confetti";
 import { useAccount } from "wagmi";
 import ConnectWallet from "@/components/ConnectWallet";
 import USDCFaucet from "@/components/USDCFaucet";
+import TestnetInfo from "@/components/TestnetInfo";
 import {
   usePoolInfo,
   useParticipantInfo,
@@ -205,6 +206,9 @@ export default function PoolDetailPage() {
       {/* Main Content */}
       <section className="py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          {/* Testnet Info Banner */}
+          <TestnetInfo />
+
           {/* USDC Faucet Banner */}
           <USDCFaucet />
 

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { useAccount } from "wagmi";
 import ConnectWallet from "@/components/ConnectWallet";
 import USDCFaucet from "@/components/USDCFaucet";
+import TestnetInfo from "@/components/TestnetInfo";
 import {
   useAllPoolsWithInfo,
   useRequiredCollateral,
@@ -185,6 +186,9 @@ export default function PoolsPage() {
       {/* Main Content */}
       <section className="py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Testnet Info Banner */}
+          <TestnetInfo />
+
           {/* USDC Faucet Banner */}
           <USDCFaucet />
 
