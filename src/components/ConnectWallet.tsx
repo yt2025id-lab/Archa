@@ -109,27 +109,32 @@ export default function ConnectWallet({ variant = "header" }: ConnectWalletProps
       {showModal && canUsePortal && createPortal(
         <div className="fixed inset-0 z-[300]">
           {/* Backdrop - full screen dark overlay */}
-          <div 
-            className="fixed inset-0 bg-black/40"
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setShowModal(false)}
           />
-          
-          {/* Modal container - centered with slight offset to top */}
-          <div 
-            className="fixed inset-0 flex items-start md:items-center justify-center p-4 pt-[15vh] md:pt-4"
+
+          {/* Modal container - responsive positioning */}
+          <div
+            className="fixed inset-0 flex items-end sm:items-center justify-center p-0 sm:p-4"
             onClick={() => setShowModal(false)}
           >
-            <div 
-              className="relative bg-white rounded-3xl w-full max-w-md p-6 md:mb-20"
-              style={{ boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)' }}
+            <div
+              className="relative bg-white w-full sm:max-w-md sm:rounded-3xl rounded-t-3xl p-5 sm:p-6 max-h-[85vh] overflow-y-auto animate-slideUp sm:animate-fadeIn"
+              style={{ boxShadow: '0 -4px 20px rgba(0, 0, 0, 0.15)' }}
               onClick={(e) => e.stopPropagation()}
             >
+            {/* Mobile drag indicator */}
+            <div className="flex justify-center mb-3 sm:hidden">
+              <div className="w-10 h-1 bg-gray-300 rounded-full" />
+            </div>
+
             {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-gray-900">Connect Wallet</h3>
+            <div className="flex items-center justify-between mb-5 sm:mb-6">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900">Connect Wallet</h3>
               <button
                 onClick={() => setShowModal(false)}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 <svg className="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
