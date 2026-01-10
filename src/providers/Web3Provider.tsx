@@ -11,7 +11,6 @@ const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || "demo-proj
 
 const connectors = [
   injected({
-    shimDisconnect: false, // Disable auto-reconnect on page load
     target() {
       return {
         id: "injected",
@@ -42,15 +41,13 @@ const config = createConfig({
     [sepolia.id]: http("https://gateway.tenderly.co/public/sepolia"),
   },
   ssr: true,
-  // Disable automatic reconnection on page load
-  multiInjectedProviderDiscovery: false,
 });
 
 export function Web3Provider({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <WagmiProvider config={config} reconnectOnMount={false}>
+    <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
         {children}
       </QueryClientProvider>
