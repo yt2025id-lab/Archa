@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { useAccount, useWriteContract, useReadContract } from "wagmi";
-import { parseUnits } from "viem";
 import { mantleSepoliaTestnet } from "wagmi/chains";
+import { activeContracts } from "@/config/contracts";
 
-const MOCK_USDC_ADDRESS = "0x3e647B4E693B73bBa709cCF26E557698BE603a32";
+const MOCK_USDC_ADDRESS = activeContracts.usdc;
 
 const MOCK_USDC_ABI = [
   {
