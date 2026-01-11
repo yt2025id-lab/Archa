@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useAccount } from "wagmi";
 import ConnectWallet from "@/components/ConnectWallet";
-import USDCFaucet from "@/components/USDCFaucet";
+// import USDCFaucet from "@/components/USDCFaucet"; // Disabled - using original USDC contract
 import TestnetInfo from "@/components/TestnetInfo";
 import {
   useAllPoolsWithInfo,
@@ -189,8 +189,8 @@ export default function PoolsPage() {
           {/* Testnet Info Banner */}
           <TestnetInfo />
 
-          {/* USDC Faucet Banner */}
-          <USDCFaucet />
+          {/* USDC Faucet Banner - disabled for now */}
+          {/* <USDCFaucet /> */}
 
           {/* Stats Bar */}
           {pools && pools.length > 0 && (

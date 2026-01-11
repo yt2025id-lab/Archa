@@ -25,9 +25,9 @@ export const CONTRACTS = {
   // Mantle Sepolia Testnet
   mantleSepolia: {
     chainId: 5003,
-    usdc: "0x3e647B4E693B73bBa709cCF26E557698BE603a32" as `0x${string}`, // MockUSDC with Faucet
-    factory: "0x41AB8122110588682358F9B23A01761C2064F1d0" as `0x${string}`, // ArisanFactory
-    yieldStrategy: "0x9A951AAbE94134Cc4df4eAACD6117d94c8e4A2ea" as `0x${string}`, // AIYieldStrategy
+    usdc: "0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D" as `0x${string}`, // MockUSDC
+    factory: "0x15078CaEC56D393F8966999E12e1C03d34D27C16" as `0x${string}`, // ArisanFactory
+    yieldStrategy: "0x09beBF7c34b05234c0c2462DCCC9A828B595de12" as `0x${string}`, // AIYieldStrategy
   },
   // Mantle Mainnet
   mainnet: {
