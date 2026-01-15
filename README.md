@@ -79,11 +79,13 @@
 
 Collateral = 125% × Deposit × (Participants - 1)
 
-| Pool Type | Monthly Deposit | Participants | Collateral | Duration |
-|-----------|-----------------|--------------|------------|----------|
-| Starter | 10 USDC | 5 people | 50 USDC | 5 months |
-| Standard | 50 USDC | 10 people | 563 USDC | 10 months |
-| Premium | 100 USDC | 20 people | 2,375 USDC | 20 months |
+| Pool Type | Monthly Deposit | Participants | Collateral | Cycle Duration | Total Duration |
+|-----------|-----------------|--------------|------------|----------------|----------------|
+| Small Pool | 10 USDC | 5 people | 50 USDC | 30 days | ~5 months |
+| Medium Pool | 50 USDC | 10 people | 563 USDC | 30 days | ~10 months |
+| Large Pool | 100 USDC | 20 people | 2,375 USDC | 30 days | ~20 months |
+
+> **How Cycles Work:** Each pool operates on a 30-day cycle. Total duration = 30 days × number of participants. For example, a 5-person pool runs for 5 cycles (150 days ≈ 5 months).
 
 > **Anti Run-away Protection:** The 125% multiplier ensures there's no economic benefit from winning early and leaving. Even if you receive your pot first and disappear, you'll lose more in collateral than you gained.
 
