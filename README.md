@@ -69,6 +69,9 @@
 | **100% Transparent** | All transactions and yield recorded on blockchain, verifiable by anyone |
 | **USDC Stablecoin** | Use USDC with stable value, yield in stablecoin too |
 | **Low Fees** | Built on Mantle Network with very low transaction fees |
+| **Leaderboard** | Community rankings showing top earners, win rates, and pool participation |
+| **FAQ Section** | Comprehensive help center with multi-language support (EN/ID) |
+| **Testnet Faucet** | Easy MNT testnet token access for testing (USDC faucet planned) |
 
 ---
 
@@ -154,14 +157,16 @@ forge script script/Deploy.s.sol:DeployScript --rpc-url mantle-sepolia --broadca
 ### Mantle Sepolia Testnet (Live ✅)
 | Contract | Address |
 |----------|---------|
-| ArisanFactory | `0x15078CaEC56D393F8966999E12e1C03d34D27C16` |
-| AIYieldStrategy | `0x09beBF7c34b05234c0c2462DCCC9A828B595de12` |
-| MockUSDC | `0xb52fF96A29262BD8dC9a0Fc56CcA5a9EC9Ddbc9D` |
+| ArisanFactory | `0x41AB8122110588682358F9B23A01761C2064F1d0` |
+| AIYieldStrategy | `0x9A951AAbE94134Cc4df4eAACD6117d94c8e4A2ea` |
+| MockUSDC | `0x3e647B4E693B73bBa709cCF26E557698BE603a32` |
 | Small Pool (10 USDC) | `0xa5fe7e4db7cc25a6aeb67f787be0c3da6a4e1b05` |
 | Medium Pool (50 USDC) | `0x71560fc237b64a7625a6056c7d02e303652ef1b7` |
 | Large Pool (100 USDC) | `0x98e5733617b661aa7bb5dd71185174ee8d519d76` |
 
 **Explorer:** [explorer.sepolia.mantle.xyz](https://explorer.sepolia.mantle.xyz)
+
+> **Note for Testers:** To get MNT testnet tokens, visit the [Mantle Sepolia Faucet](https://faucet.sepolia.mantle.xyz). For MockUSDC tokens, please contact the team via [Telegram](https://t.me/archaonchain) (automated faucet coming soon).
 
 ### Mantle Mainnet (Coming Soon)
 | Contract | Address |
@@ -180,7 +185,11 @@ archa/
 │   ├── app/                 # Next.js pages
 │   │   ├── page.tsx         # Landing page
 │   │   ├── pools/           # Pool explorer
+│   │   │   ├── page.tsx     # Pool list
+│   │   │   └── [address]/   # Pool detail page
 │   │   ├── ai/              # AI Yield Optimizer dashboard
+│   │   ├── leaderboard/     # Community rankings
+│   │   ├── faq/             # FAQ page with multi-language
 │   │   └── api/             # API routes
 │   │       ├── yields/      # Yield data endpoints
 │   │       └── strategy/    # Strategy recommendation
@@ -215,6 +224,9 @@ archa/
 │   │   └── ArisanPool.t.sol     # Comprehensive tests
 │   └── script/
 │       └── Deploy.s.sol         # Deployment scripts
+├── docs/                    # Documentation
+│   ├── pitch-deck/          # Pitch deck
+│   └── video-recording-guide.md
 └── public/                  # Static assets
 ```
 
@@ -234,6 +246,8 @@ archa/
 - [x] Join pool mechanism
 - [x] Pool detail page with participants
 - [x] Pool templates (Small/Medium/Large)
+- [x] Leaderboard with community rankings
+- [x] FAQ page with multi-language support
 - [ ] Monthly deposit automation
 - [ ] Winner selection system (VRF)
 
@@ -244,11 +258,13 @@ archa/
 - [x] AI Dashboard with recommendations
 - [x] Multi-protocol analysis (Lendle, Merchant Moe, Agni, Minterest, KTX)
 
-### Phase 4: Launch
+### Phase 4: Launch ✅
+- [x] Multi-language support (EN/ID)
+- [x] MNT testnet faucet integration
+- [ ] USDC faucet for easy testing (planned)
 - [ ] Security audit
 - [ ] Mantle mainnet deployment
 - [ ] Community building
-- [x] Multi-language support (EN/ID)
 
 ---
 
